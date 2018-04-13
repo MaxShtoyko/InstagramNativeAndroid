@@ -8,7 +8,7 @@
       android:id="@+id/myButton"
       android:layout_width="fill_parent"
       android:layout_height="wrap_content"      
-      local:MvxBind="Click Title"/>
+      local:MvxBind="Click MyCommand"/>
   <ImageView
       android:src="@android:drawable/ic_menu_gallery"
       android:layout_width="fill_parent"

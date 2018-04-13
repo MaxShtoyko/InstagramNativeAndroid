@@ -19,9 +19,7 @@ namespace Ins.ViewModels
 {
     public class CameraViewModel: MvxViewModel
     {
-
         public string Title = "hello";
-
         
         public ICommand MyCommand
         {

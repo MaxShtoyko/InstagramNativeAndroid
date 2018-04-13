@@ -19,7 +19,7 @@ namespace Ins.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.LoginPage);
+            SetContentView(Resource.Layout.LoginView);
 
             // Create your application here
         }

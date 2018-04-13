@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Windows.Input;
+
 using Android.App;
 using Android.Content;
 using Android.OS;
@@ -13,11 +13,8 @@ using MvvmCross.Core.ViewModels;
 
 namespace Ins.ViewModels
 {
-    public class LoginPageViewModel:MvxViewModel
+    public class NewsViewModel:MvxViewModel
     {
-        public ICommand OnLogIn
-        {
-            get => new MvxCommand(() => ShowViewModel<TabbedViewModel>(), () => true);
-        }
+        public string Title = "hello";
     }
 }
