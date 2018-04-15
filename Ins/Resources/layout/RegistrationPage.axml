@@ -13,21 +13,24 @@
             android:id="@+id/registrationEmail"
             android:hint="Email"
             android:maxLength="30" 
-            android:singleLine="true"/>
+            android:singleLine="true"
+            local:MvxBind="Text User.Email, Mode=TwoWay"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/registrationFullName"
             android:hint="Full Name"
             android:maxLength="30" 
-            android:singleLine="true"/>
+            android:singleLine="true"
+            local:MvxBind="Text User.FullName, Mode=TwoWay"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:id="@+id/editText3"
             android:hint="Login"
             android:maxLength="30"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            local:MvxBind="Text User.Login, Mode=TwoWay"/>
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -35,7 +38,8 @@
             android:password="true"
             android:hint="Password"
             android:maxLength="30"
-            android:singleLine="true"/>
+            android:singleLine="true"
+            local:MvxBind="Text User.Password, Mode=TwoWay"/>
     </LinearLayout>
     <Button
         android:text="Sign Up"

@@ -33,8 +33,9 @@ namespace Ins.ViewModels
 
         public LoginPageViewModel()
         {
-            _user = new User();
+            _user = UserService.getCurrentUser();
 
+            DataBaseService.createDataBase();
             OnLogIn = new MvxCommand(LogInClicked);
             OnSignUp = new MvxCommand(SignUpClicked);
         }
@@ -47,7 +48,16 @@ namespace Ins.ViewModels
         void LogInClicked()
         {
             if (UserService.IsCorrect(User)){
+
+                if (!DataBaseService.InDataBase(User)){
+                    DataBaseService.insertIntoTableUser(User);
+                }            
+                else
+                {
+                    DataBaseService.updateTableUser(User);
+                }
                 ShowViewModel<TabbedViewModel>();
+
             }
             else {
 

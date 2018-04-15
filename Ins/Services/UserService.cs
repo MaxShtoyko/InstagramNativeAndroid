@@ -16,6 +16,16 @@ namespace Ins.Services
 {
     static public class UserService
     {
+        static private User _currentUser;
+
+        static public User getCurrentUser()
+        {
+            if (_currentUser == null)
+                _currentUser = new User();
+
+            return _currentUser;
+        }
+
         static public bool IsCorrect( User user )
         {
             if (String.IsNullOrWhiteSpace(user.Email) || String.IsNullOrWhiteSpace(user.Password)){
