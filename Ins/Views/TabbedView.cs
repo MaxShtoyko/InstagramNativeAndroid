@@ -16,7 +16,7 @@ using MvvmCross.Droid.Views.Fragments;
 
 namespace Ins.Views
 {
-    [Activity]
+    [Activity(Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen")]
     public class TabbedView : MvxTabsFragmentActivity
     {
         public TabbedViewModel TabbedViewModel

@@ -22,7 +22,7 @@ namespace Ins.Views
                                           Bundle savedInstanceState)
         {
             var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-            return this.BindingInflate(Resource.Layout.CameraView, null);
+            return this.BindingInflate(Resource.Layout.ProfileFragmentView, null);
         }
     }
 }
