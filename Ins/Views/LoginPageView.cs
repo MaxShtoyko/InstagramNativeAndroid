@@ -13,14 +13,13 @@ using MvvmCross.Droid.Views;
 
 namespace Ins.Views
 {
-    [Activity(Label = "LoginPageView")]
+    [Activity(Label = "LoginPageView",Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen")]
     public class LoginPageView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.LoginView);
-
             // Create your application here
         }
     }
