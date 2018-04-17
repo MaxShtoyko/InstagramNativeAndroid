@@ -9,6 +9,7 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Ins.Interfaces;
 using Ins.Models;
 using Ins.Services;
 using MvvmCross.Core.ViewModels;
@@ -17,6 +18,9 @@ namespace Ins.ViewModels
 {
     public class LoginPageViewModel:MvxViewModel
     {
+        private IUserService _userService;
+        private IDataBaseService _dataBaseService;
+
         private User _user;
         public User User
         {
@@ -31,11 +35,14 @@ namespace Ins.ViewModels
         public ICommand OnLogIn { get; private set; }
         public ICommand OnSignUp { get; private set; }
 
-        public LoginPageViewModel()
+        public LoginPageViewModel(IUserService userService, IDataBaseService dataBaseService)
         {
-            _user = UserService.getCurrentUser();
+            _userService = userService;
+            _dataBaseService = dataBaseService;
+        
+            _user = _userService.GetCurrentUser();
+            _dataBaseService.CreateDataBase();
 
-            DataBaseService.createDataBase();
             OnLogIn = new MvxCommand(LogInClicked);
             OnSignUp = new MvxCommand(SignUpClicked);
         }
@@ -47,23 +54,16 @@ namespace Ins.ViewModels
 
         void LogInClicked()
         {
-            if (UserService.IsCorrect(User)){
+            if (_userService.IsCorrect(User)){
 
-                if (!DataBaseService.InDataBase(User)){
-                    DataBaseService.insertIntoTableUser(User);
+                if (!_dataBaseService.InDataBase(User)){
+                    _dataBaseService.InsertIntoTableUser(User);
                 }            
-                else
-                {
-                    DataBaseService.updateTableUser(User);
-                }
                 ShowViewModel<TabbedViewModel>();
-
             }
             else {
-
+                
             }
-        }
-
-        
+        }        
     }
 }

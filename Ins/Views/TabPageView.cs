@@ -17,14 +17,14 @@ using MvvmCross.Droid.Views.Fragments;
 namespace Ins.Views
 {
     [Activity(Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen")]
-    public class TabbedView : MvxTabsFragmentActivity
+    public class TabPageView : MvxTabsFragmentActivity
     {
-        public TabbedViewModel TabbedViewModel
+        public TabPageViewModel TabbedViewModel
         {
-            get { return (TabbedViewModel)base.ViewModel; }
+            get { return (TabPageViewModel)base.ViewModel; }
         }
 
-        public TabbedView()
+        public TabPageView()
             : base(Resource.Layout.TabView, Resource.Id.actualtabcontent)
         {
         }
@@ -34,7 +34,6 @@ namespace Ins.Views
             AddTab<CameraView>("Camera", "Camera", args, TabbedViewModel.CameraVM);
             AddTab<NewsView>("News", "News", args, TabbedViewModel.NewsVM);
             AddTab<ProfileView>("Profile", "Profile", args, TabbedViewModel.ProfileVM);
-            // note that
         }
     }
 }

@@ -5,16 +5,19 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Java.IO;
 
 namespace Ins.Helpers
 {
-    static public class ConstantHelper
+    public static class CameraHelper
     {
-        static readonly public string dataBaseName = "UsersTest.db";
-        static readonly public List<string> permissions = new List<string> { "public_profile", "user_friends", "email" };
-}
+        public static File file;
+        public static File dir;
+        public static Bitmap bitmap;
+    }
 }

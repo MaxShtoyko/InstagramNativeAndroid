@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
   <string name="app_name">Ins</string>
+  <string name="facebook_app_id">592106287822987</string>
 </resources>

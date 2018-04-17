@@ -11,16 +11,17 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Ins.Helpers;
+using Ins.Interfaces;
 using Ins.Models;
 using SQLite;
 
 namespace Ins.Services
 {
-    static class DataBaseService
+    class DataBaseService:IDataBaseService
     {
         static private string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
-        static public bool createDataBase()
+        public bool CreateDataBase()
         {
             using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
@@ -29,7 +30,7 @@ namespace Ins.Services
             }
         }
 
-        static public void insertIntoTableUser(User User)
+        public void InsertIntoTableUser(User User)
         {
             using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
@@ -37,7 +38,7 @@ namespace Ins.Services
             }
         }
 
-        static public List<User> getUsers()
+        public List<User> GetUsers()
         {
             using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
@@ -45,7 +46,7 @@ namespace Ins.Services
             }
         }
 
-        static public void updateTableUser(User User)
+        public void UpdateTableUser(User User)
         {
             using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
@@ -58,7 +59,7 @@ namespace Ins.Services
             }
         }
 
-        static public bool InDataBase(User user)
+        public bool InDataBase(User user)
         {
             using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
@@ -66,6 +67,5 @@ namespace Ins.Services
                 return result > 0;
             }
         }
-
     }
 }

@@ -9,14 +9,17 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
+using Ins.Interfaces;
 using Ins.Models;
 using Ins.Services;
 using MvvmCross.Core.ViewModels;
 
 namespace Ins.ViewModels
 {
-    public class RegistrationViewModel:MvxViewModel 
+    public class RegistrationViewModel:MvxViewModel
     {
+        private IUserService _userService;
+
         private User _user;
         public User User
         {
@@ -30,10 +33,10 @@ namespace Ins.ViewModels
 
         public ICommand OnSignUp { get; private set; }
         
-
-        public RegistrationViewModel()
+        public RegistrationViewModel(IUserService userService)
         {
-            _user = UserService.getCurrentUser();
+            _userService = userService;
+            _user = _userService.GetCurrentUser();
 
             OnSignUp = new MvxCommand(SignUpClicked);
         }

@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using SQLite;
+using Xamarin.Facebook.Login.Widget;
 
 namespace Ins.Models
 {
@@ -17,9 +18,10 @@ namespace Ins.Models
     {
         [PrimaryKey]
         public string Email { get; set; }
-
         public string FullName { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
+
+        public ProfilePictureView ProfilePictureView { get; set; }
     }
 }

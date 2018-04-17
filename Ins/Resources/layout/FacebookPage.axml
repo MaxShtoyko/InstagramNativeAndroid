@@ -18,7 +18,7 @@
       android:layout_width="100dp"
       android:layout_height="100dp"
       android:layout_gravity="center_horizontal"
-      local:MvxBind="ProfileId CurrentUser.ProfilePictureView.ProfileId, Mode=TwoWay"/>
+      local:MvxBind="ProfileId _currentUser.ProfilePictureView.ProfileId, Mode=TwoWay"/>
   <TextView
       android:id="@+id/txtFirstName"
       android:layout_width="wrap_content"
@@ -28,7 +28,7 @@
       android:textSize="18sp"
       android:layout_gravity="center_horizontal"
       android:padding="5dp" 
-      local:MvxBind="Text CurrentUser.Email, Mode=TwoWay"/>
+      local:MvxBind="Text _currentUser.Email, Mode=TwoWay"/>
   <TextView
       android:id="@+id/txtLastName"
       android:layout_width="wrap_content"
@@ -38,7 +38,7 @@
       android:textSize="18sp"
       android:layout_gravity="center_horizontal"
       android:padding="5dp"
-      local:MvxBind="Text CurrentUser.FullName, Mode=TwoWay"/>
+      local:MvxBind="Text _currentUser.FullName, Mode=TwoWay"/>
   <TextView
       android:id="@+id/txtName"
       android:layout_width="wrap_content"
@@ -48,7 +48,7 @@
       android:textSize="18sp"
       android:layout_gravity="center_horizontal"
       android:padding="5dp" 
-      local:MvxBind="Text CurrentUser.Id, Mode=TwoWay"/>
+      local:MvxBind="Text _currentUser.Id, Mode=TwoWay"/>
   <com.facebook.share.widget.ShareButton
       android:id="@+id/btnShare"
       android:layout_width="wrap_content"

@@ -13,14 +13,16 @@ using Ins.Interfaces;
 using Ins.Models;
 using Ins.Services;
 using MvvmCross.Core.ViewModels;
+using Newtonsoft.Json;
+using Xamarin.Facebook;
 
 namespace Ins.ViewModels
 {
-    public class ProfileViewModel:MvxViewModel
+    public class FacebookPageViewModel: MvxViewModel
     {
         private IUserService _userService;
-
         private User _currentUser;
+
         public User CurrentUser
         {
             get => _currentUser;
@@ -30,7 +32,8 @@ namespace Ins.ViewModels
                     RaisePropertyChanged(() => _currentUser);
             }
         }
-        public ProfileViewModel(IUserService userService)
+
+        public FacebookPageViewModel(IUserService userService)
         {
             _userService = userService;
             _currentUser = _userService.GetCurrentUser();
