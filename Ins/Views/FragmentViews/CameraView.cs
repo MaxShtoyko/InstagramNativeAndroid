@@ -4,8 +4,8 @@ using Android.OS;
 using Android.Provider;
 using Android.Views;
 using Android.Widget;
+using Ins.Core.Models;
 using Ins.Droid.Helpers;
-using Ins.Droid.Models;
 using Ins.Droid.Services;
 using Java.IO;
 using MvvmCross.Droid.Views.Fragments;
@@ -71,14 +71,15 @@ namespace Ins.Droid.Views
 
             Photo newPhoto = new Photo()
             {
-                Picture = CameraHelper.file.Path.LoadAndResizeBitmap(width, height),
+                //Picture = CameraHelper.file.Path.LoadAndResizeBitmap(width, height),
                 DateOfPublication = DateTime.Now.ToLongDateString(),
                 Author = UserService.GetCurrentUserName()
             };
 
-            _imageView.SetImageBitmap(newPhoto.Picture);
+            //_imageView.SetImageBitmap(newPhoto.Picture);
 
-            PhotoService.AddPhoto(newPhoto);
+            //PhotoService.AddPhoto(newPhoto);
+
 
             GC.Collect();
         }

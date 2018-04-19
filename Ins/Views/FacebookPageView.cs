@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
 using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Ins.Droid.Models;
+using Ins.Core.Interfaces;
+using Ins.Core.Models;
+using Ins.Droid.Helpers;
+using Ins.Droid.Helpers.FacebookHelpers;
+using Ins.Droid.Services;
 using MvvmCross.Droid.Views;
 using Newtonsoft.Json;
+using System;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
 using Xamarin.Facebook.Login.Widget;
-using Xamarin.Facebook.Share.Model;
-using Ins.Droid.Services;
-using Ins.Droid.Helpers;
-using Ins.Droid.Interfaces;
-using Ins.Droid.Helpers.FacebookHelpers;
 
 namespace Ins.Droid.Views
 {

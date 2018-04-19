@@ -2,6 +2,7 @@ using Android.Content;
 using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
+using Ins.Core;
 
 namespace Ins.Droid
 {

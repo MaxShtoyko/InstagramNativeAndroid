@@ -1,6 +1,6 @@
-﻿using Ins.Droid.Helpers;
-using Ins.Droid.Interfaces;
-using Ins.Droid.Models;
+﻿using Ins.Core.Interfaces;
+using Ins.Core.Models;
+using Ins.Droid.Helpers;
 using SQLite;
 using System;
 using System.Collections.Generic;
@@ -8,23 +8,23 @@ using System.Linq;
 
 namespace Ins.Droid.Services
 {
-    public class DataBaseService<T>:IDataBaseService where T: class
+    public class DataBaseService:IDataBaseService
     {
         static private string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
-        public void CreateDataBase(T type, string dataBaseName)
+        public void CreateDataBase()
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, dataBaseName)))
+            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
-                connection.CreateTable<T>();
+                connection.CreateTable<User>();
             }
         }
 
-        public void InsertIntoTable(T item, string dataBaseName)
+        public void InsertIntoTableUser(User user)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, dataBaseName)))
+            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
             {
-                connection.Insert(item);
+                connection.Insert(user);
             }
         }
 
@@ -56,16 +56,6 @@ namespace Ins.Droid.Services
                 int result = connection.Table<User>().ToList().Where(u => u.Email == user.Email).ToList().Count;
                 return result > 0;
             }
-        }
-
-        public void CreateDataBase()
-        {
-            throw new NotImplementedException();
-        }
-
-        public void InsertIntoTableUser(User User)
-        {
-            throw new NotImplementedException();
         }
     }
 }

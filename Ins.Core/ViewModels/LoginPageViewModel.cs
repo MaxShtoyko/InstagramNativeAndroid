@@ -1,21 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Windows.Input;
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Ins.Droid.Interfaces;
-using Ins.Droid.Models;
-using Ins.Droid.Services;
+﻿using Ins.Core.Interfaces;
+using Ins.Core.Models;
 using MvvmCross.Core.ViewModels;
-using MvvmCross.Plugins.Messenger;
+using System.Windows.Input;
 
-namespace Ins.Droid.ViewModels
+namespace Ins.Core.ViewModels
 {
     public class LoginPageViewModel:MvxViewModel
     {

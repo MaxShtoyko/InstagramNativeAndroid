@@ -10,8 +10,8 @@
     <ProjectTypeGuids>{EFBA0AD7-5A72-4C68-AF49-83D382785DCF};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Ins</RootNamespace>
-    <AssemblyName>Ins</AssemblyName>
+    <RootNamespace>Ins.Droid</RootNamespace>
+    <AssemblyName>Ins.Droid</AssemblyName>
     <FileAlignment>512</FileAlignment>
     <AndroidApplication>True</AndroidApplication>
     <AndroidResgenFile>Resources\Resource.Designer.cs</AndroidResgenFile>
@@ -166,7 +166,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="App.cs" />
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
     <Compile Include="Extensions\EmailExtension.cs" />
@@ -174,31 +173,14 @@
     <Compile Include="Helpers\CameraHelper.cs" />
     <Compile Include="Helpers\PhotoHelpers\PhotoAlbumAdapter.cs" />
     <Compile Include="Helpers\PhotoHelpers\PhotoViewHolder.cs" />
-    <Compile Include="Helpers\ConstantHelper.cs" />
     <Compile Include="Helpers\FacebookHelpers\FacebookProfileHelper.cs" />
     <Compile Include="Helpers\FacebookHelpers\ProfileChangeHelper.cs" />
     <Compile Include="Helpers\FacebookHelpers\ProfileTrackHelper.cs" />
-    <Compile Include="Interfaces\IDataBaseService.cs" />
-    <Compile Include="Interfaces\IUserService.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
-    <Compile Include="Models\FacebookProfile.cs" />
-    <Compile Include="Models\Photo.cs" />
-    <Compile Include="Models\PhotoAlbum.cs" />
-    <Compile Include="Models\User.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\DataBaseService.cs" />
-    <Compile Include="Services\PhotoService.cs" />
-    <Compile Include="Services\UserService.cs" />
     <Compile Include="Setup.cs" />
     <Compile Include="SplashScreen.cs" />
-    <Compile Include="ViewModels\FacebookPageViewModel.cs" />
-    <Compile Include="ViewModels\FragmentViewModels\CameraViewModel.cs" />
-    <Compile Include="ViewModels\LoginPageViewModel.cs" />
-    <Compile Include="ViewModels\FragmentViewModels\NewsViewModel.cs" />
-    <Compile Include="ViewModels\FragmentViewModels\ProfileViewModel.cs" />
-    <Compile Include="ViewModels\RegistrationPageViewModel.cs" />
-    <Compile Include="ViewModels\TabPageViewModel.cs" />
     <Compile Include="Views\FacebookPageView.cs" />
     <Compile Include="Views\FragmentViews\CameraView.cs" />
     <Compile Include="Views\LoginPageView.cs" />
@@ -256,6 +238,12 @@
   <ItemGroup>
     <AndroidResource Include="Resources\values\SplashStyle.xml" />
     <AndroidResource Include="Resources\drawable\splash.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">
+      <Project>{cc775e3d-9b9c-4b8d-8fbc-45df5c036e6f}</Project>
+      <Name>Ins.Core</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

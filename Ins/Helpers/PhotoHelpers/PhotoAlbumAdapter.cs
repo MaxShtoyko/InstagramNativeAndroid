@@ -1,16 +1,7 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Support.V7.Widget;
+﻿using Android.Support.V7.Widget;
 using Android.Views;
-using Ins.Droid.Models;
-using Android.Widget;
+using Ins.Core.Models;
+using System.Linq;
 
 namespace Ins.Droid.Helpers.CameraHelpers
 {
@@ -31,7 +22,7 @@ namespace Ins.Droid.Helpers.CameraHelpers
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             PhotoViewHolder viewHolder = holder as PhotoViewHolder;
-            viewHolder.Image.SetImageBitmap(_photoAlbum.Photos[position].Picture);
+           // viewHolder.Image.SetImageBitmap(_photoAlbum.Photos[position].Picture);
             viewHolder.Date.Text = _photoAlbum.Photos[position].DateOfPublication;
             viewHolder.Author.Text = _photoAlbum.Photos[position].Author;
         }

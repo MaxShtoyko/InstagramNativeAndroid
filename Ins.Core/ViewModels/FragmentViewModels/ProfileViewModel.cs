@@ -1,21 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Views;
-using Android.Widget;
-using Ins.Droid.Interfaces;
-using Ins.Droid.Models;
-using Ins.Droid.Services;
+﻿using Ins.Core.Interfaces;
+using Ins.Core.Models;
 using MvvmCross.Core.ViewModels;
-using Xamarin.Facebook.Login.Widget;
 
-namespace Ins.Droid.ViewModels
+namespace Ins.Core.ViewModels
 {
     public class ProfileViewModel:MvxViewModel
     {
