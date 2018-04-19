@@ -1,12 +1,12 @@
-﻿using Ins.Helpers;
-using Ins.Interfaces;
-using Ins.Models;
+﻿using Ins.Droid.Helpers;
+using Ins.Droid.Interfaces;
+using Ins.Droid.Models;
 using SQLite;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ins.Services
+namespace Ins.Droid.Services
 {
     public class DataBaseService<T>:IDataBaseService where T: class
     {

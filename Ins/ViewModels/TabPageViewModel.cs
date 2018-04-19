@@ -12,7 +12,7 @@ using Android.Widget;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform;
 
-namespace Ins.ViewModels
+namespace Ins.Droid.ViewModels
 {
     public class TabPageViewModel : MvxViewModel
     {

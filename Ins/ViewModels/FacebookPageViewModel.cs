@@ -9,14 +9,14 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Interfaces;
-using Ins.Models;
-using Ins.Services;
+using Ins.Droid.Interfaces;
+using Ins.Droid.Models;
+using Ins.Droid.Services;
 using MvvmCross.Core.ViewModels;
 using Newtonsoft.Json;
 using Xamarin.Facebook;
 
-namespace Ins.ViewModels
+namespace Ins.Droid.ViewModels
 {
     public class FacebookPageViewModel: MvxViewModel
     {

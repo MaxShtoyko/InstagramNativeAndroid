@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using Xamarin.Facebook;
 
-namespace Ins.Helpers.FacebookHelpers
+namespace Ins.Droid.Helpers.FacebookHelpers
 {
     public class ProfileTrackHelper : ProfileTracker
     {

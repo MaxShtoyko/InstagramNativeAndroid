@@ -10,19 +10,19 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Models;
+using Ins.Droid.Models;
 using MvvmCross.Droid.Views;
 using Newtonsoft.Json;
 using Xamarin.Facebook;
 using Xamarin.Facebook.Login;
 using Xamarin.Facebook.Login.Widget;
 using Xamarin.Facebook.Share.Model;
-using Ins.Services;
-using Ins.Helpers;
-using Ins.Interfaces;
-using Ins.Helpers.FacebookHelpers;
+using Ins.Droid.Services;
+using Ins.Droid.Helpers;
+using Ins.Droid.Interfaces;
+using Ins.Droid.Helpers.FacebookHelpers;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
 
     [Activity]

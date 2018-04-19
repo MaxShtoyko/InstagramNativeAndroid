@@ -12,7 +12,7 @@ using Android.Widget;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.IoC;
 
-namespace Ins
+namespace Ins.Droid
 {
     public class App : MvxApplication
     {

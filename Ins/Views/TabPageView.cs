@@ -10,11 +10,11 @@ using Android.Runtime;
 using Android.Util;
 using Android.Views;
 using Android.Widget;
-using Ins.ViewModels;
+using Ins.Droid.ViewModels;
 using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Views.Fragments;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity(Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen")]
     public class TabPageView : MvxTabsFragmentActivity

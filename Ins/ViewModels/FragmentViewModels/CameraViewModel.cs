@@ -11,12 +11,12 @@ using Android.Provider;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Helpers;
+using Ins.Droid.Helpers;
 using Java.IO;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Droid.Views;
 
-namespace Ins.ViewModels
+namespace Ins.Droid.ViewModels
 {
     public class CameraViewModel: MvxViewModel
     {       

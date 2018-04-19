@@ -11,7 +11,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Core.ViewModels;
 
-namespace Ins.ViewModels
+namespace Ins.Droid.ViewModels
 {
     public class NewsViewModel:MvxViewModel
     {

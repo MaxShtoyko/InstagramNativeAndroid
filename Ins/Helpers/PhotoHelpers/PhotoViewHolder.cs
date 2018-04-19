@@ -11,7 +11,7 @@ using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
 
-namespace Ins.Helpers.CameraHelpers
+namespace Ins.Droid.Helpers.CameraHelpers
 {
     public class PhotoViewHolder : RecyclerView.ViewHolder
     {

@@ -13,7 +13,7 @@ using Android.Widget;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views.Fragments;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity(Label = "Profile")]
     public class ProfileView : MvxFragment

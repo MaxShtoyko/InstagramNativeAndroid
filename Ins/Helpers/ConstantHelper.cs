@@ -10,7 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Ins.Helpers
+namespace Ins.Droid.Helpers
 {
     static public class ConstantHelper
     {

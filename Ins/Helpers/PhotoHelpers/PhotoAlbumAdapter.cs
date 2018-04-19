@@ -9,10 +9,10 @@ using Android.OS;
 using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
-using Ins.Models;
+using Ins.Droid.Models;
 using Android.Widget;
 
-namespace Ins.Helpers.CameraHelpers
+namespace Ins.Droid.Helpers.CameraHelpers
 {
     public class PhotoAlbumAdapter : RecyclerView.Adapter
     {

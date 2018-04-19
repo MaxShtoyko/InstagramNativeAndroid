@@ -9,11 +9,11 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Extensions;
-using Ins.Interfaces;
-using Ins.Models;
+using Ins.Droid.Extensions;
+using Ins.Droid.Interfaces;
+using Ins.Droid.Models;
 
-namespace Ins.Services
+namespace Ins.Droid.Services
 {
     public class UserService:IUserService
     {

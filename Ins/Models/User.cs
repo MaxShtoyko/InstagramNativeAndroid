@@ -12,7 +12,7 @@ using Android.Widget;
 using SQLite;
 using Xamarin.Facebook.Login.Widget;
 
-namespace Ins.Models
+namespace Ins.Droid.Models
 {
     public class User
     {

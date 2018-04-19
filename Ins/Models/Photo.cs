@@ -11,7 +11,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 
-namespace Ins.Models
+namespace Ins.Droid.Models
 {
     public class Photo
     {

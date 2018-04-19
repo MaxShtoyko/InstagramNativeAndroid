@@ -12,7 +12,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity]
     public class RegistrationPageView : MvxActivity

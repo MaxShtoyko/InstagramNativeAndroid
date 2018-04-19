@@ -9,9 +9,9 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Models;
+using Ins.Droid.Models;
 
-namespace Ins.Services
+namespace Ins.Droid.Services
 {
     public class PhotoService
     {

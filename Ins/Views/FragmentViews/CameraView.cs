@@ -1,26 +1,17 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.Content.PM;
 using Android.OS;
 using Android.Provider;
-using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Helpers;
-using Ins.Models;
-using Ins.Services;
-using Ins.ViewModels;
+using Ins.Droid.Helpers;
+using Ins.Droid.Models;
+using Ins.Droid.Services;
 using Java.IO;
-using MvvmCross.Binding.Droid.BindingContext;
-using MvvmCross.Droid.Views;
 using MvvmCross.Droid.Views.Fragments;
+using System;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity(Label = "View for FirstViewModel")]
     public class CameraView: MvxFragment
@@ -91,6 +82,7 @@ namespace Ins.Views
 
             GC.Collect();
         }
+
         private void TakeAPicture(object sender, EventArgs eventArgs)
         {
             Intent intent = new Intent(MediaStore.ActionImageCapture);

@@ -9,13 +9,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Ins.Interfaces;
-using Ins.Models;
-using Ins.Services;
+using Ins.Droid.Interfaces;
+using Ins.Droid.Models;
+using Ins.Droid.Services;
 using MvvmCross.Core.ViewModels;
 using Xamarin.Facebook.Login.Widget;
 
-namespace Ins.ViewModels
+namespace Ins.Droid.ViewModels
 {
     public class ProfileViewModel:MvxViewModel
     {
@@ -34,6 +34,7 @@ namespace Ins.ViewModels
         public ProfileViewModel(IUserService userService)
         {
             _userService = userService;
-            _currentUser = _userService.GetCurrentUser();        }
+            _currentUser = _userService.GetCurrentUser();
+        }
     }
 }

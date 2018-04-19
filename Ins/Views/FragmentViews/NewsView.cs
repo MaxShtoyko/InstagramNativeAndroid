@@ -10,12 +10,12 @@ using Android.Runtime;
 using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
-using Ins.Helpers.CameraHelpers;
-using Ins.Models;
+using Ins.Droid.Helpers.CameraHelpers;
+using Ins.Droid.Models;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views.Fragments;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity(Label = "NewsView", Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
     public class NewsView : MvxFragment

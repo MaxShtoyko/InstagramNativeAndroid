@@ -12,7 +12,7 @@ using Android.Views;
 using Android.Widget;
 using MvvmCross.Droid.Views;
 
-namespace Ins.Views
+namespace Ins.Droid.Views
 {
     [Activity(Label = "LoginPageView",Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen", MainLauncher = true)]
     public class LoginPageView : MvxActivity

@@ -12,7 +12,7 @@ using Android.Views;
 using Android.Widget;
 using Java.IO;
 
-namespace Ins.Helpers
+namespace Ins.Droid.Helpers
 {
     public static class CameraHelper
     {
