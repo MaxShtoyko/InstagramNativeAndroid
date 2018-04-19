@@ -40,7 +40,12 @@ namespace Ins.Services
         {
             _currentUser.FullName = result.name;
             _currentUser.Email = result.email;
-            _currentUser.ProfilePictureView.ProfileId = result.id;
+            _currentUser.ProfilePictureID = result.id;
+        }
+
+        static public string GetCurrentUserName()
+        {
+            return _currentUser.FullName;
         }
     }
 }

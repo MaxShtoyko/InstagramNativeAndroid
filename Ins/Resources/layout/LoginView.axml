@@ -37,6 +37,12 @@
             android:layout_height="wrap_content"
             android:id="@+id/logInButton"
             local:MvxBind="Click OnLogIn" />
+      <Button
+            android:text="Log in via Facebook"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/logInButton"
+            local:MvxBind="Click OnLogInViaFacebook" />
     </LinearLayout>
     <Button
         android:text="Sign Up"

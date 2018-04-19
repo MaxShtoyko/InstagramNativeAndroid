@@ -15,9 +15,9 @@ namespace Ins.Interfaces
 {
     public interface IDataBaseService
     {
-        bool CreateDataBase();
         bool InDataBase(User user);
 
+        void CreateDataBase();
         void InsertIntoTableUser(User User);
         void UpdateTableUser(User User);
 

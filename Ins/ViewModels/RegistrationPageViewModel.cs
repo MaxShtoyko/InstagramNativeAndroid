@@ -16,7 +16,7 @@ using MvvmCross.Core.ViewModels;
 
 namespace Ins.ViewModels
 {
-    public class RegistrationViewModel:MvxViewModel
+    public class RegistrationPageViewModel:MvxViewModel
     {
         private IUserService _userService;
 
@@ -33,7 +33,7 @@ namespace Ins.ViewModels
 
         public ICommand OnSignUp { get; private set; }
         
-        public RegistrationViewModel(IUserService userService)
+        public RegistrationPageViewModel(IUserService userService)
         {
             _userService = userService;
             _user = _userService.GetCurrentUser();
@@ -43,7 +43,7 @@ namespace Ins.ViewModels
 
         void SignUpClicked()
         {
-            ShowViewModel<TabbedViewModel>();
+            ShowViewModel<TabPageViewModel>();
         }
     }
 }

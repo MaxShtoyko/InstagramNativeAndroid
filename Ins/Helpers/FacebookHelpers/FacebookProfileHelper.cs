@@ -5,19 +5,19 @@ using System.Text;
 
 using Android.App;
 using Android.Content;
-using Android.Graphics;
 using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.IO;
+using Xamarin.Facebook;
 
-namespace Ins.Helpers
+namespace Ins.Helpers.FacebookHelpers
 {
-    public static class CameraHelper
+    class FacebookProfileHelper
     {
-        public static File file;
-        public static File directory;
-        public static Bitmap bitmap;
+        public static bool IsRegistred()
+        {
+            return AccessToken.CurrentAccessToken != null;
+        }
     }
 }

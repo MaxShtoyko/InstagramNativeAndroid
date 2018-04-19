@@ -15,7 +15,7 @@ using MvvmCross.Droid.Views;
 namespace Ins.Views
 {
     [Activity]
-    public class RegistrationView : MvxActivity
+    public class RegistrationPageView : MvxActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {

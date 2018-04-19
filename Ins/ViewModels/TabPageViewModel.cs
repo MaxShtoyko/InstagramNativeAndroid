@@ -14,9 +14,9 @@ using MvvmCross.Platform;
 
 namespace Ins.ViewModels
 {
-    public class TabbedViewModel : MvxViewModel
+    public class TabPageViewModel : MvxViewModel
     {
-        public TabbedViewModel()
+        public TabPageViewModel()
         {
             CameraVM = Mvx.IocConstruct<CameraViewModel>();
             NewsVM = Mvx.IocConstruct<NewsViewModel>();

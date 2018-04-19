@@ -21,7 +21,6 @@ namespace Ins.Models
         public string FullName { get; set; }
         public string Login { get; set; }
         public string Password { get; set; }
-
-        public ProfilePictureView ProfilePictureView { get; set; }
+        public string ProfilePictureID { get; set; }
     }
 }

@@ -7,21 +7,37 @@ using Android.App;
 using Android.Content;
 using Android.OS;
 using Android.Runtime;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Android.Widget;
+using Ins.Helpers.CameraHelpers;
+using Ins.Models;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views.Fragments;
 
 namespace Ins.Views
 {
-    [Activity(Label = "NewsView")]
+    [Activity(Label = "NewsView", Theme = "@style/Theme.AppCompat.Light.DarkActionBar")]
     public class NewsView : MvxFragment
     {
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState)
         {
-            var ignored = base.OnCreateView(inflater, container, savedInstanceState);
-            return this.BindingInflate(Resource.Layout.NewsFragmentView, null);
+            var photoAlbum = PhotoAlbum.GetPhotoAlbum();
+            // Set our view from the "main" layout resource        
+
+            var view = inflater.Inflate(Resource.Layout.NewsFragmentView, container, false);
+            var recyclerView = view.FindViewById(Resource.Id.recyclerView) as RecyclerView;
+
+            var layoutManager = new LinearLayoutManager(Context);
+            var adapter = new PhotoAlbumAdapter(photoAlbum);
+
+            recyclerView.SetLayoutManager(layoutManager);          
+            recyclerView.SetAdapter(adapter);
+
+            base.OnCreateView(inflater, container, savedInstanceState);
+
+            return view;
         }
 
     }

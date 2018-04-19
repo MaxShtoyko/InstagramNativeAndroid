@@ -10,14 +10,13 @@ using Android.OS;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
-using Java.IO;
 
-namespace Ins.Helpers
+namespace Ins.Models
 {
-    public static class CameraHelper
+    public class Photo
     {
-        public static File file;
-        public static File directory;
-        public static Bitmap bitmap;
+        public string Author { get; set; }
+        public string DateOfPublication { get; set; }
+        public Bitmap Picture { get; set; }
     }
 }

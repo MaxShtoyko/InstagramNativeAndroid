@@ -13,6 +13,7 @@ using Ins.Interfaces;
 using Ins.Models;
 using Ins.Services;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Plugins.Messenger;
 
 namespace Ins.ViewModels
 {
@@ -34,35 +35,43 @@ namespace Ins.ViewModels
 
         public ICommand OnLogIn { get; private set; }
         public ICommand OnSignUp { get; private set; }
-
+        public ICommand OnLogInViaFacebook { get; private set; }
+        
         public LoginPageViewModel(IUserService userService, IDataBaseService dataBaseService)
         {
             _userService = userService;
             _dataBaseService = dataBaseService;
-        
+
             _user = _userService.GetCurrentUser();
             _dataBaseService.CreateDataBase();
 
             OnLogIn = new MvxCommand(LogInClicked);
             OnSignUp = new MvxCommand(SignUpClicked);
+            OnLogInViaFacebook = new MvxCommand(LogInViaFacebookClicked);
         }
 
         void SignUpClicked()
         {
-            ShowViewModel<RegistrationViewModel>();
+            ShowViewModel<RegistrationPageViewModel>();
+        }
+
+        void LogInViaFacebookClicked()
+        {
+            ShowViewModel<FacebookPageViewModel>();
         }
 
         void LogInClicked()
-        {
-            if (_userService.IsCorrect(User)){
-
+        {           
+            if (_userService.IsCorrect(User))
+            {
                 if (!_dataBaseService.InDataBase(User)){
                     _dataBaseService.InsertIntoTableUser(User);
-                }            
-                ShowViewModel<TabbedViewModel>();
+                }
+                ShowViewModel<TabPageViewModel>();
             }
-            else {
-                
+            else
+            {
+
             }
         }        
     }

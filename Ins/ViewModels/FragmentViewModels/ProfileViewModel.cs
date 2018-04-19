@@ -13,6 +13,7 @@ using Ins.Interfaces;
 using Ins.Models;
 using Ins.Services;
 using MvvmCross.Core.ViewModels;
+using Xamarin.Facebook.Login.Widget;
 
 namespace Ins.ViewModels
 {
@@ -33,7 +34,6 @@ namespace Ins.ViewModels
         public ProfileViewModel(IUserService userService)
         {
             _userService = userService;
-            _currentUser = _userService.GetCurrentUser();
-        }
+            _currentUser = _userService.GetCurrentUser();        }
     }
 }

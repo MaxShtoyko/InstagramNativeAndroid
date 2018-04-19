@@ -20,37 +20,27 @@ using Xamarin.Facebook.Share.Model;
 using Ins.Services;
 using Ins.Helpers;
 using Ins.Interfaces;
+using Ins.Helpers.FacebookHelpers;
 
 namespace Ins.Views
 {
 
-    [Activity(Label = "FacebookPageView", MainLauncher = true)]
+    [Activity]
     public class FacebookPageView : MvxActivity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
         private ICallbackManager _callBackManager;
-        private IUserService _userService;
-
-        public FacebookPageView()
-        {
-              
-        }
-
-        public FacebookPageView( IUserService userService )
-        {
-            _userService = userService;
-        }
+        private IUserService _userService = new UserService();
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
-            SetContentView( Resource.Layout.FacebookPage );
 
             FacebookSdk.SdkInitialize( this.ApplicationContext );
+
             _callBackManager = CallbackManagerFactory.Create();
-
             SetLoginButton();
-
-            LoginManager.Instance.RegisterCallback( _callBackManager, this );
+         
+            LoginManager.Instance.RegisterCallback(_callBackManager, this);
         }
 
         public void OnCompleted( Org.Json.JSONObject json, GraphResponse response )
@@ -58,25 +48,28 @@ namespace Ins.Views
             string data = json.ToString();
             FacebookProfile result = JsonConvert.DeserializeObject<FacebookProfile>(data);
 
-            if (_userService.GetCurrentUser().ProfilePictureView == null){
-                _userService.GetCurrentUser().ProfilePictureView = new ProfilePictureView(this);
-            }
-
             _userService.SetUser(result);
-            StartActivity(typeof(TabPageView));
+
+            if (FacebookProfileHelper.IsRegistred()){
+                StartActivity(typeof(TabPageView));
+            }
         }
 
         private void SetLoginButton()
         {
-            LoginButton button = FindViewById<LoginButton>(Resource.Id.login_button);
+            LoginButton button = new LoginButton(this);
             button.SetReadPermissions(ConstantHelper.permissions);
             button.RegisterCallback(_callBackManager, this);
+
+            if (FacebookProfileHelper.IsRegistred()){
+                SendRequest();
+            }
+            button.CallOnClick();            
         }
 
         private void SendRequest()
         {
             GraphRequest request = GraphRequest.NewMeRequest(AccessToken.CurrentAccessToken, this);
-
             Bundle parameters = new Bundle();
             parameters.PutString("fields", "id,name,age_range,email");
             request.Parameters = parameters;
@@ -102,9 +95,15 @@ namespace Ins.Views
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
-            base.OnActivityResult(requestCode, resultCode, data);
-            _callBackManager.OnActivityResult(requestCode, (int)resultCode, data);
-            SendRequest();
+            if (resultCode == Result.Ok){
+                base.OnActivityResult(requestCode, resultCode, data);
+                _callBackManager.OnActivityResult(requestCode, (int)resultCode, data);
+
+                SendRequest();
+            }
+            else {
+                Finish();
+            }
         }
     }  
 }

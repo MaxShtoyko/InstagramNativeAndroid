@@ -1,40 +1,30 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
-using Android.Util;
-using Android.Views;
-using Android.Widget;
-using Ins.Helpers;
+﻿using Ins.Helpers;
 using Ins.Interfaces;
 using Ins.Models;
 using SQLite;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Ins.Services
 {
-    class DataBaseService:IDataBaseService
+    public class DataBaseService<T>:IDataBaseService where T: class
     {
         static private string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
 
-        public bool CreateDataBase()
+        public void CreateDataBase(T type, string dataBaseName)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
+            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, dataBaseName)))
             {
-                connection.CreateTable<User>();
-                return true;
+                connection.CreateTable<T>();
             }
         }
 
-        public void InsertIntoTableUser(User User)
+        public void InsertIntoTable(T item, string dataBaseName)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
+            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, dataBaseName)))
             {
-                connection.Insert(User);
+                connection.Insert(item);
             }
         }
 
@@ -66,6 +56,16 @@ namespace Ins.Services
                 int result = connection.Table<User>().ToList().Where(u => u.Email == user.Email).ToList().Count;
                 return result > 0;
             }
+        }
+
+        public void CreateDataBase()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void InsertIntoTableUser(User User)
+        {
+            throw new NotImplementedException();
         }
     }
 }
