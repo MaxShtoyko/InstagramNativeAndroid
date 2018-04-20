@@ -168,7 +168,6 @@
   <ItemGroup>
     <Compile Include="Bootstrap\MessengerPluginBootstrap.cs" />
     <Compile Include="DebugTrace.cs" />
-    <Compile Include="Extensions\EmailExtension.cs" />
     <Compile Include="Helpers\BitmapHelpers.cs" />
     <Compile Include="Helpers\CameraHelper.cs" />
     <Compile Include="Helpers\PhotoHelpers\PhotoAlbumAdapter.cs" />

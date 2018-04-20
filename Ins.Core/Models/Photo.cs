@@ -4,6 +4,6 @@
     {
         public string Author { get; set; }
         public string DateOfPublication { get; set; }
-        //public Bitmap Picture { get; set; }
+        public string Path { get; set; }
     }
 }

@@ -1,7 +1,9 @@
 ﻿using Ins.Core.Models;
+using System;
 using System.Collections.Generic;
+using System.Text;
 
-namespace Ins.Droid.Services
+namespace Ins.Core.Services
 {
     public class PhotoService
     {

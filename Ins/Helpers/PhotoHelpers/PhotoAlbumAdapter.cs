@@ -1,4 +1,5 @@
-﻿using Android.Support.V7.Widget;
+﻿using Android.Content.Res;
+using Android.Support.V7.Widget;
 using Android.Views;
 using Ins.Core.Models;
 using System.Linq;
@@ -21,8 +22,11 @@ namespace Ins.Droid.Helpers.CameraHelpers
 
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
+            int width = Resources.System.DisplayMetrics.WidthPixels;
+            int height = Resources.System.DisplayMetrics.HeightPixels;
+
             PhotoViewHolder viewHolder = holder as PhotoViewHolder;
-           // viewHolder.Image.SetImageBitmap(_photoAlbum.Photos[position].Picture);
+            viewHolder.Image.SetImageBitmap(BitmapHelpers.LoadAndResizeBitmap(_photoAlbum.Photos[position].Path, width, height));
             viewHolder.Date.Text = _photoAlbum.Photos[position].DateOfPublication;
             viewHolder.Author.Text = _photoAlbum.Photos[position].Author;
         }
