@@ -10,32 +10,32 @@ namespace Ins.Droid.Services
 {
     public class DataBaseService<T>:IDataBaseService<T> where T: new()
     {
-        static private string _folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
-        private SQLiteConnection connection = new SQLiteConnection(System.IO.Path.Combine(_folder, typeof(T).ToString()));
+        static private string _folder = Environment.GetFolderPath(Environment.SpecialFolder.Personal);
+        private SQLiteConnection _connection = new SQLiteConnection(System.IO.Path.Combine(_folder, typeof(T).ToString()));
 
         public void CreateDataBase()
         {
-            connection.CreateTable<T>();
+            _connection.CreateTable<T>();
         }
 
         public void InsertIntoTable(T item)
         {
-            connection.Insert(item);
+            _connection.Insert(item);
         }
 
         public List<T> GetItems()
         {
-            return connection.Table<T>().ToList();
+            return _connection.Table<T>().ToList();
         }
 
         public void UpdateTable(T item)
         {
-            connection.Update(item);
+            _connection.Update(item);
         }
 
         public bool InDataBase(object primaryKey)
         {
-            return connection.Find<T>(primaryKey) != null;
+            return _connection.Find<T>(primaryKey) != null;
         }
     }
 }

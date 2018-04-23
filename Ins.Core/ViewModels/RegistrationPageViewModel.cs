@@ -5,9 +5,10 @@ using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class RegistrationPageViewModel:MvxViewModel
+    public class RegistrationPageViewModel:BaseMvxViewModel
     {
-        private IUserService _userService;
+        private readonly IUserService _userService;
+        private readonly IDataBaseService<User> _dataBaseService;
 
         private User _user;
         public User User
@@ -22,9 +23,11 @@ namespace Ins.Core.ViewModels
 
         public ICommand OnSignUp { get; private set; }
         
-        public RegistrationPageViewModel(IUserService userService)
+        public RegistrationPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService)
         {
             _userService = userService;
+            _dataBaseService = dataBaseService;
+
             _user = _userService.GetCurrentUser();
 
             OnSignUp = new MvxCommand(SignUpClicked);
@@ -32,7 +35,14 @@ namespace Ins.Core.ViewModels
 
         void SignUpClicked()
         {
-            ShowViewModel<TabPageViewModel>();
+            if ( _userService.IsCorrect(_user) && !_dataBaseService.InDataBase(User.Email) )
+            {
+                _dataBaseService.InsertIntoTable(User);
+                ShowViewModel<TabPageViewModel>();
+            }
+            else{
+                Error = "Error, please check the entered information!";
+            }
         }
     }
 }

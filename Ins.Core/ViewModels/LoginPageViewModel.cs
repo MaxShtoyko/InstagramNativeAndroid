@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class LoginPageViewModel:MvxViewModel
+    public class LoginPageViewModel: BaseMvxViewModel
     {
         private readonly IUserService _userService;
         private readonly IDataBaseService<User> _dataBaseService;
@@ -52,16 +52,11 @@ namespace Ins.Core.ViewModels
 
         void LogInClicked()
         {           
-            if (_userService.IsCorrect(User))
-            {
-                if (!_dataBaseService.InDataBase(User.Email)){
-                    _dataBaseService.InsertIntoTable(User);
-                }
+            if ( _userService.IsCorrect(User) && _dataBaseService.InDataBase(User.Email) ){
                 ShowViewModel<TabPageViewModel>();
             }
-            else
-            {
-
+            else{
+                Error = "Error, please check the entered information!";
             }
         }  
     }

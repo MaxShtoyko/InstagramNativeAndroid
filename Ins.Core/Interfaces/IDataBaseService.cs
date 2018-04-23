@@ -7,7 +7,7 @@ namespace Ins.Core.Interfaces
     {
         bool InDataBase(object primaryKey);
 
-        void CreateDataBase(string dataBaseName);
+        void CreateDataBase();
         void InsertIntoTable(T item);
         void UpdateTable(T item);
 

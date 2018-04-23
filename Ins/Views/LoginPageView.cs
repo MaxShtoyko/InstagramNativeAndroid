@@ -20,7 +20,7 @@ namespace Ins.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            SetContentView(Resource.Layout.LoginView);
+            SetContentView(Resource.Layout.LoginPage);
 
             // Create your application here
         }
