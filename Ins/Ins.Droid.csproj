@@ -205,7 +205,7 @@
     <AndroidResource Include="Resources\layout\TabView.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
-    <AndroidResource Include="Resources\layout\LoginView.axml">
+    <AndroidResource Include="Resources\layout\LoginPage.axml">
       <SubType>Designer</SubType>
     </AndroidResource>
     <AndroidResource Include="Resources\layout\NewsFragmentView.axml">

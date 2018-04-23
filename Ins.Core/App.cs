@@ -1,4 +1,8 @@
-﻿using MvvmCross.Core.ViewModels;
+﻿using Ins.Core.Interfaces;
+using Ins.Core.Models;
+using Ins.Droid.Services;
+using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using MvvmCross.Platform.IoC;
 
 namespace Ins.Core
@@ -11,6 +15,8 @@ namespace Ins.Core
                 .EndingWith("Service")
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
+
+            Mvx.RegisterType<IDataBaseService<User>, DataBaseService<User>>();
 
             RegisterAppStart<ViewModels.LoginPageViewModel>();
         }
