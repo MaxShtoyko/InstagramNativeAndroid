@@ -1,14 +1,16 @@
 ﻿using Ins.Core.Interfaces;
 using Ins.Core.Models;
+using Ins.Droid.Helpers;
 using MvvmCross.Core.ViewModels;
+using MvvmCross.Platform;
 using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
     public class LoginPageViewModel:MvxViewModel
     {
-        private IUserService _userService;
-        private IDataBaseService _dataBaseService;
+        private readonly IUserService _userService;
+        private readonly IDataBaseService<User> _dataBaseService;
 
         private User _user;
         public User User
@@ -25,13 +27,13 @@ namespace Ins.Core.ViewModels
         public ICommand OnSignUp { get; private set; }
         public ICommand OnLogInViaFacebook { get; private set; }
         
-        public LoginPageViewModel(IUserService userService, IDataBaseService dataBaseService)
+        public LoginPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService)
         {
             _userService = userService;
             _dataBaseService = dataBaseService;
 
             _user = _userService.GetCurrentUser();
-            _dataBaseService.CreateDataBase();
+           _dataBaseService.CreateDataBase();
 
             OnLogIn = new MvxCommand(LogInClicked);
             OnSignUp = new MvxCommand(SignUpClicked);
@@ -52,8 +54,8 @@ namespace Ins.Core.ViewModels
         {           
             if (_userService.IsCorrect(User))
             {
-                if (!_dataBaseService.InDataBase(User)){
-                    _dataBaseService.InsertIntoTableUser(User);
+                if (!_dataBaseService.InDataBase(User.Email)){
+                    _dataBaseService.InsertIntoTable(User);
                 }
                 ShowViewModel<TabPageViewModel>();
             }
@@ -61,6 +63,6 @@ namespace Ins.Core.ViewModels
             {
 
             }
-        }        
+        }  
     }
 }

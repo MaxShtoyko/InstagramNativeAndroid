@@ -8,54 +8,34 @@ using System.Linq;
 
 namespace Ins.Droid.Services
 {
-    public class DataBaseService:IDataBaseService
+    public class DataBaseService<T>:IDataBaseService<T> where T: new()
     {
-        static private string folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        static private string _folder = System.Environment.GetFolderPath(System.Environment.SpecialFolder.Personal);
+        private SQLiteConnection connection = new SQLiteConnection(System.IO.Path.Combine(_folder, typeof(T).ToString()));
 
         public void CreateDataBase()
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
-            {
-                connection.CreateTable<User>();
-            }
+            connection.CreateTable<T>();
         }
 
-        public void InsertIntoTableUser(User user)
+        public void InsertIntoTable(T item)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
-            {
-                connection.Insert(user);
-            }
+            connection.Insert(item);
         }
 
-        public List<User> GetUsers()
+        public List<T> GetItems()
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
-            {
-                return connection.Table<User>().ToList();
-            }
+            return connection.Table<T>().ToList();
         }
 
-        public void UpdateTableUser(User User)
+        public void UpdateTable(T item)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
-            {
-                connection.Query<User>(
-                    "UPDATE User set FullName=?,Login=?,Password=? Where Email=?", 
-                    User.FullName,
-                    User.Login, 
-                    User.Password, 
-                    User.Email);
-            }
+            connection.Update(item);
         }
 
-        public bool InDataBase(User user)
+        public bool InDataBase(object primaryKey)
         {
-            using (var connection = new SQLiteConnection(System.IO.Path.Combine(folder, ConstantHelper.dataBaseName)))
-            {
-                int result = connection.Table<User>().ToList().Where(u => u.Email == user.Email).ToList().Count;
-                return result > 0;
-            }
+            return connection.Find<T>(primaryKey) != null;
         }
     }
 }

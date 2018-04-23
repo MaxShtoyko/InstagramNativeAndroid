@@ -3,14 +3,14 @@ using System.Collections.Generic;
 
 namespace Ins.Core.Interfaces
 {
-    public interface IDataBaseService
+    public interface IDataBaseService<T>
     {
-        bool InDataBase(User user);
+        bool InDataBase(object primaryKey);
 
-        void CreateDataBase();
-        void InsertIntoTableUser(User User);
-        void UpdateTableUser(User User);
+        void CreateDataBase(string dataBaseName);
+        void InsertIntoTable(T item);
+        void UpdateTable(T item);
 
-        List<User> GetUsers();
+        List<T> GetItems();
     }
 }
