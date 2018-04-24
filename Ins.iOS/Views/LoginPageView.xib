@@ -11,8 +11,9 @@
                 <outlet property="EmailTextField" destination="138" id="name-outlet-138"/>
                 <outlet property="PasswordTextField" destination="139" id="name-outlet-139"/>
                 <outlet property="LogInButton" destination="140" id="name-outlet-140"/>
-                <outlet property="FacebookLoginButton" destination="141" id="name-outlet-141"/>
+                <outlet property="LoginViaFacebookButton" destination="141" id="name-outlet-141"/>
                 <outlet property="SignUpButton" destination="284" id="name-outlet-284"/>
+                <outlet property="ErrorTextLabel" destination="555" id="name-outlet-555"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -53,6 +54,13 @@
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                     <state key="normal" title="Sign Up"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="555" translatesAutoresizingMaskIntoConstraints="NO" fixedFrame="YES">
+                    <rect key="frame" x="56" y="253" width="253" height="21"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
         </view>
     </objects>

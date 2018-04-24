@@ -20,11 +20,15 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton FacebookLoginButton { get; set; }
+        UIKit.UILabel ErrorTextLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LogInButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LoginViaFacebookButton { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -45,14 +49,19 @@ namespace Ins.iOS.Views
                 EmailTextField = null;
             }
 
-            if (FacebookLoginButton != null) {
-                FacebookLoginButton.Dispose ();
-                FacebookLoginButton = null;
+            if (ErrorTextLabel != null) {
+                ErrorTextLabel.Dispose ();
+                ErrorTextLabel = null;
             }
 
             if (LogInButton != null) {
                 LogInButton.Dispose ();
                 LogInButton = null;
+            }
+
+            if (LoginViaFacebookButton != null) {
+                LoginViaFacebookButton.Dispose ();
+                LoginViaFacebookButton = null;
             }
 
             if (PasswordTextField != null) {
