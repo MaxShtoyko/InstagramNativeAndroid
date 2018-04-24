@@ -2,19 +2,19 @@
 using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
 using UIKit;
+using System;
 
 namespace Ins.iOS.Views
 {
-    public partial class LoginPageView : MvxViewController
+    public partial class LoginPageView : BaseView
     {
-        protected LoginPageViewModel LoginPageViewModel
-            => ViewModel as LoginPageViewModel;
-
         public LoginPageView() : base("LoginPageView", null)
         {
+            Title = "Instrugrum";
         }
 
-        protected void CreateBindings(){
+        protected override void CreateBindings(){
+            
             var set = this.CreateBindingSet<LoginPageView, LoginPageViewModel>();
 
             set.Bind(EmailTextField)
@@ -43,17 +43,7 @@ namespace Ins.iOS.Views
         {
             base.ViewDidLoad();
 
-            var stringAttributes = new UIStringAttributes();
-            stringAttributes.Font = UIFont.SystemFontOfSize(16);
-            stringAttributes.ForegroundColor = UIColor.Black;
-            //NavigationController.NavigationBar.BarTintColor = new UIColor(6 / 255f, 116 / 255f, 173 / 255f, 1);
-            NavigationController.NavigationBar.TintColor = UIColor.White;
-            NavigationController.NavigationBar.TitleTextAttributes = stringAttributes;
 
-            this.Title = "Instagram";
-
-            CreateBindings();
-            // Perform any additional setup after loading the view, typically from a nib.
         }
 
         public override void DidReceiveMemoryWarning()
