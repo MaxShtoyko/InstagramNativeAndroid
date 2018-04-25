@@ -5,9 +5,7 @@
        android:thickness="0dp"
 
        android:shape="rectangle">
-  <stroke android:width="0.7dp"
-
-         android:color="#2d272a"/>
-  <corners android:radius="2dp" />
+  <solid android:color="#B3a0368e"/>
+  <corners android:radius="3dp" />
 
 </shape>
