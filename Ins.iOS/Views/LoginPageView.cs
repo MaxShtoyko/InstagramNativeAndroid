@@ -1,8 +1,5 @@
 ﻿using Ins.Core.ViewModels;
-using MvvmCross.iOS.Views;
 using MvvmCross.Binding.BindingContext;
-using UIKit;
-using System;
 
 namespace Ins.iOS.Views
 {
@@ -13,8 +10,8 @@ namespace Ins.iOS.Views
             Title = "Instrugrum";
         }
 
-        protected override void CreateBindings(){
-            
+        protected override void CreateBindings()
+        {
             var set = this.CreateBindingSet<LoginPageView, LoginPageViewModel>();
 
             set.Bind(EmailTextField)
@@ -31,12 +28,19 @@ namespace Ins.iOS.Views
             set.Bind(SignUpButton)
                .To(vm => vm.OnSignUp);
 
-            set.Bind(ErrorTextLabel).To(vm => vm.Error);
+            set.Bind(ErrorTextLabel)
+               .To(vm => vm.Error);
 
             set.Bind(LoginViaFacebookButton)
                .To(vm => vm.OnLogInViaFacebook);
 
             set.Apply();
+        }
+
+        public override void ViewWillAppear(bool animated)
+        {
+            base.ViewWillAppear(animated);
+            NavigationController.NavigationBar.Hidden = true;
         }
 
         public override void ViewDidLoad()
@@ -48,6 +52,12 @@ namespace Ins.iOS.Views
         {
             base.DidReceiveMemoryWarning();
             // Release any cached data, images, etc that aren't in use.
+        }
+
+        public override void ViewWillDisappear(bool animated)
+        {
+            base.ViewWillDisappear(animated);
+            NavigationController.NavigationBar.Hidden = false;
         }
     }
 }

@@ -22,15 +22,15 @@ namespace Ins.iOS.Views
 
             NavigationController.NavigationBar.BackgroundColor = UIColor.White;
 
-            if (RespondsToSelector(new ObjCRuntime.Selector("edgesForExtendedLayout")))
-            {
-                EdgesForExtendedLayout = UIRectEdge.None;
-            }
+            // if (RespondsToSelector(new ObjCRuntime.Selector("edgesForExtendedLayout")))
+            //{
+            //    EdgesForExtendedLayout = UIRectEdge.None;
+            //}
 
             CreateBindings();
         }
 
-        public override UIStatusBarStyle PreferredStatusBarStyle()
+		public override UIStatusBarStyle PreferredStatusBarStyle()
         {
             return UIStatusBarStyle.Default;
         }
@@ -38,5 +38,5 @@ namespace Ins.iOS.Views
         protected virtual void CreateBindings()
         {
         }
-    }
+	}
 }

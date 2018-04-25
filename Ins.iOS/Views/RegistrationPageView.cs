@@ -13,7 +13,6 @@ namespace Ins.iOS.Views
 
         protected override void CreateBindings()
         {
-
             var set = this.CreateBindingSet<RegistrationPageView, RegistrationPageViewModel>();
 
             set.Bind(EmailTextField)
