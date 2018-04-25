@@ -132,6 +132,8 @@
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\LoginPageView.xib" />
     <InterfaceDefinition Include="Views\RegistrationPageView.xib" />
+    <InterfaceDefinition Include="Views\FacebookPageView.xib" />
+    <InterfaceDefinition Include="Views\TabPageStoryboard.storyboard" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -152,6 +154,10 @@
     <Compile Include="Views\RegistrationPageView.cs" />
     <Compile Include="Views\RegistrationPageView.designer.cs">
       <DependentUpon>RegistrationPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\FacebookPageView.cs" />
+    <Compile Include="Views\FacebookPageView.designer.cs">
+      <DependentUpon>FacebookPageView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
