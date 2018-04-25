@@ -6,6 +6,8 @@ namespace Ins.Core.Interfaces
     {
         User GetCurrentUser();
         bool IsCorrect(User user);
+
+        void Reset();
         void SetUser(FacebookProfile result);
     }
 }

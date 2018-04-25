@@ -42,6 +42,7 @@ namespace Ins.Core.ViewModels
 
         void SignUpClicked()
         {
+            _userService.Reset();
             ShowViewModel<RegistrationPageViewModel>();
         }
 

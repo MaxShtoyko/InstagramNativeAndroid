@@ -26,6 +26,14 @@ namespace Ins.Droid.Services
             return user.Email.IsEmail() && user.Password.Length > 6;
         }
 
+        public void Reset()
+        {
+            _currentUser.FullName = String.Empty;
+            _currentUser.Email = String.Empty;
+            _currentUser.Login = String.Empty;
+            _currentUser.Password = String.Empty;
+        }
+
         public void SetUser(FacebookProfile result)
         {
             _currentUser.FullName = result.name;
