@@ -2,4 +2,7 @@
 <resources>
   <string name="app_name">Ins</string>
   <string name="facebook_app_id">592106287822987</string>
+  <string name="signUpText">
+    <b>Don\'t have an account?</b> Sign up!
+  </string>
 </resources>
