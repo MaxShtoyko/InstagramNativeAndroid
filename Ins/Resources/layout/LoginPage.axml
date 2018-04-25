@@ -76,7 +76,7 @@
             android:layout_height="wrap_content"
             android:id="@+id/logInViaFacebookButton"
             local:MvxBind="Click OnLogInViaFacebook"
-            android:textColor="#ffffff"/>
+            android:textColor="#ffffff" />
         <TextView
             local:MvxBind="Text Error"
             android:layout_width="match_parent"
@@ -92,6 +92,7 @@
         android:textStyle="bold"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="#87184f"
         android:layout_alignParentBottom="true"
         android:id="@+id/signUpButton"
         local:MvxBind="Click OnSignUp" />

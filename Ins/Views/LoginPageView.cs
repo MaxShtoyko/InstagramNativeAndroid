@@ -37,7 +37,6 @@ namespace Ins.Droid.Views
             loginView.SetBackgroundResource(Resource.Drawable.LoginPageStyle);
             logInButton.SetBackgroundResource(Resource.Drawable.ButtonStyle);
             logInViaFacebookButton.SetBackgroundResource(Resource.Drawable.FacebookButtonStyle);
-            signUpButton.Background = null;
             // Create your application here
         }
     }
