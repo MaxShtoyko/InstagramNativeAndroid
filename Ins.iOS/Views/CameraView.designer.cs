@@ -9,7 +9,7 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Ins.iOS
+namespace Ins.iOS.Views
 {
     [Register ("CameraView")]
     partial class CameraView

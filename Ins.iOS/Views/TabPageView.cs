@@ -4,7 +4,7 @@ using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
 using UIKit;
 
-namespace Ins.iOS
+namespace Ins.iOS.Views
 {
     public partial class TabPageView : MvxTabBarViewController<TabPageViewModel>
     {

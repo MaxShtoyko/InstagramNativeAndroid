@@ -134,6 +134,9 @@
     <InterfaceDefinition Include="Views\RegistrationPageView.xib" />
     <InterfaceDefinition Include="Views\FacebookPageView.xib" />
     <InterfaceDefinition Include="Views\TabPageStoryboard.storyboard" />
+    <InterfaceDefinition Include="Views\CameraView.xib" />
+    <InterfaceDefinition Include="Views\NewsView.xib" />
+    <InterfaceDefinition Include="Views\ProfileView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -159,14 +162,6 @@
     <Compile Include="Views\FacebookPageView.designer.cs">
       <DependentUpon>FacebookPageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewsView.cs" />
-    <Compile Include="Views\NewsView.designer.cs">
-      <DependentUpon>NewsView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProfileView.cs" />
-    <Compile Include="Views\ProfileView.designer.cs">
-      <DependentUpon>ProfileView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\TabPageView.cs" />
     <Compile Include="Views\TabPageView.designer.cs">
       <DependentUpon>TabPageView.cs</DependentUpon>
@@ -174,6 +169,14 @@
     <Compile Include="Views\CameraView.cs" />
     <Compile Include="Views\CameraView.designer.cs">
       <DependentUpon>CameraView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsView.cs" />
+    <Compile Include="Views\NewsView.designer.cs">
+      <DependentUpon>NewsView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileView.cs" />
+    <Compile Include="Views\ProfileView.designer.cs">
+      <DependentUpon>ProfileView.cs</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

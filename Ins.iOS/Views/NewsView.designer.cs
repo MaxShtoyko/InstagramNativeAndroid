@@ -9,10 +9,10 @@ using System;
 using System.CodeDom.Compiler;
 using UIKit;
 
-namespace Ins.iOS
+namespace Ins.iOS.Views
 {
     [Register ("NewsView")]
-    partial class NewsPageView
+    partial class NewsView
     {
         void ReleaseDesignerOutlets ()
         {

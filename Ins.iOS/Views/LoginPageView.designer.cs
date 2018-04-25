@@ -38,10 +38,6 @@ namespace Ins.iOS.Views
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SignUpButton { get; set; }
 
-        [Action ("UIButton141_TouchUpInside:")]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        partial void UIButton141_TouchUpInside (UIKit.UIButton sender);
-
         void ReleaseDesignerOutlets ()
         {
             if (EmailTextField != null) {
