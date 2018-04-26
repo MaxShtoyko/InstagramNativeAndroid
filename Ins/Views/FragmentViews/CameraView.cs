@@ -1,5 +1,6 @@
 ﻿using Android.App;
 using Android.Content;
+using Android.Graphics;
 using Android.OS;
 using Android.Provider;
 using Android.Views;
@@ -18,7 +19,7 @@ namespace Ins.Droid.Views
     public class CameraView: MvxFragment
     {
         private ImageView _imageView;
-        private Button _button;
+        private Button _takePhotoButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState)
@@ -29,10 +30,13 @@ namespace Ins.Droid.Views
 
             CreateDirectoryForPictures();
 
-            _imageView = view.FindViewById(Resource.Id.imageView1) as ImageView;
-            _button = view.FindViewById<Button>(Resource.Id.myButton) as Button;
+            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
+            _takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhotoButton) as Button;
 
-            _button.Click += TakeAPicture;
+            Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
+            _takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+
+            _takePhotoButton.Click += TakeAPicture;
 
             if (CameraHelper.file != null){
                 SetImage();

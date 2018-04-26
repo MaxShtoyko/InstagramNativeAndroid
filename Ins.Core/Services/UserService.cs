@@ -45,5 +45,10 @@ namespace Ins.Droid.Services
         {
             return _currentUser.FullName;
         }
+
+        static public string GetUserId()
+        {
+            return _currentUser.ProfilePictureID;
+        }
     }
 }

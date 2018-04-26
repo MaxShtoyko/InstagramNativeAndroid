@@ -1,5 +1,7 @@
 ﻿using Android.App;
+using Android.Graphics;
 using Android.OS;
+using Android.Widget;
 using Ins.Core.ViewModels;
 using MvvmCross.Droid.Views;
 
@@ -24,5 +26,6 @@ namespace Ins.Droid.Views
             AddTab<NewsView>("News", "News", args, TabbedViewModel.NewsVM);
             AddTab<ProfileView>("Profile", "Profile", args, TabbedViewModel.ProfileVM);
         }
+
     }
 }
