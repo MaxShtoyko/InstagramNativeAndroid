@@ -27,6 +27,14 @@ namespace Ins.Droid.Views
             // Create your application here
         }
 
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+
+            var errorText = FindViewById<TextView>(Resource.Id.errorText);
+            errorText.Text = string.Empty;
+        }
+
         private void SetViews()
         {
             var NameEditText = FindViewById<EditText>(Resource.Id.registrationFullName);

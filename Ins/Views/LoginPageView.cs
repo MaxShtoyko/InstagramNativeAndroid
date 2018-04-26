@@ -18,6 +18,14 @@ namespace Ins.Droid.Views
             // Create your application here
         }
 
+        protected override void OnRestart()
+        {
+            base.OnRestart();
+
+            var errorText = FindViewById<TextView>(Resource.Id.errorText);
+            errorText.Text = string.Empty;
+        }
+
         private void SetViews()
         {
             var header = FindViewById<TextView>(Resource.Id.headerView);
@@ -27,6 +35,7 @@ namespace Ins.Droid.Views
             var signUpButton = FindViewById<Button>(Resource.Id.signUpButton);
             var logInButton = FindViewById<Button>(Resource.Id.logInButton);
             var logInViaFacebookButton = FindViewById<Button>(Resource.Id.logInViaFacebookButton);
+            var errorText = FindViewById<TextView>(Resource.Id.errorText);
 
             Typeface headerFont = Typeface.CreateFromAsset(Assets, "fonts/9424.ttf");
             Typeface robotoLightFont = Typeface.CreateFromAsset(Assets, "fonts/Roboto-Light.ttf");
@@ -35,6 +44,7 @@ namespace Ins.Droid.Views
             emailEntry.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
             passwordEntry.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
             signUpButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            errorText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
 
             passwordEntry.SetBackgroundResource(Resource.Drawable.EditTextStyle);
             emailEntry.SetBackgroundResource(Resource.Drawable.EditTextStyle);
