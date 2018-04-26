@@ -1,60 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:local="http://schemas.android.com/apk/res-auto"
-                android:orientation="vertical"
-                android:layout_width="match_parent"
-                android:layout_height="fill_parent"
-                android:background="#E2E2E2">
-  <LinearLayout
-      android:orientation="vertical"
-      android:layout_width="match_parent"
-      android:layout_height="fill_parent">
-    <com.facebook.login.widget.ProfilePictureView
-        android:id="@+id/profilePic"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_gravity="center_horizontal"
-        android:layout_marginTop="50.0dp"
-        local:MvxBind="ProfileId CurrentUser.ProfilePictureID, Mode=TwoWay"/>
-    <TextView
-        android:id="@+id/txtFirstName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="First Name"
-        android:textColor="#333"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:padding="5dp"
-        local:MvxBind="Text CurrentUser.Email, Mode=TwoWay"/>
-    <TextView
-        android:id="@+id/txtLastName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Last Name"
-        android:textColor="#333"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:padding="5dp"
-        local:MvxBind="Text CurrentUser.FullName, Mode=TwoWay"/>
-    <TextView
-        android:id="@+id/txtName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Name"
-        android:textColor="#333"
-        android:textSize="18sp"
-        android:layout_gravity="center_horizontal"
-        android:padding="5dp"
-        local:MvxBind="Text CurrentUser.Id, Mode=TwoWay"/>
-
-  </LinearLayout>
-
-  <com.facebook.login.widget.LoginButton
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#E2E2E2">
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent">
+        <com.facebook.login.widget.ProfilePictureView
+            android:id="@+id/profilePic"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50.0dp"
+            local:MvxBind="ProfileId CurrentUser.ProfilePictureID, Mode=TwoWay" />
+        <TextView
+            android:id="@+id/txtFirstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First Name"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            local:MvxBind="Text CurrentUser.Email, Mode=TwoWay" />
+        <TextView
+            android:id="@+id/txtLastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Last Name"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            local:MvxBind="Text CurrentUser.FullName, Mode=TwoWay" />
+        <TextView
+            android:id="@+id/txtName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Name"
+            android:textColor="#333"
+            android:textSize="18sp"
+            android:layout_gravity="center_horizontal"
+            android:padding="5dp"
+            local:MvxBind="Text CurrentUser.Id, Mode=TwoWay" />
+    </LinearLayout>
+    <com.facebook.login.widget.LoginButton
         android:id="@+id/login_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="20.0dp"
-        android:layout_gravity="center_horizontal"/>
+        android:layout_gravity="center_horizontal" />
 </RelativeLayout>

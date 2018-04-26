@@ -7,6 +7,7 @@ using Ins.Droid.Helpers;
 using Ins.Droid.Helpers.FacebookHelpers;
 using Ins.Droid.Services;
 using MvvmCross.Droid.Views;
+using MvvmCross.Platform;
 using Newtonsoft.Json;
 using System;
 using Xamarin.Facebook;
@@ -20,7 +21,7 @@ namespace Ins.Droid.Views
     public class FacebookPageView : MvxActivity, IFacebookCallback, GraphRequest.IGraphJSONObjectCallback
     {
         private ICallbackManager _callBackManager;
-        private IUserService _userService = new UserService();
+        private IUserService _userService;
 
         protected override void OnCreate(Bundle bundle)
         {
@@ -28,10 +29,15 @@ namespace Ins.Droid.Views
 
             FacebookSdk.SdkInitialize( this.ApplicationContext );
 
+            _userService = Mvx.Resolve<IUserService>();
             _callBackManager = CallbackManagerFactory.Create();
+
             SetLoginButton();
-         
-            LoginManager.Instance.RegisterCallback(_callBackManager, this);
+
+            if (FacebookProfileHelper.IsRegistred()){
+                StartActivity(typeof(TabPageView));              
+            }
+
         }
 
         public void OnCompleted( Org.Json.JSONObject json, GraphResponse response )
@@ -52,9 +58,6 @@ namespace Ins.Droid.Views
             button.SetReadPermissions(ConstantHelper.permissions);
             button.RegisterCallback(_callBackManager, this);
 
-            if (FacebookProfileHelper.IsRegistred()){
-                SendRequest();
-            }
             button.CallOnClick();            
         }
 
@@ -80,8 +83,7 @@ namespace Ins.Droid.Views
 
         public void OnSuccess(Java.Lang.Object result)
         {
-            LoginResult loginResult = result as LoginResult;
-            Console.WriteLine(AccessToken.CurrentAccessToken.UserId);
+            //throw new NotImplementedException();
         }
 
         protected override void OnActivityResult(int requestCode, Result resultCode, Intent data)
@@ -89,7 +91,6 @@ namespace Ins.Droid.Views
             if (resultCode == Result.Ok){
                 base.OnActivityResult(requestCode, resultCode, data);
                 _callBackManager.OnActivityResult(requestCode, (int)resultCode, data);
-
                 SendRequest();
             }
             else {
