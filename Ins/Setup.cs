@@ -3,6 +3,9 @@ using MvvmCross.Droid.Platform;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.Platform.Platform;
 using Ins.Core;
+using MvvmCross.Platform;
+using Ins.Core.Interfaces;
+using Ins.Droid.Services;
 
 namespace Ins.Droid
 {
@@ -20,6 +23,12 @@ namespace Ins.Droid
         protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
+        }
+
+        protected override void InitializeIoC()
+        {
+            base.InitializeIoC();
+            Mvx.RegisterSingleton<IUIService>(() => new UIService());
         }
     }
 }
