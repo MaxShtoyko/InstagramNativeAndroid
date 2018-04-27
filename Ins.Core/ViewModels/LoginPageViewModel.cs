@@ -75,8 +75,9 @@ namespace Ins.Core.ViewModels
 
             if (e.IsAuthenticated)
             {
-                var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email"), null, e.Account);
+                var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email,picture?type=normal"), null, e.Account);
                 var response = await request.GetResponseAsync();
+                var text = response.GetResponseText();
                 User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
                 _userService.SetUser(user);
                 ShowViewModel<TabPageViewModel>();

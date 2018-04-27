@@ -39,6 +39,7 @@ namespace Ins.Droid.Services
             _currentUser.FullName = user.FullName;
             _currentUser.Email = user.Email;
             _currentUser.ProfilePictureID = user.ProfilePictureID;
+            _currentUser.PictureData.Data.Url = user.PictureData.Data.Url;
         }
 
         static public string GetCurrentUserName()
