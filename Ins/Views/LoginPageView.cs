@@ -9,9 +9,13 @@ namespace Ins.Droid.Views
     [Activity(Label = "LoginPageView",Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen", MainLauncher = true)]
     public class LoginPageView : BaseMvxView
     {
+        internal static LoginPageView Instance { get; private set; }
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
+            Instance = this;
+
             SetContentView(Resource.Layout.LoginPage);
 
             SetViews();
@@ -21,7 +25,6 @@ namespace Ins.Droid.Views
         protected override void OnRestart()
         {
             base.OnRestart();
-
             var errorText = FindViewById<TextView>(Resource.Id.errorText);
             errorText.Text = string.Empty;
         }
