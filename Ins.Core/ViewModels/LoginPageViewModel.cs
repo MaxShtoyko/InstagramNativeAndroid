@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 using System.Windows.Input;
 using Ins.Core.Interfaces;
 using Ins.Core.Models;
+using Ins.Droid.Helpers;
 using MvvmCross.Core.ViewModels;
 using Newtonsoft.Json;
 using Xamarin.Auth;
@@ -59,28 +63,46 @@ namespace Ins.Core.ViewModels
             }
         }
 
+        async Task SendRequest(Account account)
+        {
+            var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email,picture"), null, account);
+            var response = await request.GetResponseAsync();
+            var text = response.GetResponseText();
+
+            User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
+            _userService.SetUser(user);
+            ShowViewModel<TabPageViewModel>();
+        }
 
         void LogInViaFacebookClicked()
         {
-            var auth = new OAuth2Authenticator(clientId: "437227470080490", scope: "", authorizeUrl: new Uri("https://m.facebook.com/dialog/oauth/"),
-                                               redirectUrl: new Uri("https://www.facebook.com/connect/login_success.html"));
-            auth.Completed += Auth_Completed;
-            var ui = _uiService.GetUI(auth);
-            _uiService.ShowUI(ui);
+            if (User.IsRegistered){ 
+                var accounts = AccountStore.Create().FindAccountsForService("Facebook").ToList();
+                Account account = accounts.First();
+                SendRequest(account).Wait();
+            }
+            else{
+                var auth = new OAuth2Authenticator(
+                    scope: "", 
+                    clientId: ConstantHelper.userId, 
+                    redirectUrl: ConstantHelper.redirectUrl,
+                    authorizeUrl: ConstantHelper.authorizeUrl);
+
+                auth.Completed += Auth_Completed;
+                var ui = _uiService.GetUI(auth);
+
+                _uiService.ShowUI(ui);
+            }
+
         }
 
         private async void Auth_Completed(object sender, AuthenticatorCompletedEventArgs e)
         {
             _uiService.DismissUI();
 
-            if (e.IsAuthenticated)
-            {
-                var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email,picture?type=normal"), null, e.Account);
-                var response = await request.GetResponseAsync();
-                var text = response.GetResponseText();
-                User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
-                _userService.SetUser(user);
-                ShowViewModel<TabPageViewModel>();
+            if (e.IsAuthenticated){
+                AccountStore.Create().Save(e.Account, "Facebook");
+                await SendRequest(e.Account);
             }
             else
             {

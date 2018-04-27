@@ -16,10 +16,12 @@ namespace Ins.Core.Models
 
         public string Password { get; set; }
 
+        public bool IsRegistered { get; set; } = false;
+
         [JsonProperty(PropertyName = "id")]
         public string ProfilePictureID { get; set; }
 
-        [JsonProperty("picture")]
+        [Ignore]
         public Picture PictureData { get; set; }
 
         public partial class Picture
