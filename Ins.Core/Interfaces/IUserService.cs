@@ -8,6 +8,6 @@ namespace Ins.Core.Interfaces
         bool IsCorrect(User user);
 
         void Reset();
-        void SetUser(FacebookProfile result);
+        void SetUser(User user);
     }
 }

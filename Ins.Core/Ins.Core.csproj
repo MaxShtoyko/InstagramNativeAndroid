@@ -11,6 +11,7 @@
     <PackageReference Include="MvvmCross.Platform" Version="5.7.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
     <PackageReference Include="sqlite-net-pcl" Version="1.4.118" />
+    <PackageReference Include="Xamarin.Auth" Version="1.6.0.2" />
   </ItemGroup>
 
 </Project>

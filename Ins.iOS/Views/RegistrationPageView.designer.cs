@@ -20,6 +20,10 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel ErrorTextLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField FullNameTextField { get; set; }
 
         [Outlet]
@@ -39,6 +43,11 @@ namespace Ins.iOS.Views
             if (EmailTextField != null) {
                 EmailTextField.Dispose ();
                 EmailTextField = null;
+            }
+
+            if (ErrorTextLabel != null) {
+                ErrorTextLabel.Dispose ();
+                ErrorTextLabel = null;
             }
 
             if (FullNameTextField != null) {

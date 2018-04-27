@@ -34,11 +34,11 @@ namespace Ins.Droid.Services
             _currentUser.Password = String.Empty;
         }
 
-        public void SetUser(FacebookProfile result)
+        public void SetUser(User user)
         {
-            _currentUser.FullName = result.name;
-            _currentUser.Email = result.email;
-            _currentUser.ProfilePictureID = result.id;
+            _currentUser.FullName = user.FullName;
+            _currentUser.Email = user.Email;
+            _currentUser.ProfilePictureID = user.ProfilePictureID;
         }
 
         static public string GetCurrentUserName()

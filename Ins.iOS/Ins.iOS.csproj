@@ -120,6 +120,16 @@
     <Reference Include="SQLite-net">
       <HintPath>..\packages\sqlite-net-pcl.1.4.118\lib\netstandard1.1\SQLite-net.dll</HintPath>
     </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.iOS.4.30.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\netstandard2.0\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.6.0.2\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json" />
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -127,12 +137,12 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
+    <Folder Include="Services\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\LoginPageView.xib" />
     <InterfaceDefinition Include="Views\RegistrationPageView.xib" />
-    <InterfaceDefinition Include="Views\FacebookPageView.xib" />
     <InterfaceDefinition Include="Views\TabPageStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\CameraView.xib" />
     <InterfaceDefinition Include="Views\NewsView.xib" />
@@ -158,10 +168,6 @@
     <Compile Include="Views\RegistrationPageView.designer.cs">
       <DependentUpon>RegistrationPageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\FacebookPageView.cs" />
-    <Compile Include="Views\FacebookPageView.designer.cs">
-      <DependentUpon>FacebookPageView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\TabPageView.cs" />
     <Compile Include="Views\TabPageView.designer.cs">
       <DependentUpon>TabPageView.cs</DependentUpon>
@@ -178,6 +184,7 @@
     <Compile Include="Views\ProfileView.designer.cs">
       <DependentUpon>ProfileView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Services\UIService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">
