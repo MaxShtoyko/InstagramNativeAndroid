@@ -37,5 +37,10 @@ namespace Ins.Droid.Services
         {
             return _connection.Find<T>(primaryKey) != null;
         }
+
+        public T GetItem(object primaryKey)
+        {
+            return _connection.Find<T>(primaryKey);
+        }
     }
 }

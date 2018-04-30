@@ -27,6 +27,12 @@ namespace Ins.Droid.Views
             // Create your application here
         }
 
+        protected override void OnUserLeaveHint()
+        {
+            base.OnUserLeaveHint();
+            Finish();
+        }
+
         protected override void OnRestart()
         {
             base.OnRestart();

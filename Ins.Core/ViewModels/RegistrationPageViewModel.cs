@@ -35,10 +35,15 @@ namespace Ins.Core.ViewModels
 
         void SignUpClicked()
         {
-            if ( _userService.IsCorrect(_user) && !_dataBaseService.InDataBase(User.Email) )
+            if ( _userService.IsCorrect(_user) )
             {
-                _dataBaseService.InsertIntoTable(User);
-                ShowViewModel<TabPageViewModel>();
+                if(!_dataBaseService.InDataBase(User.Email)){
+                    _dataBaseService.InsertIntoTable(User);
+                    ShowViewModel<TabPageViewModel>();
+                }
+                else{
+                    Error = "Error, this email is already in use!";
+                }
             }
             else{
                 Error = "Error, please check the entered information!";

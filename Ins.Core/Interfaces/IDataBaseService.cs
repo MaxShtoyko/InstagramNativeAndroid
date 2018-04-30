@@ -10,6 +10,7 @@ namespace Ins.Core.Interfaces
         void CreateDataBase();
         void InsertIntoTable(T item);
         void UpdateTable(T item);
+        T GetItem(object primaryKey);
 
         List<T> GetItems();
     }

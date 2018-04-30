@@ -56,7 +56,16 @@ namespace Ins.Core.ViewModels
         void LogInClicked()
         {           
             if ( _userService.IsCorrect(User) && _dataBaseService.InDataBase(User.Email) ){
-                ShowViewModel<TabPageViewModel>();
+
+                var currentUser = _dataBaseService.GetItem(User.Email);
+
+                if ( String.Equals(currentUser.Password,User.Password) ){
+                    _userService.SetUser(currentUser);
+                    ShowViewModel<TabPageViewModel>();
+                }
+                else{
+                    Error = "Error, please check the password!";
+                }
             }
             else{
                 Error = "Error, please check the entered information!";
@@ -71,15 +80,14 @@ namespace Ins.Core.ViewModels
 
             User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
             _userService.SetUser(user);
+
             ShowViewModel<TabPageViewModel>();
         }
 
         void LogInViaFacebookClicked()
         {
-            if (User.IsRegistered){ 
-                var accounts = AccountStore.Create().FindAccountsForService("Facebook").ToList();
-                Account account = accounts.First();
-                SendRequest(account).Wait();
+            if (User.IsRegistered){
+                ShowViewModel<TabPageViewModel>();
             }
             else{
                 var auth = new OAuth2Authenticator(
@@ -101,7 +109,6 @@ namespace Ins.Core.ViewModels
             _uiService.DismissUI();
 
             if (e.IsAuthenticated){
-                AccountStore.Create().Save(e.Account, "Facebook");
                 await SendRequest(e.Account);
             }
             else
