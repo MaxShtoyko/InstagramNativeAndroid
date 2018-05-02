@@ -10,6 +10,7 @@ using Ins.Core.Services;
 using Ins.Droid.Helpers;
 using Ins.Droid.Services;
 using Java.IO;
+using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views.Fragments;
 using System;
 
@@ -18,8 +19,9 @@ namespace Ins.Droid.Views
     [Activity(Label = "View for FirstViewModel")]
     public class CameraView: MvxFragment
     {
+        internal static CameraView Instance { get; private set; }
+
         private ImageView _imageView;
-        private Button _takePhotoButton;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState)
@@ -27,22 +29,20 @@ namespace Ins.Droid.Views
             base.OnCreateView(inflater, container, savedInstanceState);
 
             var view = inflater.Inflate(Resource.Layout.CameraFragmentView, container, false);
+            var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhoto) as Button;
+            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
 
             CreateDirectoryForPictures();
-
-            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
-            _takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhotoButton) as Button;
+            Instance = this;
 
             Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
-            _takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-
-            _takePhotoButton.Click += TakeAPicture;
+            takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
 
             if (CameraHelper.file != null){
                 SetImage();
             }
-       
-            return view;                      
+
+            return this.BindingInflate(Resource.Layout.CameraFragmentView, null);
         }
 
         private void CreateDirectoryForPictures()
@@ -51,8 +51,7 @@ namespace Ins.Droid.Views
                 Android.OS.Environment.GetExternalStoragePublicDirectory(
                     Android.OS.Environment.DirectoryPictures), "CameraAppDemo");
 
-            if (!CameraHelper.directory.Exists())
-            {
+            if (!CameraHelper.directory.Exists()){
                 CameraHelper.directory.Mkdirs();
             }
         }
@@ -60,8 +59,6 @@ namespace Ins.Droid.Views
         public override void OnActivityResult(int requestCode, Result resultCode, Intent data)
         {
             base.OnActivityResult(requestCode, resultCode, data);
-
-            // Make it available in the gallery
 
             if (resultCode == Result.Ok){
                 SetImage();
@@ -84,16 +81,6 @@ namespace Ins.Droid.Views
             _imageView.SetImageBitmap(BitmapHelpers.LoadAndResizeBitmap(CameraHelper.file.Path, width, height));
 
             PhotoService.AddPhoto(newPhoto);
-
-            GC.Collect();
-        }
-
-        private void TakeAPicture(object sender, EventArgs eventArgs)
-        {
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            CameraHelper.file = new File(CameraHelper.directory, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
-            intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(CameraHelper.file));
-            StartActivityForResult(intent, 0);
         }
     }
 
