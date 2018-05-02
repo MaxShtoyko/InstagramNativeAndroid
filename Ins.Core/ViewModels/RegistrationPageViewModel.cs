@@ -39,7 +39,7 @@ namespace Ins.Core.ViewModels
             {
                 if(!_dataBaseService.InDataBase(User.Email)){
                     _dataBaseService.InsertIntoTable(User);
-                    ShowViewModel<TabPageViewModel>();
+                    ShowViewModel<LoginPageViewModel>();
                 }
                 else{
                     Error = "Error, this email is already in use!";

@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="fill_parent"
-    android:background="#E2E2E2">
+    android:background="#ffffff">
     <LinearLayout
         android:orientation="vertical"
         android:layout_width="match_parent"
@@ -47,12 +47,13 @@
             android:padding="5dp"
             local:MvxBind="Text CurrentUser.Id, Mode=TwoWay" />
     </LinearLayout>
-    <com.facebook.login.widget.LoginButton
-        android:id="@+id/login_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="20.0dp"
-        android:layout_gravity="center_horizontal" />
+    <Button
+      android:text="Log out !"
+      android:textStyle="bold"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#87184f"
+      android:layout_alignParentBottom="true"
+      android:id="@+id/logOutButton"
+      local:MvxBind="Click OnLogOut" />
 </RelativeLayout>
