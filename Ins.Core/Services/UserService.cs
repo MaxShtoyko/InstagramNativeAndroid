@@ -14,7 +14,6 @@ namespace Ins.Droid.Services
             if (_currentUser == null)
             {
                 _currentUser = new User();
-                _currentUser.PictureData = new User.Picture();
             }
 
             return _currentUser;
@@ -42,12 +41,8 @@ namespace Ins.Droid.Services
             _currentUser.FullName = user.FullName;
             _currentUser.Email = user.Email;
             _currentUser.IsRegistered = true;
-
-            if (user.ProfilePictureID != null){
-                _currentUser.ProfilePictureID = user.ProfilePictureID;
-                _currentUser.PictureData.Data.Url = user.PictureData.Data.Url;
-            }
-           
+            _currentUser.ProfilePictureID = user.ProfilePictureID;
+            _currentUser.PictureUrl = user.PictureUrl;
         }
 
         static public string GetCurrentUserName()
