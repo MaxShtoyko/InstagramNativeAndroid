@@ -14,7 +14,7 @@ using Xamarin.Auth;
 
 namespace Ins.Core.ViewModels
 {
-    public class LoginPageViewModel : BaseMvxViewModel
+    public class LoginPageViewModel : MvxViewModel
     {
         private readonly IUIService _uiService;
         private readonly IUserService _userService;

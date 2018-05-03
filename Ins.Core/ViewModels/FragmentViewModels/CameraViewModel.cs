@@ -4,7 +4,7 @@ using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class CameraViewModel: MvxViewModel
+    public class CameraViewModel : MvxViewModel
     {
         private IUIService _uiService;
 

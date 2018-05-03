@@ -31,10 +31,6 @@ namespace Ins.iOS.Views
                .To(vm => vm.User.Password)
                .TwoWay();
 
-            set.Bind(ErrorTextLabel)
-               .To(vm => vm.Error)
-               .TwoWay();
-
             set.Bind(SignUpButton)
                .To(vm => vm.OnSignUp);
 

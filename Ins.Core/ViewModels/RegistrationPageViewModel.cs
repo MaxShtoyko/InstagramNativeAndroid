@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class RegistrationPageViewModel:BaseMvxViewModel
+    public class RegistrationPageViewModel : MvxViewModel
     {
         private readonly IUserService _userService;
         private readonly IErrorService _errorService;

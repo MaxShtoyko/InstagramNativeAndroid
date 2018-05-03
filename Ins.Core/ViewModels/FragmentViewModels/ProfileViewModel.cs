@@ -5,7 +5,7 @@ using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class ProfileViewModel:MvxViewModel
+    public class ProfileViewModel : MvxViewModel
     {
         private IUserService _userService;
         private IUIService _uIService;

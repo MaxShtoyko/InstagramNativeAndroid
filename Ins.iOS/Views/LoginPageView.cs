@@ -28,9 +28,6 @@ namespace Ins.iOS.Views
             set.Bind(SignUpButton)
                .To(vm => vm.OnSignUp);
 
-            set.Bind(ErrorTextLabel)
-               .To(vm => vm.Error);
-
             set.Bind(LoginViaFacebookButton)
                .To(vm => vm.OnLogInViaFacebook);
 
