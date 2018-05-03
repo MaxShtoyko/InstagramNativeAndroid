@@ -4,10 +4,12 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Ins.Core.Interfaces;
+using Ins.Core.Mappers;
 using Ins.Core.Models;
 using Ins.Droid.Helpers;
 using MvvmCross.Core.ViewModels;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 using Xamarin.Auth;
 
 namespace Ins.Core.ViewModels
@@ -59,7 +61,6 @@ namespace Ins.Core.ViewModels
         {
             if (_userService.IsCorrect(User) && _dataBaseService.InDataBase(User.Email))
             {
-
                 var currentUser = _dataBaseService.GetItem(User.Email);
 
                 if (String.Equals(currentUser.Password, User.Password))
@@ -80,11 +81,21 @@ namespace Ins.Core.ViewModels
 
         async Task SendRequest(Account account)
         {
-            var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email,picture"), null, account);
+            var parameters = new Dictionary<string, string>();
+            parameters["fields"] = "name,email,picture.type(normal)";
+            var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me"), parameters, account);
+          
             var response = await request.GetResponseAsync();
             var text = response.GetResponseText();
 
-            User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
+            if (JObject.Parse(text).ContainsKey("error")){
+                _errorService.ShowError("Error, something went wrong with Facebook API");
+                return;
+            }
+
+            var fbUser = JsonConvert.DeserializeObject<UserJson>(text);
+            var user = UserMapper.MapToDto(fbUser);
+            
             _userService.SetUser(user);
 
             ShowViewModel<TabPageViewModel>();
