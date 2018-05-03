@@ -3,6 +3,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Widget;
 using Ins.Core.ViewModels;
+using Ins.Droid.Services;
 using MvvmCross.Droid.Views;
 
 namespace Ins.Droid.Views
@@ -10,8 +11,6 @@ namespace Ins.Droid.Views
     [Activity(Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen")]
     public class TabPageView : MvxTabsFragmentActivity
     {
-        internal static TabPageView Instance { get; private set; }
-
         public TabPageViewModel TabbedViewModel
         {
             get { return (TabPageViewModel)base.ViewModel; }
@@ -20,7 +19,7 @@ namespace Ins.Droid.Views
         public TabPageView()
             : base(Resource.Layout.TabView, Resource.Id.actualtabcontent)
         {
-            Instance = this;
+            ActivityHelper.TabPageActivity = this;
         }
 
         protected override void AddTabs(Bundle args)

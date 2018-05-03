@@ -8,6 +8,7 @@ namespace Ins.Core.ViewModels
     public class RegistrationPageViewModel:BaseMvxViewModel
     {
         private readonly IUserService _userService;
+        private readonly IErrorService _errorService;
         private readonly IDataBaseService<User> _dataBaseService;
 
         private User _user;
@@ -23,10 +24,11 @@ namespace Ins.Core.ViewModels
 
         public ICommand OnSignUp { get; private set; }
         
-        public RegistrationPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService)
+        public RegistrationPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService, IErrorService errorService)
         {
             _userService = userService;
             _dataBaseService = dataBaseService;
+            _errorService = errorService;
 
             _user = _userService.GetCurrentUser();
 
@@ -42,11 +44,11 @@ namespace Ins.Core.ViewModels
                     ShowViewModel<LoginPageViewModel>();
                 }
                 else{
-                    Error = "Error, this email is already in use!";
+                    _errorService.ShowError("Error, this email is already in use!");
                 }
             }
             else{
-                Error = "Error, please check the entered information!";
+                _errorService.ShowError("Error, please check the entered information!");
             }
         }
     }

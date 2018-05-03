@@ -3,18 +3,17 @@ using Android.App;
 using Android.Graphics;
 using Android.OS;
 using Android.Widget;
+using Ins.Droid.Services;
 
 namespace Ins.Droid.Views
 {
     [Activity(Label = "LoginPageView",Theme = "@android:style/Theme.DeviceDefault.NoActionBar.Fullscreen", MainLauncher = true)]
     public class LoginPageView : BaseMvxView
     {
-        internal static LoginPageView Instance { get; private set; }
-
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-            Instance = this;
+            ActivityHelper.LoginPageActivity = this;
 
             SetContentView(Resource.Layout.LoginPage);
 

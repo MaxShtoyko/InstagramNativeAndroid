@@ -29,7 +29,7 @@ namespace Ins.Droid.Services
 
         public void GoToLoginUI()
         {
-            TabPageView.Instance.Finish();
+            ActivityHelper.TabPageActivity.Finish();
         }
 
         public object GetCameraUI()
@@ -43,7 +43,7 @@ namespace Ins.Droid.Services
 
         public object GetUI(OAuth2Authenticator auth)
         {
-            return auth.GetUI(LoginPageView.Instance);
+            return auth.GetUI(ActivityHelper.BaseActivity);
         }
 
         public void ShowCameraUI(object ui)
@@ -53,7 +53,7 @@ namespace Ins.Droid.Services
 
         public void ShowUI(object ui)
         {
-            LoginPageView.Instance.StartActivity(ui as Intent);
+            ActivityHelper.BaseActivity.StartActivity(ui as Intent);
         }
     }
 }

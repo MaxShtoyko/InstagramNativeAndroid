@@ -10,6 +10,7 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Calligraphy;
+using Ins.Droid.Services;
 using MvvmCross.Droid.Views;
 
 namespace Ins.Droid.Views
@@ -20,7 +21,7 @@ namespace Ins.Droid.Views
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
-
+            ActivityHelper.BaseActivity = this;
             // Create your application here
         }
         protected override void AttachBaseContext(Android.Content.Context @base)
