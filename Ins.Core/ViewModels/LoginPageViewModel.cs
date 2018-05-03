@@ -4,20 +4,19 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using Ins.Core.Interfaces;
-using Ins.Core.Mappers;
 using Ins.Core.Models;
 using Ins.Droid.Helpers;
 using MvvmCross.Core.ViewModels;
 using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 using Xamarin.Auth;
 
 namespace Ins.Core.ViewModels
 {
-    public class LoginPageViewModel: BaseMvxViewModel
+    public class LoginPageViewModel : BaseMvxViewModel
     {
         private readonly IUIService _uiService;
         private readonly IUserService _userService;
+        private readonly IErrorService _errorService;
         private readonly IDataBaseService<User> _dataBaseService;
 
         private User _user;
@@ -34,15 +33,16 @@ namespace Ins.Core.ViewModels
         public ICommand OnLogIn { get; private set; }
         public ICommand OnSignUp { get; private set; }
         public ICommand OnLogInViaFacebook { get; private set; }
-        
-        public LoginPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService, IUIService uiService)
+
+        public LoginPageViewModel(IUserService userService, IDataBaseService<User> dataBaseService, IUIService uiService, IErrorService errorService)
         {
             _uiService = uiService;
             _userService = userService;
             _dataBaseService = dataBaseService;
+            _errorService = errorService;
 
             _user = _userService.GetCurrentUser();
-           _dataBaseService.CreateDataBase();
+            _dataBaseService.CreateDataBase();
 
             OnLogIn = new MvxCommand(LogInClicked);
             OnSignUp = new MvxCommand(SignUpClicked);
@@ -56,40 +56,35 @@ namespace Ins.Core.ViewModels
         }
 
         void LogInClicked()
-        {           
-            if ( _userService.IsCorrect(User) && _dataBaseService.InDataBase(User.Email) ){
+        {
+            if (_userService.IsCorrect(User) && _dataBaseService.InDataBase(User.Email))
+            {
 
                 var currentUser = _dataBaseService.GetItem(User.Email);
 
-                if ( String.Equals(currentUser.Password,User.Password) ){
+                if (String.Equals(currentUser.Password, User.Password))
+                {
                     _userService.SetUser(currentUser);
                     ShowViewModel<TabPageViewModel>();
                 }
-                else{
-                    Error = "Error, please check the password!";
+                else
+                {
+                    _errorService.ShowError("Error, please check the password!");
                 }
             }
-            else{
-                Error = "Error, please check the entered information!";
+            else
+            {
+                _errorService.ShowError("Error, please check the entered information!");
             }
         }
 
         async Task SendRequest(Account account)
         {
-            var parameters = new Dictionary<string, string>();
-            parameters["fields"] = "name,email,picture.type(normal)";
-
-            var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me"), parameters, account);
+            var request = new OAuth2Request("GET", new Uri("https://graph.facebook.com/me?fields=name,email,picture"), null, account);
             var response = await request.GetResponseAsync();
             var text = response.GetResponseText();
 
-            if ( JObject.Parse(text).ContainsKey("error") ){
-                Error = "Error, something went wrong with Facebook API";
-                return;
-            }
-
-            var fbUser = JsonConvert.DeserializeObject<UserJson>(text);
-            var user = UserMapper.MapToDto(fbUser);
+            User user = JsonConvert.DeserializeObject<User>(response.GetResponseText());
             _userService.SetUser(user);
 
             ShowViewModel<TabPageViewModel>();
@@ -97,13 +92,15 @@ namespace Ins.Core.ViewModels
 
         void LogInViaFacebookClicked()
         {
-            if (User.IsRegistered){
+            if (User.IsRegistered)
+            {
                 ShowViewModel<TabPageViewModel>();
             }
-            else{
+            else
+            {
                 var auth = new OAuth2Authenticator(
-                    scope: "", 
-                    clientId: ConstantHelper.userId, 
+                    scope: "",
+                    clientId: ConstantHelper.userId,
                     redirectUrl: ConstantHelper.redirectUrl,
                     authorizeUrl: ConstantHelper.authorizeUrl);
 
@@ -112,14 +109,14 @@ namespace Ins.Core.ViewModels
 
                 _uiService.ShowUI(ui);
             }
-
         }
 
         private async void Auth_Completed(object sender, AuthenticatorCompletedEventArgs e)
         {
             _uiService.DismissUI();
 
-            if (e.IsAuthenticated){
+            if (e.IsAuthenticated)
+            {
                 await SendRequest(e.Account);
             }
             else
