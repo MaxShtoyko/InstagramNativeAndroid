@@ -30,6 +30,7 @@ namespace Ins.iOS
         {
             base.InitializeIoC();
             Mvx.RegisterSingleton<IUIService>(() => new UIService());
+            Mvx.RegisterSingleton<IErrorService>(() => new ErrorService());
         }
         
         protected override IMvxTrace CreateDebugTrace()

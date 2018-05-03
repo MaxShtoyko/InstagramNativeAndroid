@@ -24,11 +24,6 @@ namespace Ins.iOS.Services
             } 
         }
 
-        public void DismissUI()
-        {
-            ViewController.DismissViewController(true, null);
-        }
-
         public object GetUI(OAuth2Authenticator auth)
         {
             return auth.GetUI();
@@ -37,6 +32,26 @@ namespace Ins.iOS.Services
         public void ShowUI(object ui)
         {
             ViewController.PresentViewController(ui as UIViewController, true, null);
+        }
+
+        public void DismissUI()
+        {
+            ViewController.DismissViewController(true, null);
+        }
+
+        public void GoToLoginUI()
+        {
+            throw new NotImplementedException();
+        }
+
+        public object GetCameraUI()
+        {
+            throw new NotImplementedException();
+        }
+
+        public void ShowCameraUI(object ui)
+        {
+            throw new NotImplementedException();
         }
     }
 }
