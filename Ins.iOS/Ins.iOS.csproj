@@ -127,6 +127,21 @@
       <HintPath>..\packages\Xamarin.Auth.1.6.0.2\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
     </Reference>
     <Reference Include="System.Json" />
+    <Reference Include="System.Collections.Immutable">
+      <HintPath>..\packages\System.Collections.Immutable.1.4.0\lib\netstandard2.0\System.Collections.Immutable.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.DownloadCache.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.DownloadCache.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.DownloadCache.iOS.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File">
+      <HintPath>..\packages\MvvmCross.Plugin.File.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.dll</HintPath>
+    </Reference>
+    <Reference Include="MvvmCross.Plugins.File.iOS">
+      <HintPath>..\packages\MvvmCross.Plugin.File.5.7.0\lib\Xamarin.iOS10\MvvmCross.Plugins.File.iOS.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
@@ -135,6 +150,7 @@
   <ItemGroup>
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
+    <Folder Include="Converters\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -182,6 +198,9 @@
       <DependentUpon>ProfileView.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\UIService.cs" />
+    <Compile Include="Services\ErrorService.cs" />
+    <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
+    <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">

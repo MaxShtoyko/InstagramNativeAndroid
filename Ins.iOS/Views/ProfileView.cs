@@ -1,11 +1,14 @@
 ﻿using Ins.Core.ViewModels;
 
 using MvvmCross.Binding.BindingContext;
+using MvvmCross.Binding.iOS.Views;
 
 namespace Ins.iOS.Views
 {
     public partial class ProfileView : BaseView
     {
+        private MvxImageViewLoader _loader;
+
         public ProfileView() : base("ProfileView", null)
         {
         }
@@ -21,6 +24,14 @@ namespace Ins.iOS.Views
             set.Bind(EmailTextLabel)
                .To(vm => vm.CurrentUser.Email)
                .TwoWay();
+
+            _loader = new MvxImageViewLoader(() => ProfilePictureImageView);
+
+            set.Bind(_loader)
+               .To(vm => vm.CurrentUser.PictureUrl);
+
+            //set.Bind(ProfilePictureImageView.ImageUrl)
+            //   .To(vm => vm.CurrentUser.PictureUrl);
 
             set.Apply();
         }

@@ -24,7 +24,7 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIImageView ProfilePictureImageView { get; set; }
+        MvvmCross.Binding.iOS.Views.MvxImageView ProfilePictureImageView { get; set; }
 
         void ReleaseDesignerOutlets ()
         {

@@ -26,6 +26,7 @@ namespace Ins.iOS.Views
             
             base.ViewDidLoad();
 
+            NavigationItem.HidesBackButton = true;
             CreateTabs();
         }
 
