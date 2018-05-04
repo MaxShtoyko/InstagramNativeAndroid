@@ -40,11 +40,6 @@ namespace Ins.iOS.Services
             ViewController.DismissViewController(true, null);
         }
 
-        public void GoToLoginUI()
-        {
-            throw new NotImplementedException();
-        }
-
         public object GetCameraUI()
         {
             return new object();

@@ -34,7 +34,7 @@ namespace Ins.Core.ViewModels
 
         void LogOutClicked()
         {
-            _uIService.GoToLoginUI();
+            Close(this);
         }
     }
 }

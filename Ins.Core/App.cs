@@ -18,7 +18,7 @@ namespace Ins.Core
 
             Mvx.RegisterType<IDataBaseService<User>, DataBaseService<User>>();
 
-            RegisterAppStart<ViewModels.LoginPageViewModel>();
+            RegisterNavigationServiceAppStart<ViewModels.LoginPageViewModel>();
         }
     }
 }
