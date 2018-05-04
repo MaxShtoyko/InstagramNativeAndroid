@@ -24,6 +24,10 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton LogOutButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         MvvmCross.Binding.iOS.Views.MvxImageView ProfilePictureImageView { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -36,6 +40,11 @@ namespace Ins.iOS.Views
             if (FullNameTextLabel != null) {
                 FullNameTextLabel.Dispose ();
                 FullNameTextLabel = null;
+            }
+
+            if (LogOutButton != null) {
+                LogOutButton.Dispose ();
+                LogOutButton = null;
             }
 
             if (ProfilePictureImageView != null) {

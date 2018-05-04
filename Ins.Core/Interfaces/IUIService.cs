@@ -10,7 +10,6 @@ namespace Ins.Core.Interfaces
         void ShowUI(object ui);
         void ShowCameraUI(object ui);
 
-        void GoToLoginUI();
         void DismissUI();
     }
 }

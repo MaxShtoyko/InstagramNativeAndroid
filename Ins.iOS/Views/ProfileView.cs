@@ -25,13 +25,13 @@ namespace Ins.iOS.Views
                .To(vm => vm.CurrentUser.Email)
                .TwoWay();
 
+            set.Bind(LogOutButton)
+               .To(vm => vm.OnLogOut);
+
             _loader = new MvxImageViewLoader(() => ProfilePictureImageView);
 
             set.Bind(_loader)
                .To(vm => vm.CurrentUser.PictureUrl);
-
-            //set.Bind(ProfilePictureImageView.ImageUrl)
-            //   .To(vm => vm.CurrentUser.PictureUrl);
 
             set.Apply();
         }

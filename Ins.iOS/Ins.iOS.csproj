@@ -158,8 +158,9 @@
     <InterfaceDefinition Include="Views\RegistrationPageView.xib" />
     <InterfaceDefinition Include="Views\TabPageStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\CameraView.xib" />
-    <InterfaceDefinition Include="Views\NewsView.xib" />
     <InterfaceDefinition Include="Views\ProfileView.xib" />
+    <InterfaceDefinition Include="Views\PhotoCell.xib" />
+    <InterfaceDefinition Include="Views\NewsView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -189,10 +190,6 @@
     <Compile Include="Views\CameraView.designer.cs">
       <DependentUpon>CameraView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\NewsView.cs" />
-    <Compile Include="Views\NewsView.designer.cs">
-      <DependentUpon>NewsView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\ProfileView.cs" />
     <Compile Include="Views\ProfileView.designer.cs">
       <DependentUpon>ProfileView.cs</DependentUpon>
@@ -201,6 +198,15 @@
     <Compile Include="Services\ErrorService.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
+    <Compile Include="Views\NewsDataSource.cs" />
+    <Compile Include="Views\PhotoCell.cs" />
+    <Compile Include="Views\PhotoCell.designer.cs">
+      <DependentUpon>PhotoCell.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NewsView.cs" />
+    <Compile Include="Views\NewsView.designer.cs">
+      <DependentUpon>NewsView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">

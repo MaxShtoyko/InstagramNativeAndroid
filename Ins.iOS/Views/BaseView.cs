@@ -1,4 +1,4 @@
-﻿using System;
+﻿ using System;
 using Foundation;
 using MvvmCross.iOS.Views;
 using UIKit;
@@ -18,9 +18,11 @@ namespace Ins.iOS.Views
             var stringAttributes = new UIStringAttributes();
             stringAttributes.Font = UIFont.SystemFontOfSize(18);
             stringAttributes.ForegroundColor = UIColor.Black;
-            NavigationController.NavigationBar.TitleTextAttributes = stringAttributes;
 
-            NavigationController.NavigationBar.BackgroundColor = UIColor.White;
+            if ( NavigationController != null ) {
+                NavigationController.NavigationBar.TitleTextAttributes = stringAttributes;
+                NavigationController.NavigationBar.BackgroundColor = UIColor.White;
+            }
 
             // if (RespondsToSelector(new ObjCRuntime.Selector("edgesForExtendedLayout")))
             //{

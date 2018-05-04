@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace Ins.Core.Models
 {
@@ -6,14 +7,15 @@ namespace Ins.Core.Models
     {
         private static PhotoAlbum _photoAlbum;
 
-        public List<Photo> Photos { get; set; }
+        public ObservableCollection<Photo> Photos { get; set; }
 
         private PhotoAlbum() { }
 
         static public PhotoAlbum GetPhotoAlbum()
         {
-            if(_photoAlbum == null){
-                _photoAlbum = new PhotoAlbum(){ Photos = new List<Photo>() };
+            if (_photoAlbum == null)
+            {
+                _photoAlbum = new PhotoAlbum() { Photos = new ObservableCollection<Photo>() };
             }
             return _photoAlbum;
         }

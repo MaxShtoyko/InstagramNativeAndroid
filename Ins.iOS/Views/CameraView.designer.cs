@@ -14,8 +14,16 @@ namespace Ins.iOS.Views
     [Register ("CameraView")]
     partial class CameraView
     {
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton TakePhotoButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
+            if (TakePhotoButton != null) {
+                TakePhotoButton.Dispose ();
+                TakePhotoButton = null;
+            }
         }
     }
 }
