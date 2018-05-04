@@ -30,9 +30,6 @@ namespace Ins.iOS.Views
             set.Bind(_loader)
                .To(vm => vm.CurrentUser.PictureUrl);
 
-            //set.Bind(ProfilePictureImageView.ImageUrl)
-            //   .To(vm => vm.CurrentUser.PictureUrl);
-
             set.Apply();
         }
 

@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using Ins.Core.Interfaces;
+using Ins.Core.Models;
 using UIKit;
 using Xamarin.Auth;
 
@@ -46,12 +47,14 @@ namespace Ins.iOS.Services
 
         public object GetCameraUI()
         {
-            throw new NotImplementedException();
+            return new object();
         }
 
         public void ShowCameraUI(object ui)
         {
-            throw new NotImplementedException();
+            var photo = new Photo { Author = "Danya", DateOfPublication = "2018" };
+            PhotoAlbum.GetPhotoAlbum().Photos.Add(photo);
+            return;
         }
     }
 }

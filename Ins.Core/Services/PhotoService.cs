@@ -1,6 +1,7 @@
 ﻿using Ins.Core.Models;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 
 namespace Ins.Core.Services
@@ -9,7 +10,7 @@ namespace Ins.Core.Services
     {
         static private PhotoAlbum _photoAlbum = PhotoAlbum.GetPhotoAlbum();
 
-        static public List<Photo> GetPhotos()
+        static public ObservableCollection<Photo> GetPhotos()
         {
             return _photoAlbum.Photos;
         }
