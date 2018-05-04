@@ -1,4 +1,5 @@
 using Ins.Core.Interfaces;
+using Ins.iOS.Presenters;
 using Ins.iOS.Services;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Platform;
@@ -11,9 +12,14 @@ namespace Ins.iOS
 {
     public class Setup : MvxIosSetup
     {
+        private UIWindow _window;
+        private IMvxApplicationDelegate _applicationDelegate;
+
         public Setup(IMvxApplicationDelegate applicationDelegate, UIWindow window)
             : base(applicationDelegate, window)
         {
+            _applicationDelegate = applicationDelegate;
+            _window = window;
         }
         
         public Setup(IMvxApplicationDelegate applicationDelegate, IMvxIosViewPresenter presenter)
@@ -32,8 +38,15 @@ namespace Ins.iOS
             Mvx.RegisterSingleton<IUIService>(() => new UIService());
             Mvx.RegisterSingleton<IErrorService>(() => new ErrorService());
         }
-        
-        protected override IMvxTrace CreateDebugTrace()
+
+		protected override IMvxIosViewPresenter CreatePresenter()
+		{
+            var presenter = new MyNavigationPresenter(_applicationDelegate, _window);
+            Mvx.RegisterSingleton(presenter);
+            return presenter;
+		}
+
+		protected override IMvxTrace CreateDebugTrace()
         {
             return new DebugTrace();
         }

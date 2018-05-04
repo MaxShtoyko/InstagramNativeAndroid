@@ -1,6 +1,8 @@
 ﻿using Ins.Core.Interfaces;
 using Ins.Core.Models;
+using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using System.Collections.Generic;
 using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
@@ -9,6 +11,7 @@ namespace Ins.Core.ViewModels
     {
         private IUserService _userService;
         private IUIService _uIService;
+        private IMvxNavigationService _navigationService;
 
         public ICommand OnLogOut { get; private set; }
 
@@ -22,10 +25,11 @@ namespace Ins.Core.ViewModels
                     RaisePropertyChanged(() => _currentUser);
             }
         }
-        public ProfileViewModel(IUserService userService, IUIService uIService)
+        public ProfileViewModel(IMvxNavigationService navigationService, IUserService userService, IUIService uIService)
         {
             _userService = userService;
             _uIService = uIService;
+            _navigationService = navigationService;
 
             _currentUser = _userService.GetCurrentUser();
 
@@ -34,7 +38,9 @@ namespace Ins.Core.ViewModels
 
         void LogOutClicked()
         {
-            Close(this);
+            var mvxBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationCommand", "StackClear" } });
+            _navigationService.Navigate<LoginPageViewModel>( mvxBundle );
+            //Close(this);
         }
     }
 }
