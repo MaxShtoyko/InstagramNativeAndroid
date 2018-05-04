@@ -28,21 +28,18 @@ namespace Ins.Droid.Views
         {
             base.OnCreateView(inflater, container, savedInstanceState);
 
-            var view = inflater.Inflate(Resource.Layout.CameraFragmentView, container, false);
-            var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhoto) as Button;
-            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
+            var view = this.BindingInflate(Resource.Layout.CameraFragmentView, null);
+
+            SetViews(view);
 
             CreateDirectoryForPictures();
             Instance = this;
-
-            Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
-            takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
 
             if (CameraHelper.file != null){
                 SetImage();
             }
 
-            return this.BindingInflate(Resource.Layout.CameraFragmentView, null);
+            return view;
         }
 
         private void CreateDirectoryForPictures()
@@ -64,6 +61,16 @@ namespace Ins.Droid.Views
                 SetImage();
             }
             CameraHelper.file = null;
+        }
+
+        void SetViews(View view)
+        {
+            var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhoto) as Button;
+            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
+
+            Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
+
+            takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
         }
 
         private void SetImage()

@@ -18,7 +18,7 @@
                 android:id="@android:id/tabs"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:background="#458eff"
+                android:background="#494daa"
                 android:layout_height="wrap_content"
                 android:layout_weight="0" />
             <FrameLayout

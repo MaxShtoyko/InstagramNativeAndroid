@@ -2,18 +2,24 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
-    android:layout_width="match_parent"
+    android:layout_width="fill_parent"
     android:layout_height="match_parent">
     <ImageView
         android:src="@android:drawable/ic_menu_gallery"
         android:layout_width="fill_parent"
-        android:layout_height="200.0dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"        
+        android:gravity="center_vertical"
+        android:layout_marginTop="50dp"
         android:id="@+id/lastPhoto"
         android:adjustViewBounds="true" />
     <Button
         android:id="@+id/takePhoto"
+        android:text="Take a photo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
+        android:textColor="#ffffff"
+        android:background="#184a9b"
+        android:layout_alignParentBottom="true"       
         local:MvxBind="Click OnTakePhoto"/>
 </RelativeLayout>
