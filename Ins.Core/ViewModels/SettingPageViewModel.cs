@@ -2,18 +2,19 @@
 using Ins.Core.Models;
 using MvvmCross.Core.Navigation;
 using MvvmCross.Core.ViewModels;
+using System;
 using System.Collections.Generic;
+using System.Text;
 using System.Windows.Input;
 
 namespace Ins.Core.ViewModels
 {
-    public class ProfileViewModel : MvxViewModel
+    public class SettingPageViewModel:MvxViewModel
     {
-        private readonly IUserService _userService;
-        private readonly IUIService _uIService;
         private readonly IMvxNavigationService _navigationService;
+        private readonly IUserService _userService;
 
-        public ICommand OnEditProfile { get; private set; }
+        public ICommand OnLogOut { get; private set; }
 
         private User _currentUser;
         public User CurrentUser
@@ -25,20 +26,23 @@ namespace Ins.Core.ViewModels
                     RaisePropertyChanged(() => _currentUser);
             }
         }
-        public ProfileViewModel(IUserService userService, IUIService uIService, IMvxNavigationService navigationService)
+
+        public SettingPageViewModel(IMvxNavigationService navigationService, IUserService userService)
         {
-            _userService = userService;
-            _uIService = uIService;
             _navigationService = navigationService;
+            _userService = userService;
 
             _currentUser = _userService.GetCurrentUser();
 
-            OnEditProfile = new MvxCommand(EditProfileClicked);
+            OnLogOut = new MvxCommand(LogOutClicked);
         }
 
-        private void EditProfileClicked()
+        void LogOutClicked()
         {
-            ShowViewModel<SettingPageViewModel>();
+            var mvxBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationCommand", "StackClear" } });
+            _navigationService.Navigate<LoginPageViewModel>(mvxBundle);
+            //Close(this);
         }
+
     }
 }

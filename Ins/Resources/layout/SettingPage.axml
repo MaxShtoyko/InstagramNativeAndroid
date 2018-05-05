@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:local="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFFFFF"
+    android:id="@+id/settingPageView">
+  <LinearLayout
+      android:orientation="vertical"
+      android:layout_width="match_parent"
+      android:layout_height="match_parent"
+      android:padding="4.0dp">
+    <TextView
+         android:text="Setting Page"
+         android:layout_width="match_parent"
+         android:textAlignment="center"
+         android:layout_height="wrap_content"
+         android:textSize="46.0dp"
+         android:gravity="center"
+         android:layout_marginTop="30.0dp"
+         android:id="@+id/settingHeader"
+         android:textColor="#ffffff" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrationEmail"
+        android:hint="Email"
+        android:maxLength="30"
+        android:singleLine="true"
+        android:textColor="#FFFFFF"
+        android:enabled="false"
+        android:textSize="20.0dp"
+        android:layout_marginTop="50.dp"
+        android:layout_marginBottom="3.0dp"
+        local:MvxBind="Text CurrentUser.Email, Mode=TwoWay" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrationFullName"
+        android:hint="Full Name"
+        android:maxLength="30"
+        android:enabled="false"
+        android:textColor="#FFFFFF"
+        android:singleLine="true"
+        android:textSize="20.0dp"
+        android:layout_marginBottom="3.0dp"
+        local:MvxBind="Text CurrentUser.FullName, Mode=TwoWay" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/registrationLogin"
+        android:hint="Login..."
+        android:maxLength="30"
+        android:textColor="#FFFFFF"
+        android:textSize="20.0dp"
+        android:singleLine="true"
+        android:layout_marginBottom="3.0dp"
+        local:MvxBind="Text CurrentUser.Login, Mode=TwoWay" />
+  </LinearLayout>
+  <Button
+      android:text="LogOut!"
+      android:textStyle="bold"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:background="#87184f"
+      android:layout_alignParentBottom="true"
+      android:id="@+id/logOutButton"
+      local:MvxBind="Click OnLogOut" />
+  <View
+      android:layout_width="match_parent"
+      android:layout_height="1.0dp"
+      android:background="#870043"
+      android:layout_above="@id/signUpButton"
+      android:id="@+id/separator" />
+</RelativeLayout>

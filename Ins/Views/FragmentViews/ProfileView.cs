@@ -47,23 +47,23 @@ namespace Ins.Droid.Views
 
         void SetViews(View view)
         {
-            Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
+            //Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
-            var emailEditText = view.FindViewById<EditText>(Resource.Id.profileEmailEditText);
-            var nameEditText = view.FindViewById<EditText>(Resource.Id.profileUserNameEditText);
-            var loginEditText = view.FindViewById<EditText>(Resource.Id.profileUserLoginEditText);
+            //var emailEditText = view.FindViewById<EditText>(Resource.Id.profileEmailEditText);
+            //var nameEditText = view.FindViewById<EditText>(Resource.Id.profileUserNameEditText);
+            //var loginEditText = view.FindViewById<EditText>(Resource.Id.profileUserLoginEditText);
 
-            emailEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-            nameEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-            loginEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            //emailEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            //nameEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            //loginEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
 
-            emailEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
-            nameEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
-            loginEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
+            //emailEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
+            //nameEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
+            //loginEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
 
-            loginEditText.SetHintTextColor(Color.Black);
-            nameEditText.SetHintTextColor(Color.Black);
-            emailEditText.SetHintTextColor(Color.Black);
+            //loginEditText.SetHintTextColor(Color.Black);
+            //nameEditText.SetHintTextColor(Color.Black);
+            //emailEditText.SetHintTextColor(Color.Black);
         }
     }
 }

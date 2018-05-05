@@ -27,17 +27,6 @@ namespace Ins.Droid.Helpers.PhotoHelpers
             _photoAlbum = photoAlbum;
         }
 
-        public Position GetPosition(int position)
-        {
-            if( (position+1)%3==0 ){
-                return Position.Third;
-            }
-            else if ( (position + 1)% 2 == 0 ){
-                return Position.Second;
-            }
-            return Position.First;
-        }
-
         public override int ItemCount
         {
             get => _photoAlbum.Photos.Count;
@@ -46,10 +35,9 @@ namespace Ins.Droid.Helpers.PhotoHelpers
         public override void OnBindViewHolder(RecyclerView.ViewHolder holder, int position)
         {
             int width = Resources.System.DisplayMetrics.WidthPixels;
-            int height = Resources.System.DisplayMetrics.HeightPixels;
 
             GalleryViewHolder viewHolder = holder as GalleryViewHolder;
-            Bitmap bitmap = BitmapHelpers.LoadAndResizeBitmap(_photoAlbum.Photos[position].Path, width, width);
+            Bitmap bitmap = BitmapHelpers.LoadAndResizeBitmap(_photoAlbum.Photos[position].Path, width, width/4);
 
             viewHolder.image.SetImageBitmap(bitmap);
         }
