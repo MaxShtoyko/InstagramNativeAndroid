@@ -1,0 +1,10 @@
+diff a/Ins.Core/ViewModels/FragmentViewModels/CameraViewModel.cs b/Ins.Core/ViewModels/FragmentViewModels/CameraViewModel.cs	(rejected hunks)
+@@ -22,6 +23,7 @@
+             object ui = _uiService.GetCameraUI();
+             _uiService.ShowCameraUI(ui);
+         }
++
+     }
+    
+ }
+\ No newline at end of file
