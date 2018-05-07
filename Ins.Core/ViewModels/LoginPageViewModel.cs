@@ -98,6 +98,7 @@ namespace Ins.Core.ViewModels
             
             _userService.SetUser(user);
 
+
             ShowViewModel<TabPageViewModel>();
         }
 

@@ -25,12 +25,12 @@
                     <rect key="frame" x="56" y="45" width="292" height="30"/>
                     <nil key="textColor"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" textContentType="email" keyboardType="emailAddress"/>
                 </textField>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="139" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password" misplaced="YES">
                     <rect key="frame" x="56" y="83" width="292" height="30"/>
                     <nil key="textColor"/>
-                    <textInputTraits key="textInputTraits"/>
+                    <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="140" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
@@ -63,4 +63,7 @@
             </constraints>
         </view>
     </objects>
+    <resources>
+        <image name="user.png" width="128" height="128"/>
+    </resources>
 </document>

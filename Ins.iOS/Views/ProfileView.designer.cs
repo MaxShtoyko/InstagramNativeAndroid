@@ -24,11 +24,19 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton LogOutButton { get; set; }
+        UIKit.NSLayoutConstraint ProfileImageViewToTopConstraint { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         MvvmCross.Binding.iOS.Views.MvxImageView ProfilePictureImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIButton SettingsButton { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint SettingsButtopToBottomConstraint { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
@@ -42,14 +50,24 @@ namespace Ins.iOS.Views
                 FullNameTextLabel = null;
             }
 
-            if (LogOutButton != null) {
-                LogOutButton.Dispose ();
-                LogOutButton = null;
+            if (ProfileImageViewToTopConstraint != null) {
+                ProfileImageViewToTopConstraint.Dispose ();
+                ProfileImageViewToTopConstraint = null;
             }
 
             if (ProfilePictureImageView != null) {
                 ProfilePictureImageView.Dispose ();
                 ProfilePictureImageView = null;
+            }
+
+            if (SettingsButton != null) {
+                SettingsButton.Dispose ();
+                SettingsButton = null;
+            }
+
+            if (SettingsButtopToBottomConstraint != null) {
+                SettingsButtopToBottomConstraint.Dispose ();
+                SettingsButtopToBottomConstraint = null;
             }
         }
     }

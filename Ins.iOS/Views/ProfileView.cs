@@ -2,6 +2,7 @@
 
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
+using UIKit;
 
 namespace Ins.iOS.Views
 {
@@ -25,8 +26,8 @@ namespace Ins.iOS.Views
                .To(vm => vm.CurrentUser.Email)
                .TwoWay();
 
-            set.Bind(LogOutButton)
-               .To(vm => vm.OnLogOut);
+            set.Bind(SettingsButton)
+               .To(vm => vm.OnEditProfile);
 
             _loader = new MvxImageViewLoader(() => ProfilePictureImageView);
 
@@ -39,7 +40,12 @@ namespace Ins.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
-            // Perform any additional setup after loading the view, typically from a nib.
+
+            var h = UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+            ProfileImageViewToTopConstraint.Constant = h + 90;
+
+            var b = View.Frame.Size.Height;
+            //SettingsButtopToBottomConstraint.Constant = b - 50;
         }
 
         public override void DidReceiveMemoryWarning()

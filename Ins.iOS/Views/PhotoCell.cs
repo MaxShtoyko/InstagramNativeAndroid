@@ -11,7 +11,6 @@ namespace Ins.iOS.Views
     public partial class PhotoCell : MvxTableViewCell
     {
         public static readonly NSString Key = new NSString("PhotoCell");
-        public static readonly UINib Nib;
 
         public PhotoCell(IntPtr handle) : base(handle)
         {

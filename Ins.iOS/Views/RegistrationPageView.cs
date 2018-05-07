@@ -40,6 +40,9 @@ namespace Ins.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+
+            var h = UIApplication.SharedApplication.StatusBarFrame.Size.Height;
+            EmailTextFieldToTopConstraint.Constant = h + 80;
         }
 
         public override void DidReceiveMemoryWarning()

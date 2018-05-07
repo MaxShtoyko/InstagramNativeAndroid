@@ -15,7 +15,8 @@ namespace Ins.iOS.Presenters
 		{
             if (request.PresentationValues != null)
             {
-                if (request.PresentationValues.ContainsKey("NavigationMode") && request.PresentationValues["NavigationMode"] == "ClearStack")
+                if (request.PresentationValues.ContainsKey("NavigationMode")
+                       && request.PresentationValues["NavigationMode"] == "ClearStack")
                     MasterNavigationController.PopToRootViewController(false);
             }
 
