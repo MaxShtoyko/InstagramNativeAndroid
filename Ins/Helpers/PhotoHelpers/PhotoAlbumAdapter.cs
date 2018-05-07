@@ -45,7 +45,7 @@ namespace Ins.Droid.Helpers.CameraHelpers
 
             Typeface robotoLightFont = Typeface.CreateFromAsset(itemView.Context.Assets, "fonts/Roboto-Light.ttf");
 
-            authorText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            authorText.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
             dateText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
 
             return viewHolder;

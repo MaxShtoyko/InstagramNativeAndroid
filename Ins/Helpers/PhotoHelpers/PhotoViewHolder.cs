@@ -26,7 +26,7 @@ namespace Ins.Droid.Helpers.CameraHelpers
             Image = itemView.FindViewById<ImageView>(Resource.Id.imageView);
             Author = itemView.FindViewById<TextView>(Resource.Id.authorText);
             Date = itemView.FindViewById<TextView>(Resource.Id.dateText);
-            UserIcon = itemView.FindViewById<ProfilePictureView>(Resource.Id.profile);
+            UserIcon = itemView.FindViewById<ProfilePictureView>(Resource.Id.profileImageView);
         }
     }
 
