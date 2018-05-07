@@ -151,6 +151,8 @@
     <Folder Include="Resources\" />
     <Folder Include="Services\" />
     <Folder Include="Converters\" />
+    <Folder Include="TableViewSources\" />
+    <Folder Include="Presenters\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -161,6 +163,7 @@
     <InterfaceDefinition Include="Views\ProfileView.xib" />
     <InterfaceDefinition Include="Views\PhotoCell.xib" />
     <InterfaceDefinition Include="Views\NewsView.xib" />
+    <InterfaceDefinition Include="Views\SettingPageView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -198,7 +201,6 @@
     <Compile Include="Services\ErrorService.cs" />
     <Compile Include="Bootstrap\DownloadCachePluginBootstrap.cs" />
     <Compile Include="Bootstrap\FilePluginBootstrap.cs" />
-    <Compile Include="Views\NewsDataSource.cs" />
     <Compile Include="Views\PhotoCell.cs" />
     <Compile Include="Views\PhotoCell.designer.cs">
       <DependentUpon>PhotoCell.cs</DependentUpon>
@@ -207,12 +209,21 @@
     <Compile Include="Views\NewsView.designer.cs">
       <DependentUpon>NewsView.cs</DependentUpon>
     </Compile>
+    <Compile Include="TableViewSources\NewsTableViewSource.cs" />
+    <Compile Include="Presenters\MyNavigationPresenter.cs" />
+    <Compile Include="Views\SettingPageView.cs" />
+    <Compile Include="Views\SettingPageView.designer.cs">
+      <DependentUpon>SettingPageView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">
       <Project>{CC775E3D-9B9C-4B8D-8FBC-45DF5C036E6F}</Project>
       <Name>Ins.Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\user.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

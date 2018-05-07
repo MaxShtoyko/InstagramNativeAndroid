@@ -11,16 +11,12 @@ using UIKit;
 
 namespace Ins.iOS.Views
 {
-    [Register ("RegistrationPageView")]
-    partial class RegistrationPageView
+    [Register ("SettingPageView")]
+    partial class SettingPageView
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField EmailTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint EmailTextFieldToTopConstraint { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -32,22 +28,13 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UITextField PasswordTextField { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UIButton SignUpButton { get; set; }
+        UIKit.UIButton LogOutButton { get; set; }
 
         void ReleaseDesignerOutlets ()
         {
             if (EmailTextField != null) {
                 EmailTextField.Dispose ();
                 EmailTextField = null;
-            }
-
-            if (EmailTextFieldToTopConstraint != null) {
-                EmailTextFieldToTopConstraint.Dispose ();
-                EmailTextFieldToTopConstraint = null;
             }
 
             if (FullNameTextField != null) {
@@ -60,14 +47,9 @@ namespace Ins.iOS.Views
                 LoginTextField = null;
             }
 
-            if (PasswordTextField != null) {
-                PasswordTextField.Dispose ();
-                PasswordTextField = null;
-            }
-
-            if (SignUpButton != null) {
-                SignUpButton.Dispose ();
-                SignUpButton = null;
+            if (LogOutButton != null) {
+                LogOutButton.Dispose ();
+                LogOutButton = null;
             }
         }
     }

@@ -1,4 +1,5 @@
 ﻿using Ins.Core.Interfaces;
+using Ins.Core.Models;
 using MvvmCross.Core.ViewModels;
 using System.Windows.Input;
 
@@ -36,6 +37,7 @@ namespace Ins.Core.ViewModels
             object ui = _cameraUIService.GetCameraUI();
             _cameraUIService.ShowCameraUI(ui);
         }
+
     }
    
 }

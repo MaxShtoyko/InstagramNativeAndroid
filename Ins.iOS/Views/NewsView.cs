@@ -1,18 +1,12 @@
-﻿using System;
-using System.Drawing;
-using Ins.Core.ViewModels;
+﻿using Ins.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
-using MvvmCross.iOS.Views;
-using UIKit;
 
 namespace Ins.iOS.Views
 {
     public partial class NewsView : BaseView
     {
         private MvxSimpleTableViewSource _newsTableViewSource;
-
-        protected NewsViewModel NewsViewModel => ViewModel as NewsViewModel;
 
         public NewsView() : base("NewsView", null)
         {
@@ -31,6 +25,7 @@ namespace Ins.iOS.Views
         protected override void CreateBindings()
         {
             base.CreateBindings();
+
             var set = this.CreateBindingSet<NewsView, NewsViewModel>();
 
             set.Bind(_newsTableViewSource).To(vm => vm.Photos);
