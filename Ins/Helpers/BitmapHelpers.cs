@@ -38,8 +38,12 @@ namespace Ins.Droid.Helpers
             options.InSampleSize = inSampleSize;
             options.InJustDecodeBounds = false;
             Bitmap resizedBitmap = BitmapFactory.DecodeFile(fileName, options);
+            Matrix matrix = new Matrix();
+            matrix.PostRotate(90);
+            Bitmap rotated = Bitmap.CreateBitmap(resizedBitmap, 0, 0, options.OutHeight, options.OutHeight,
+                    matrix, true);
 
-            return resizedBitmap;
+            return rotated;
         }
     }
 }

@@ -37,7 +37,7 @@ namespace Ins.Droid.Helpers.PhotoHelpers
             int width = Resources.System.DisplayMetrics.WidthPixels;
 
             GalleryViewHolder viewHolder = holder as GalleryViewHolder;
-            Bitmap bitmap = BitmapHelpers.LoadAndResizeBitmap(_photoAlbum.Photos[position].Path, width, width/4);
+            Bitmap bitmap = BitmapHelpers.LoadAndResizeBitmap(_photoAlbum.Photos[position].Path, width, width);
 
             viewHolder.image.SetImageBitmap(bitmap);
         }

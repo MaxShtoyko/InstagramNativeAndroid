@@ -2,7 +2,6 @@
 using Android.Content;
 using Android.Graphics;
 using Android.OS;
-using Android.Provider;
 using Android.Views;
 using Android.Widget;
 using Ins.Core.Models;
@@ -19,23 +18,20 @@ namespace Ins.Droid.Views
     [Activity(Label = "View for FirstViewModel")]
     public class CameraView: MvxFragment
     {
-        internal static CameraView Instance { get; private set; }
-
         private ImageView _imageView;
 
         public override View OnCreateView(LayoutInflater inflater, ViewGroup container,
                                           Bundle savedInstanceState)
         {
             base.OnCreateView(inflater, container, savedInstanceState);
+            ActivityHelper.CameraPageActivity = this;
 
             var view = this.BindingInflate(Resource.Layout.CameraFragmentView, null);
 
             SetViews(view);
-
             CreateDirectoryForPictures();
-            Instance = this;
 
-            if (CameraHelper.file != null){
+            if (!PhotoAlbum.IsEmpty()){
                 SetImage();
             }
 
@@ -58,6 +54,7 @@ namespace Ins.Droid.Views
             base.OnActivityResult(requestCode, resultCode, data);
 
             if (resultCode == Result.Ok){
+                AddImageToPhotoAlbum();
                 SetImage();
             }
             CameraHelper.file = null;
@@ -65,19 +62,18 @@ namespace Ins.Droid.Views
 
         void SetViews(View view)
         {
-            var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhoto) as Button;
-            _imageView = view.FindViewById(Resource.Id.lastPhoto) as ImageView;
+            _imageView = view.FindViewById<ImageView>(Resource.Id.lastPhotoImage);
+            var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhotoButton);
+            //var lastPhotoTextView = view.FindViewById<TextView>(Resource.Id.lastPhotoTextView);
 
             Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
             takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            //lastPhotoTextView.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
         }
 
-        private void SetImage()
+        private void AddImageToPhotoAlbum()
         {
-            int width = Resources.DisplayMetrics.WidthPixels;
-            int height = Resources.DisplayMetrics.HeightPixels;
-
             Photo newPhoto = new Photo()
             {
                 Path = CameraHelper.file.Path,
@@ -85,9 +81,19 @@ namespace Ins.Droid.Views
                 Author = UserService.GetCurrentUserName()
             };
 
-            _imageView.SetImageBitmap(BitmapHelpers.LoadAndResizeBitmap(CameraHelper.file.Path, width, height));
-
             PhotoService.AddPhoto(newPhoto);
+        }
+
+        private void SetImage()
+        {
+            int width = Resources.DisplayMetrics.WidthPixels;
+            int height = Resources.DisplayMetrics.HeightPixels;
+
+            var photo = PhotoService.GetLastPhoto();
+            
+            Bitmap bitmap = BitmapHelpers.LoadAndResizeBitmap(photo.Path,width, height);
+
+            _imageView.SetImageBitmap(bitmap);
         }
     }
 

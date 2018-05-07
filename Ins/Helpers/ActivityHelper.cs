@@ -17,5 +17,6 @@ namespace Ins.Droid.Services
     {
         internal static BaseMvxView BaseActivity { get; set; }
         internal static TabPageView TabPageActivity { get; set; }
+        internal static CameraView CameraPageActivity { get; set; }   
     }
 }

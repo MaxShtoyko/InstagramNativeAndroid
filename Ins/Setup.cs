@@ -30,6 +30,7 @@ namespace Ins.Droid
             base.InitializeIoC();
             Mvx.RegisterSingleton<IUIService>(() => new UIService());
             Mvx.RegisterSingleton<IErrorService>(() => new ErrorService());
+            Mvx.RegisterSingleton<ICameraUIService>(() => new CameraUIService());
         }
     }
 }

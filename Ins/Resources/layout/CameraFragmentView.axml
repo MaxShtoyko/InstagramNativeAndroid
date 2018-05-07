@@ -4,22 +4,68 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="match_parent">
-    <ImageView
-        android:src="@android:drawable/ic_menu_gallery"
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_width="fill_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:src="@android:drawable/ic_menu_gallery"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="3dp"
+            android:scaleType="fitXY"
+            android:layout_marginBottom="140dp"
+            android:adjustViewBounds="true"
+            android:id="@+id/lastPhotoImage" />
+    </LinearLayout>
+    <TextView
+        android:textColor="#2a2b2d"
+        android:id="@+id/sharePhotoTextView"
         android:layout_height="wrap_content"
-        android:layout_gravity="center_vertical"        
-        android:gravity="center_vertical"
-        android:layout_marginTop="50dp"
-        android:id="@+id/lastPhoto"
-        android:adjustViewBounds="true" />
+        android:layout_width="fill_parent"
+        android:textSize="14dp"
+        android:gravity="center_horizontal"
+        android:layout_marginBottom="110dp"
+        android:layout_alignParentBottom="true"
+        android:text="Share this photo with your family and friends:" />
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp">
+        <ImageView
+            android:src="@drawable/Facebook"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp" />
+        <ImageView
+            android:src="@drawable/Twitter"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp" />
+        <ImageView
+            android:src="@drawable/Google"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp" />
+        <ImageView
+            android:src="@drawable/Buffer"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginLeft="8dp" />
+    </LinearLayout>
     <Button
-        android:id="@+id/takePhoto"
+        android:id="@+id/takePhotoButton"
         android:text="Take a photo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:textColor="#ffffff"
-        android:background="#184a9b"
-        android:layout_alignParentBottom="true"       
-        local:MvxBind="Click OnTakePhoto"/>
+        android:minHeight="45dp"
+        android:background="#87184f"
+        android:layout_alignParentBottom="true"
+        local:MvxBind="Click OnTakePhoto" />
 </RelativeLayout>
