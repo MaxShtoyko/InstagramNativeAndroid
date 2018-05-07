@@ -27,28 +27,9 @@ namespace Ins.Droid.Services
             
         }
 
-        public void GoToLoginUI()
-        {
-            ActivityHelper.TabPageActivity.Finish();
-        }
-
-        public object GetCameraUI()
-        {
-            Intent intent = new Intent(MediaStore.ActionImageCapture);
-            CameraHelper.file = new File(CameraHelper.directory, String.Format("myPhoto_{0}.jpg", Guid.NewGuid()));
-            intent.PutExtra(MediaStore.ExtraOutput, Android.Net.Uri.FromFile(CameraHelper.file));
-
-            return intent;
-        }
-
         public object GetUI(OAuth2Authenticator auth)
         {
             return auth.GetUI(ActivityHelper.BaseActivity);
-        }
-
-        public void ShowCameraUI(object ui)
-        {
-            CameraView.Instance.StartActivityForResult(ui as Intent, 0);
         }
 
         public void ShowUI(object ui)

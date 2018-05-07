@@ -34,6 +34,7 @@ namespace Ins.Droid.Services
             _currentUser.Email = String.Empty;
             _currentUser.Login = String.Empty;
             _currentUser.Password = String.Empty;
+            _currentUser.IsRegistered = false;
         }
 
         public void SetUser(User user)
