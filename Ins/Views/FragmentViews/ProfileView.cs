@@ -40,30 +40,21 @@ namespace Ins.Droid.Views
             recyclerView.SetLayoutManager(layoutManager);
             recyclerView.SetAdapter(adapter);
 
-            SetViews(view);
+            SetFonts(view);
 
             return view;
         }
 
-        void SetViews(View view)
+        void SetFonts(View view)
         {
-            //Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
+            Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
-            //var emailEditText = view.FindViewById<EditText>(Resource.Id.profileEmailEditText);
-            //var nameEditText = view.FindViewById<EditText>(Resource.Id.profileUserNameEditText);
-            //var loginEditText = view.FindViewById<EditText>(Resource.Id.profileUserLoginEditText);
+            var profileName = view.FindViewById<TextView>(Resource.Id.profileName);
+            var profileInformation = view.FindViewById<TextView>(Resource.Id.profileInformation);
+            
 
-            //emailEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-            //nameEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-            //loginEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-
-            //emailEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
-            //nameEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
-            //loginEditText.SetBackgroundResource(Resource.Drawable.LoginEditTextStyle);
-
-            //loginEditText.SetHintTextColor(Color.Black);
-            //nameEditText.SetHintTextColor(Color.Black);
-            //emailEditText.SetHintTextColor(Color.Black);
+            profileName.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
+            profileInformation.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
         }
     }
 }

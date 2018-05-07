@@ -180,13 +180,11 @@
     <Compile Include="Helpers\PhotoHelpers\GalleryViewHolder.cs" />
     <Compile Include="Helpers\PhotoHelpers\PhotoAlbumAdapter.cs" />
     <Compile Include="Helpers\PhotoHelpers\PhotoViewHolder.cs" />
-    <Compile Include="Helpers\FacebookHelpers\FacebookProfileHelper.cs" />
-    <Compile Include="Helpers\FacebookHelpers\ProfileChangeHelper.cs" />
-    <Compile Include="Helpers\FacebookHelpers\ProfileTrackHelper.cs" />
     <Compile Include="LinkerPleaseInclude.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Services\ActivityHelper.cs" />
+    <Compile Include="Helpers\ActivityHelper.cs" />
+    <Compile Include="Services\CameraUIService.cs" />
     <Compile Include="Services\ErrorService.cs" />
     <Compile Include="Services\UIService.cs" />
     <Compile Include="Setup.cs" />
@@ -311,6 +309,18 @@
     <AndroidResource Include="Resources\drawable\LoginEditTextStyle.xml">
       <SubType>Designer</SubType>
     </AndroidResource>
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Google.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Twitter.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Buffer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\Facebook.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
