@@ -64,12 +64,12 @@ namespace Ins.Droid.Views
         {
             _imageView = view.FindViewById<ImageView>(Resource.Id.lastPhotoImage);
             var takePhotoButton = view.FindViewById<Button>(Resource.Id.takePhotoButton);
-            //var lastPhotoTextView = view.FindViewById<TextView>(Resource.Id.lastPhotoTextView);
+            var sharePhotoTextView = view.FindViewById<TextView>(Resource.Id.sharePhotoTextView);
 
             Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
             takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-            //lastPhotoTextView.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            sharePhotoTextView.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
         }
 
         private void AddImageToPhotoAlbum()
