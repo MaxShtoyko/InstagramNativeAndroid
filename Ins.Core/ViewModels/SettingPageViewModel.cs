@@ -41,7 +41,7 @@ namespace Ins.Core.ViewModels
         {
             var mvxBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationCommand", "StackClear" } });
             _navigationService.Navigate<LoginPageViewModel>(mvxBundle);
-            //Close(this);
+            _userService.Reset();
         }
 
     }

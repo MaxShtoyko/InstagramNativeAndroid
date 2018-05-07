@@ -3,7 +3,7 @@
     xmlns:local="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#FFFFFF"
+    android:background="@drawable/LoginPageStyle"              
     android:id="@+id/settingPageView">
   <LinearLayout
       android:orientation="vertical"
@@ -29,7 +29,9 @@
         android:singleLine="true"
         android:textColor="#FFFFFF"
         android:enabled="false"
+        android:padding="8dp"
         android:textSize="20.0dp"
+        android:background="@drawable/EditTextStyle"
         android:layout_marginTop="50.dp"
         android:layout_marginBottom="3.0dp"
         local:MvxBind="Text CurrentUser.Email, Mode=TwoWay" />
@@ -41,6 +43,8 @@
         android:maxLength="30"
         android:enabled="false"
         android:textColor="#FFFFFF"
+        android:padding="8dp"
+        android:background="@drawable/EditTextStyle"
         android:singleLine="true"
         android:textSize="20.0dp"
         android:layout_marginBottom="3.0dp"
@@ -52,7 +56,9 @@
         android:hint="Login..."
         android:maxLength="30"
         android:textColor="#FFFFFF"
+        android:background="@drawable/EditTextStyle"
         android:textSize="20.0dp"
+        android:padding="8dp"
         android:singleLine="true"
         android:layout_marginBottom="3.0dp"
         local:MvxBind="Text CurrentUser.Login, Mode=TwoWay" />

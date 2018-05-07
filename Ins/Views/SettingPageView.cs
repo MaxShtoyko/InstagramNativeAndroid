@@ -21,27 +21,21 @@ namespace Ins.Droid.Views
         {
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.SettingPage);
-            SetViews();
+            SetFonts();
             // Create your application here
         }
 
-        void SetViews()
+        void SetFonts()
         {
             Typeface robotoLightFont = Typeface.CreateFromAsset(Assets, "fonts/Roboto-Light.ttf");
 
             var emailEditText = FindViewById<EditText>(Resource.Id.registrationEmail);
             var nameEditText = FindViewById<EditText>(Resource.Id.registrationFullName);
             var loginEditText = FindViewById<EditText>(Resource.Id.registrationLogin);
-            var settingPageView = FindViewById<RelativeLayout>(Resource.Id.settingPageView);
 
             emailEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
             nameEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
             loginEditText.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
-
-            emailEditText.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            nameEditText.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            loginEditText.SetBackgroundResource(Resource.Drawable.EditTextStyle);
-            settingPageView.SetBackgroundResource(Resource.Drawable.LoginPageStyle);
 
             loginEditText.SetHintTextColor(Color.Gray);
             nameEditText.SetHintTextColor(Color.Gray);
