@@ -19,5 +19,10 @@ namespace Ins.Core.Services
         {
             _photoAlbum.Photos.Add(photo);
         }
+
+        static public Photo GetLastPhoto()
+        {
+            return _photoAlbum.Photos[PhotoAlbum.GetSize()-1];
+        }
     }
 }
