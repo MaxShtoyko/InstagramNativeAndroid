@@ -12,12 +12,16 @@
             android:layout_height="wrap_content"
             android:orientation="horizontal"
             android:paddingTop="4.0dp">
-            <com.facebook.login.widget.ProfilePictureView
+            <de.hdodenhof.circleimageview.CircleImageView
+                xmlns:app="http://schemas.android.com/apk/res-auto"
                 android:id="@+id/profileImageView"
                 android:layout_width="48dp"
-                android:layout_height="48dp"
-                android:background="@drawable/circle"
+                android:layout_height="48dp"               
+                app:civ_fill_color="#000000"
+                app:civ_border_overlay="true"
                 android:layout_gravity="start"
+                app:civ_border_width="0.5dp"
+                app:civ_border_color="#000000"
                 android:layout_marginLeft="4.0dp" />
             <LinearLayout
                 android:layout_height="48dp"
