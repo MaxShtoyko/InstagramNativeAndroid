@@ -54,7 +54,7 @@
                 <constraint id="390" firstItem="186" firstAttribute="leading" secondItem="176" secondAttribute="trailing" constant="30"/>
                 <constraint id="1783" firstItem="176" firstAttribute="top" secondItem="2" secondAttribute="top" constant="50"/>
                 <constraint id="2610" firstItem="2587" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
-                <constraint id="2613" firstItem="2" firstAttribute="bottom" secondItem="2587" secondAttribute="bottom" constant="50"/>
+                <constraint id="2613" firstItem="2" firstAttribute="bottom" secondItem="2587" secondAttribute="bottom" constant="100"/>
             </constraints>
         </view>
     </objects>

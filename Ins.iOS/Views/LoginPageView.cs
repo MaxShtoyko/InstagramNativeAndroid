@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Drawing;
 using CoreAnimation;
 using CoreGraphics;
 using Foundation;
@@ -14,9 +15,7 @@ namespace Ins.iOS.Views
         CAGradientLayer gradientLayer;
 
         public LoginPageView() : base("LoginPageView", null)
-        {
-            Title = "Instrugrum";
-
+        {         
             gradientLayer = new CAGradientLayer();
             var leftColor = UIColor.FromRGB(166, 44, 116).CGColor;
             var rightColor = UIColor.FromRGB(134, 60, 145).CGColor;
@@ -64,15 +63,19 @@ namespace Ins.iOS.Views
             base.ViewDidLoad();
 
 			EmailTextField.BackgroundColor = InstrugrumColors.BoxBackgroundTransparentColor;
-			EmailTextField.AttributedPlaceholder = new NSAttributedString( "  E-mail", null, InstrugrumColors.PlaceholderTextColor );
+			EmailTextField.TintColor = InstrugrumColors.PlaceholderTextColor;
+			EmailTextField.AttributedPlaceholder = 
+				new NSAttributedString( "E-mail", null, InstrugrumColors.PlaceholderTextColor );
             EmailTextField.Layer.BorderWidth = 0;
 
 			PasswordTextField.BackgroundColor = InstrugrumColors.BoxBackgroundTransparentColor;
-			PasswordTextField.AttributedPlaceholder = new NSAttributedString( "  Password", null, InstrugrumColors.PlaceholderTextColor );
+			PasswordTextField.TintColor = InstrugrumColors.PlaceholderTextColor;
+			PasswordTextField.AttributedPlaceholder = 
+				new NSAttributedString( "Password", null, InstrugrumColors.PlaceholderTextColor );
 			PasswordTextField.Layer.BorderWidth = 0;
 
-			LogInButton.SetTitleColor( InstrugrumColors.BoxBorderTransparentColor, UIControlState.Normal);
-			LogInButton.Layer.BorderColor = InstrugrumColors.BoxBorderTransparentColor.CGColor;
+            LogInButton.SetTitleColor( InstrugrumColors.BoxBorderTransparentColor, UIControlState.Normal);
+            LogInButton.Layer.BorderColor = InstrugrumColors.BoxBorderTransparentColor.CGColor;
             LogInButton.Layer.BorderWidth = 1;
             LogInButton.Layer.CornerRadius = 4;
 
@@ -81,6 +84,18 @@ namespace Ins.iOS.Views
 			LeftSplitterView.BackgroundColor = InstrugrumColors.SplitterColor;
 			RightSplitterView.BackgroundColor = InstrugrumColors.SplitterColor;
 			OrLabel.TextColor = InstrugrumColors.SplitterColor;
+
+			SetPadding(EmailTextField, 8);
+			SetPadding(PasswordTextField, 8);
+            
+			LoginViaFacebookButton.TintColor = UIColor.White;
+        }
+
+		public static void SetPadding(UITextField f, int padding)
+        {
+            UIView paddingView = new UIView(new RectangleF(0, 0, padding, 20));
+            f.LeftView = paddingView;
+            f.LeftViewMode = UITextFieldViewMode.Always;
         }
 
         public override void ViewDidLayoutSubviews()

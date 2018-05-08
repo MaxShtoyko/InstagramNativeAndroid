@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
@@ -146,6 +145,10 @@
   <ItemGroup>
     <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json" />
     <ImageAsset Include="Assets.xcassets\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%401x.png" />
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%402x.png" />
+    <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -154,6 +157,7 @@
     <Folder Include="TableViewSources\" />
     <Folder Include="Presenters\" />
     <Folder Include="Utility\" />
+    <Folder Include="Assets.xcassets\Facebook.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -217,6 +221,7 @@
       <DependentUpon>SettingPageView.cs</DependentUpon>
     </Compile>
     <Compile Include="Utility\IntrugrumColors.cs" />
+    <Compile Include="Services\CameraUIService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">
@@ -227,9 +232,6 @@
   <ItemGroup>
     <BundleResource Include="Resources\user.png" />
     <BundleResource Include="Resources\InstagramLogoText.png" />
-    <BundleResource Include="Resources\facebook%401x.png" />
-    <BundleResource Include="Resources\facebook%402x.png" />
-    <BundleResource Include="Resources\facebook%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

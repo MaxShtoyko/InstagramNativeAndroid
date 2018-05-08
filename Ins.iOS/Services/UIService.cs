@@ -39,17 +39,5 @@ namespace Ins.iOS.Services
         {
             ViewController.DismissViewController(true, null);
         }
-
-        public object GetCameraUI()
-        {
-            return new object();
-        }
-
-        public void ShowCameraUI(object ui)
-        {
-            var photo = new Photo { Author = "Danya", DateOfPublication = "2018" };
-            PhotoAlbum.GetPhotoAlbum().Photos.Add(photo);
-            return;
-        }
     }
 }

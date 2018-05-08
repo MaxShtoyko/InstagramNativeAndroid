@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
@@ -54,9 +54,9 @@
                     </state>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141">
-                    <rect key="frame" x="110.5" y="552" width="154" height="30"/>
+                    <rect key="frame" x="97" y="556" width="181" height="22"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                    <state key="normal" title="Log in with Facebook">
+                    <state key="normal" title="  Log in with Facebook" image="Facebook">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
@@ -86,8 +86,8 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22791">
-                    <rect key="frame" x="0.0" y="620.5" width="375" height="46.5"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22791" ambiguous="YES">
+                    <rect key="frame" x="101" y="620.5" width="173" height="46.5"/>
                     <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="Don't have an account?">
@@ -107,13 +107,6 @@
                         </attributedString>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="29647">
-                    <rect key="frame" x="87.5" y="559.5" width="15" height="15"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="29647" secondAttribute="height" multiplier="1:1" id="30501"/>
-                        <constraint firstAttribute="height" constant="15" id="31067"/>
-                    </constraints>
-                </imageView>
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32492">
                     <rect key="frame" x="39" y="531" width="131.5" height="2"/>
                     <constraints>
@@ -158,8 +151,6 @@
                 <constraint firstItem="138" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="24881"/>
                 <constraint firstItem="139" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="25194"/>
                 <constraint firstItem="140" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="25292"/>
-                <constraint firstItem="29647" firstAttribute="centerY" secondItem="141" secondAttribute="centerY" id="29912"/>
-                <constraint firstItem="141" firstAttribute="leading" secondItem="29647" secondAttribute="trailing" constant="8" id="29946"/>
                 <constraint firstItem="141" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" multiplier="1.7" id="31430"/>
                 <constraint firstAttribute="centerX" secondItem="34966" secondAttribute="centerX" id="35066"/>
                 <constraint firstItem="141" firstAttribute="top" secondItem="34966" secondAttribute="centerY" constant="20" id="35320"/>
@@ -176,6 +167,6 @@
     </objects>
     <resources>
         <image name="InstagramLogoText.png" width="2495" height="711"/>
-        <image name="facebook.png" width="32" height="32"/>
+        <image name="Facebook" width="22" height="22"/>
     </resources>
 </document>

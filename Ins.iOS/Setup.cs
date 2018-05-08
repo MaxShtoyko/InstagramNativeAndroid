@@ -12,8 +12,8 @@ namespace Ins.iOS
 {
     public class Setup : MvxIosSetup
     {
-        private UIWindow _window;
-        private IMvxApplicationDelegate _applicationDelegate;
+        UIWindow _window;
+        IMvxApplicationDelegate _applicationDelegate;
 
         public Setup(IMvxApplicationDelegate applicationDelegate, UIWindow window)
             : base(applicationDelegate, window)
@@ -36,6 +36,7 @@ namespace Ins.iOS
         {
             base.InitializeIoC();
             Mvx.RegisterSingleton<IUIService>(() => new UIService());
+			Mvx.RegisterSingleton<ICameraUIService>(() => new CameraUIService());
             Mvx.RegisterSingleton<IErrorService>(() => new ErrorService());
         }
 
