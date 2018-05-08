@@ -97,9 +97,6 @@ namespace Ins.Core.ViewModels
             var user = UserMapper.MapToDto(fbUser);
             
             _userService.SetUser(user);
-
-
-            ShowViewModel<TabPageViewModel>();
         }
 
         void LogInViaFacebookClicked()
@@ -128,8 +125,9 @@ namespace Ins.Core.ViewModels
             _uiService.DismissUI();
 
             if (e.IsAuthenticated)
-            {
-                await SendRequest(e.Account);
+            {            
+                SendRequest(e.Account);
+                ShowViewModel<TabPageViewModel>();
             }
             else
             {
