@@ -22,7 +22,7 @@ namespace Ins.Core.Services
 
         static public Photo GetLastPhoto()
         {
-            return _photoAlbum.Photos[PhotoAlbum.GetSize()-1];
+            return _photoAlbum.Photos[_photoAlbum.GetSize() - 1];
         }
     }
 }

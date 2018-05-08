@@ -20,14 +20,14 @@ namespace Ins.Core.Models
             return _photoAlbum;
         }
 
-        static public int GetSize()
+        public int GetSize()
         {
-            return GetPhotoAlbum().Photos.Count;
+            return Photos.Count;
         }
 
-        static public bool IsEmpty()
+        public bool IsEmpty()
         {
-            return GetPhotoAlbum().Photos.Count == 0;
+            return Photos.Count == 0;
         }
 
     }

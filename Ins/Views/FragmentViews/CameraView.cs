@@ -31,7 +31,7 @@ namespace Ins.Droid.Views
             SetViews(view);
             CreateDirectoryForPictures();
 
-            if (!PhotoAlbum.IsEmpty()){
+            if (!PhotoAlbum.GetPhotoAlbum().IsEmpty()){
                 SetImage();
             }
 
