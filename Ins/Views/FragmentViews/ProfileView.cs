@@ -13,8 +13,10 @@ using Android.Util;
 using Android.Views;
 using Android.Widget;
 using Ins.Core.Models;
+using Ins.Droid.Helpers;
 using Ins.Droid.Helpers.CameraHelpers;
 using Ins.Droid.Helpers.PhotoHelpers;
+using Ins.Droid.Services;
 using MvvmCross.Binding.Droid.BindingContext;
 using MvvmCross.Droid.Views.Fragments;
 
@@ -41,20 +43,36 @@ namespace Ins.Droid.Views
             recyclerView.SetAdapter(adapter);
 
             SetFonts(view);
+            SetIcon(view);
 
             return view;
+        }
+
+        void SetIcon(View view)
+        {
+            var profilePictureImageView = view.FindViewById<ImageView>(Resource.Id.profilePictureImageView);
+
+            string url = UserService.GetUserIconUrl();
+
+            if (url != null){
+                Bitmap userPictureBitmap = BitmapHelpers.GetBitmapFromURL(url);
+                profilePictureImageView.SetImageBitmap(BitmapHelpers.GetRoundedShape(userPictureBitmap));
+            }
+            else{
+                profilePictureImageView.SetImageResource(Resource.Drawable.userIcon);
+            }
+
         }
 
         void SetFonts(View view)
         {
             Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
-            var profileName = view.FindViewById<TextView>(Resource.Id.profileName);
-            var profileInformation = view.FindViewById<TextView>(Resource.Id.profileInformation);
-            
+            var profileName = view.FindViewById<TextView>(Resource.Id.profileNameTextView);
+            var profileInformation = view.FindViewById<TextView>(Resource.Id.profileInformationTextView);
 
             profileName.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
-            profileInformation.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
+            profileInformation.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
         }
     }
 }

@@ -5,11 +5,9 @@
     android:layout_height="wrap_content">
     <ImageView
       android:layout_width="fill_parent"
-      android:layout_height="104dp"
-      android:layout_marginLeft="1dp"
-      android:layout_marginBottom ="1dp"
-      android:layout_marginTop ="1dp"
+      android:layout_height="105dp"
+      android:layout_marginBottom ="0.5dp"
+      android:layout_marginTop="0.5dp"
       android:elevation="6dp"
-      android:layout_marginRight="1dp"
-      android:id="@+id/image"/>   
+      android:id="@+id/galleryPhotoImageView"/>   
 </LinearLayout>

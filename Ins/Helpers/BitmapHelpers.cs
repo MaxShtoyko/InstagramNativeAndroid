@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 
 using Android.App;
@@ -44,6 +45,44 @@ namespace Ins.Droid.Helpers
                     matrix, true);
 
             return rotated;
+        }
+
+        static public Bitmap GetRoundedShape(Bitmap scaleBitmapImage)
+        {
+            int targetWidth = scaleBitmapImage.Width;
+            int targetHeight = scaleBitmapImage.Height;
+
+            Bitmap targetBitmap = Bitmap.CreateBitmap(targetWidth,
+                targetHeight, Bitmap.Config.Argb8888);
+
+            Canvas canvas = new Canvas(targetBitmap);
+            Android.Graphics.Path path = new Android.Graphics.Path();
+            path.AddCircle(((float)targetWidth - 1) / 2,
+                ((float)targetHeight - 1) / 2,
+                (Math.Min(((float)targetWidth),
+                    ((float)targetHeight)) / 2),
+                Android.Graphics.Path.Direction.Ccw);
+
+            canvas.ClipPath(path);
+            Bitmap sourceBitmap = scaleBitmapImage;
+            canvas.DrawBitmap(sourceBitmap,
+                new Rect(0, 0, sourceBitmap.Width,
+                    sourceBitmap.Height),
+                new Rect(0, 0, targetWidth, targetHeight), null);
+            return targetBitmap;
+        }
+
+        static public Bitmap GetBitmapFromURL(string url)
+        {
+            using (WebClient webClient = new WebClient())
+            {
+                byte[] bytes = webClient.DownloadData(url);
+                if (bytes != null && bytes.Length > 0)
+                {
+                   return GetRoundedShape(BitmapFactory.DecodeByteArray(bytes, 0, bytes.Length));
+                }
+            }
+            return null;
         }
     }
 }

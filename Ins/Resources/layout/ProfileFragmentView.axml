@@ -10,20 +10,22 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="4.0dp">
-        <com.facebook.login.widget.ProfilePictureView
-            android:id="@+id/profilePic"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/profilePictureImageView"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
             android:layout_gravity="center_horizontal"
-            android:layout_marginRight="4dp"
-            android:layout_marginLeft="4dp"
-            android:background="@drawable/circle"
-            android:layout_marginBottom="4dp"
-            local:MvxBind="ProfileId CurrentUser.ProfilePictureID, Mode=TwoWay" />
+            android:layout_marginRight="16dp"
+            local:civ_border_width="0.5dp"
+            local:civ_border_color="#000000"
+            local:civ_fill_color="#000000"
+            local:civ_border_overlay="true"
+            android:layout_marginLeft="8dp"
+            android:layout_marginBottom="8dp" />
         <LinearLayout
             android:orientation="vertical"
             android:layout_width="fill_parent"
-            android:layout_height="100dp">
+            android:layout_height="90dp">
             <LinearLayout
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -37,12 +39,13 @@
                     android:layout_height="60dp">
                     <TextView
                         android:text="1940"
-                        android:textColor="#000000"
+                        android:textColor="#262626"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:text="posts"
-                        android:textColor="#000000"
+                        android:textColor="#919191"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -54,12 +57,13 @@
                     android:layout_height="60dp">
                     <TextView
                         android:text="2.7m"
-                        android:textColor="#000000"
+                        android:textColor="#262626"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:text="followers"
-                        android:textColor="#000000"
+                        android:textColor="#919191"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -71,12 +75,13 @@
                     android:layout_height="60dp">
                     <TextView
                         android:text="191"
-                        android:textColor="#000000"
+                        android:textColor="#262626"
+                        android:textStyle="bold"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                     <TextView
                         android:text="following"
-                        android:textColor="#000000"
+                        android:textColor="#919191"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content" />
                 </LinearLayout>
@@ -85,35 +90,46 @@
                 android:text="Edit profile!"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="#9fa2a5"
-                android:textColor="#262728"
+                android:background="@drawable/editButton"
+                android:textColor="#3a3a3a"
                 android:layout_alignParentBottom="true"
                 android:id="@+id/editProfileButton"
                 local:MvxBind="Click OnEditProfile" />
         </LinearLayout>
     </LinearLayout>
     <TextView
-        android:id="@+id/profileName"
+        android:id="@+id/profileNameTextView"
         android:textColor="#46494f"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:textSize="16dp"
-        android:layout_marginLeft="6dp"
+        android:textSize="14dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginBottom="4dp"
         local:MvxBind="Text CurrentUser.FullName" />
     <TextView
-        android:id="@+id/profileInformation"
+        android:id="@+id/profileInformationTextView"
         android:text="@string/userInformation"
         android:textColor="#5d6066"
-        android:layout_marginLeft="4dp"
+        android:layout_marginLeft="8dp"
         android:layout_height="wrap_content"
         android:layout_width="wrap_content"
-        android:layout_marginBottom="3dp"
+        android:layout_marginBottom="8dp"
         android:textSize="12dp" />
     <View
         android:layout_width="match_parent"
         android:layout_height="1.0dp"
-        android:background="#787b82"      
-        android:id="@+id/separator"/>
+        android:background="#c4c4c4"
+        android:id="@+id/separator" />
+    <ImageView
+        android:layout_height="45dp"
+        android:layout_width="match_parent"
+        android:src="@drawable/galleryIcons" />
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.0dp"
+        android:background="#c4c4c4"
+        android:id="@+id/separator" />
     <android.support.v7.widget.RecyclerView
         android:id="@+id/galleryRecyclerView"
         android:scrollbars="vertical"

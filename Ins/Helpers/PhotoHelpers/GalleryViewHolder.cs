@@ -19,7 +19,7 @@ namespace Ins.Droid.Helpers.PhotoHelpers
 
         public GalleryViewHolder(View itemView, Action<int> listener) : base(itemView)
         {
-            image = itemView.FindViewById<ImageView>(Resource.Id.image);
+            image = itemView.FindViewById<ImageView>(Resource.Id.galleryPhotoImageView);
         }
     }
 }
