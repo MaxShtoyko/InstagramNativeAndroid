@@ -10,7 +10,6 @@ namespace Ins.Core.Mappers
 
             resultUser.Email = userJson.Email;
             resultUser.FullName = userJson.FullName;
-            resultUser.ProfilePictureID = userJson.ProfilePictureID;
             resultUser.PictureUrl = userJson.PictureData?.Data.Url;
 
             return resultUser;

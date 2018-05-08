@@ -15,8 +15,6 @@ namespace Ins.Core.Models
 
         public bool IsRegistered { get; set; } = false;
 
-        public string ProfilePictureID { get; set; }
-
         public string PictureUrl { get; set; }
     }
 }

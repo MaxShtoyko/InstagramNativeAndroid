@@ -34,6 +34,8 @@ namespace Ins.Droid.Services
             _currentUser.Email = String.Empty;
             _currentUser.Login = String.Empty;
             _currentUser.Password = String.Empty;
+
+            _currentUser.PictureUrl = null;
             _currentUser.IsRegistered = false;
         }
 
@@ -42,7 +44,6 @@ namespace Ins.Droid.Services
             _currentUser.FullName = user.FullName;
             _currentUser.Email = user.Email;
             _currentUser.IsRegistered = true;
-            _currentUser.ProfilePictureID = user.ProfilePictureID;
             _currentUser.PictureUrl = user.PictureUrl;
         }
 
@@ -51,9 +52,9 @@ namespace Ins.Droid.Services
             return _currentUser.FullName;
         }
 
-        static public string GetUserId()
+        static public string GetUserIconUrl()
         {
-            return _currentUser.ProfilePictureID;
+            return _currentUser.PictureUrl;
         }
     }
 }
