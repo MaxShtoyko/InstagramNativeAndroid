@@ -20,6 +20,10 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView LeftSplitterView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LogInButton { get; set; }
 
         [Outlet]
@@ -28,7 +32,19 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView LogoImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UILabel OrLabel { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField PasswordTextField { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView RightSplitterView { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -41,6 +57,11 @@ namespace Ins.iOS.Views
                 EmailTextField = null;
             }
 
+            if (LeftSplitterView != null) {
+                LeftSplitterView.Dispose ();
+                LeftSplitterView = null;
+            }
+
             if (LogInButton != null) {
                 LogInButton.Dispose ();
                 LogInButton = null;
@@ -51,9 +72,24 @@ namespace Ins.iOS.Views
                 LoginViaFacebookButton = null;
             }
 
+            if (LogoImageView != null) {
+                LogoImageView.Dispose ();
+                LogoImageView = null;
+            }
+
+            if (OrLabel != null) {
+                OrLabel.Dispose ();
+                OrLabel = null;
+            }
+
             if (PasswordTextField != null) {
                 PasswordTextField.Dispose ();
                 PasswordTextField = null;
+            }
+
+            if (RightSplitterView != null) {
+                RightSplitterView.Dispose ();
+                RightSplitterView = null;
             }
 
             if (SignUpButton != null) {

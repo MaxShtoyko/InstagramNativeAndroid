@@ -153,6 +153,7 @@
     <Folder Include="Converters\" />
     <Folder Include="TableViewSources\" />
     <Folder Include="Presenters\" />
+    <Folder Include="Utility\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -215,6 +216,7 @@
     <Compile Include="Views\SettingPageView.designer.cs">
       <DependentUpon>SettingPageView.cs</DependentUpon>
     </Compile>
+    <Compile Include="Utility\IntrugrumColors.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">
@@ -224,6 +226,10 @@
   </ItemGroup>
   <ItemGroup>
     <BundleResource Include="Resources\user.png" />
+    <BundleResource Include="Resources\InstagramLogoText.png" />
+    <BundleResource Include="Resources\facebook%401x.png" />
+    <BundleResource Include="Resources\facebook%402x.png" />
+    <BundleResource Include="Resources\facebook%403x.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

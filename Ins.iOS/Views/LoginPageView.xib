@@ -1,69 +1,181 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LoginPageView">
             <connections>
-                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
                 <outlet property="EmailTextField" destination="138" id="name-outlet-138"/>
-                <outlet property="PasswordTextField" destination="139" id="name-outlet-139"/>
+                <outlet property="LeftSplitterView" destination="32492" id="name-outlet-32492"/>
                 <outlet property="LogInButton" destination="140" id="name-outlet-140"/>
                 <outlet property="LoginViaFacebookButton" destination="141" id="name-outlet-141"/>
-                <outlet property="SignUpButton" destination="284" id="name-outlet-284"/>
+                <outlet property="LogoImageView" destination="3729" id="name-outlet-3729"/>
+                <outlet property="OrLabel" destination="34966" id="name-outlet-34966"/>
+                <outlet property="PasswordTextField" destination="139" id="name-outlet-139"/>
+                <outlet property="RightSplitterView" destination="34620" id="name-outlet-34620"/>
+                <outlet property="SignUpButton" destination="22791" id="name-outlet-22791"/>
+                <outlet property="view" destination="2" id="RRd-Eg-VrN"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="2">
-            <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <subviews>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="138" translatesAutoresizingMaskIntoConstraints="NO" placeholder="E-mail" misplaced="YES">
-                    <rect key="frame" x="56" y="45" width="292" height="30"/>
-                    <nil key="textColor"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="E-mail" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="138">
+                    <rect key="frame" x="37.5" y="243.5" width="300" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits" textContentType="email" keyboardType="emailAddress"/>
+                    <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                 </textField>
-                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" id="139" translatesAutoresizingMaskIntoConstraints="NO" placeholder="Password" misplaced="YES">
-                    <rect key="frame" x="56" y="83" width="292" height="30"/>
-                    <nil key="textColor"/>
-                    <textInputTraits key="textInputTraits" textContentType="password" secureTextEntry="YES"/>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="139">
+                    <rect key="frame" x="37.5" y="293.5" width="300" height="40"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="password"/>
                 </textField>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="140" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                    <rect key="frame" x="163" y="178" width="88" height="30"/>
-                    <state key="normal" title="Log In"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="140">
+                    <rect key="frame" x="37.5" y="343.5" width="300" height="40"/>
+                    <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                    <state key="normal" title="Log In">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="141" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                    <rect key="frame" x="107" y="248" width="202" height="30"/>
-                    <connections/>
-                    <state key="normal" title="Log In via Facebook"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141">
+                    <rect key="frame" x="110.5" y="552" width="154" height="30"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                    <state key="normal" title="Log in with Facebook">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="284" translatesAutoresizingMaskIntoConstraints="NO" misplaced="YES">
-                    <rect key="frame" x="178" y="688" width="58" height="30"/>
-                    <state key="normal" title="Sign Up"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="InstagramLogoText.png" translatesAutoresizingMaskIntoConstraints="NO" id="3729">
+                    <rect key="frame" x="94" y="190" width="187.5" height="53.5"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="3729" secondAttribute="height" multiplier="35:10" id="3784"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" usesAttributedText="YES" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="19404">
+                    <rect key="frame" x="37.5" y="398.5" width="300" height="13.5"/>
+                    <attributedString key="attributedText">
+                        <fragment content="Forgotten your login details?">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="11" name="HelveticaNeue"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                        <fragment content="Get Help Signing In">
+                            <attributes>
+                                <color key="NSColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <font key="NSFont" size="11" name="HelveticaNeue-Bold"/>
+                                <paragraphStyle key="NSParagraphStyle" alignment="center" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                            </attributes>
+                        </fragment>
+                    </attributedString>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22791">
+                    <rect key="frame" x="0.0" y="620.5" width="375" height="46.5"/>
+                    <state key="normal">
+                        <attributedString key="attributedTitle">
+                            <fragment content="Don't have an account?">
+                                <attributes>
+                                    <color key="NSColor" red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                            <fragment content="Sign Up">
+                                <attributes>
+                                    <color key="NSColor" red="0.99607843137254903" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <font key="NSFont" size="12" name="HelveticaNeue-Bold"/>
+                                    <paragraphStyle key="NSParagraphStyle" alignment="natural" lineBreakMode="wordWrapping" baseWritingDirection="natural"/>
+                                </attributes>
+                            </fragment>
+                        </attributedString>
+                    </state>
                 </button>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook.png" translatesAutoresizingMaskIntoConstraints="NO" id="29647">
+                    <rect key="frame" x="87.5" y="559.5" width="15" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="29647" secondAttribute="height" multiplier="1:1" id="30501"/>
+                        <constraint firstAttribute="height" constant="15" id="31067"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32492">
+                    <rect key="frame" x="39" y="531" width="131.5" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="32526"/>
+                    </constraints>
+                </imageView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34620">
+                    <rect key="frame" x="205" y="531" width="131.5" height="2"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="34621"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34966">
+                    <rect key="frame" x="176" y="521.5" width="23.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
+            <color key="backgroundColor" white="0.33333333333333298" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
-                <constraint id="693" firstItem="138" firstAttribute="top" secondItem="2" secondAttribute="top" constant="100"/>
-                <constraint id="694" firstItem="138" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
-                <constraint id="695" firstItem="138" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="60"/>
-                <constraint id="1145" firstItem="284" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
-                <constraint id="1171" firstItem="2" firstAttribute="bottom" secondItem="284" secondAttribute="bottom" constant="30"/>
-                <constraint id="2322" firstItem="139" firstAttribute="top" secondItem="138" secondAttribute="bottom" constant="10"/>
-                <constraint id="2323" firstItem="2" firstAttribute="centerX" secondItem="139" secondAttribute="centerX"/>
-                <constraint id="2324" firstItem="139" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="60"/>
-                <constraint id="2859" firstItem="140" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
-                <constraint id="2860" firstItem="140" firstAttribute="top" secondItem="139" secondAttribute="bottom" constant="50"/>
-                <constraint id="2861" firstItem="141" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
-                <constraint id="2862" firstItem="141" firstAttribute="top" secondItem="140" secondAttribute="bottom" constant="10"/>
+                <constraint firstItem="138" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="694"/>
+                <constraint firstItem="139" firstAttribute="top" secondItem="138" secondAttribute="bottom" constant="10" id="2322"/>
+                <constraint firstAttribute="centerX" secondItem="139" secondAttribute="centerX" id="2323"/>
+                <constraint firstItem="140" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="2859"/>
+                <constraint firstItem="140" firstAttribute="top" secondItem="139" secondAttribute="bottom" constant="10" id="2860"/>
+                <constraint firstItem="141" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="2861"/>
+                <constraint firstItem="3729" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.5" id="4839"/>
+                <constraint firstItem="3729" firstAttribute="centerX" secondItem="2" secondAttribute="centerX" id="5229"/>
+                <constraint firstAttribute="centerY" secondItem="139" secondAttribute="centerY" constant="20" id="7031"/>
+                <constraint firstItem="138" firstAttribute="top" secondItem="3729" secondAttribute="bottom" constant="15" id="8296"/>
+                <constraint firstItem="140" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.8" id="9389"/>
+                <constraint firstItem="139" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.8" id="9720"/>
+                <constraint firstItem="138" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.8" id="9886"/>
+                <constraint firstAttribute="centerX" secondItem="19404" secondAttribute="centerX" id="21772"/>
+                <constraint firstItem="19404" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.8" id="21930"/>
+                <constraint firstItem="19404" firstAttribute="top" secondItem="140" secondAttribute="bottom" constant="15" id="22056"/>
+                <constraint firstAttribute="centerX" secondItem="22791" secondAttribute="centerX" id="22858"/>
+                <constraint firstItem="22791" firstAttribute="width" secondItem="pHN-s8-xYA" secondAttribute="width" id="22892"/>
+                <constraint firstItem="pHN-s8-xYA" firstAttribute="bottom" secondItem="22791" secondAttribute="bottom" id="23732"/>
+                <constraint firstItem="22791" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.07" id="24200"/>
+                <constraint firstItem="138" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="24881"/>
+                <constraint firstItem="139" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="25194"/>
+                <constraint firstItem="140" firstAttribute="height" secondItem="2" secondAttribute="height" multiplier="0.06" id="25292"/>
+                <constraint firstItem="29647" firstAttribute="centerY" secondItem="141" secondAttribute="centerY" id="29912"/>
+                <constraint firstItem="141" firstAttribute="leading" secondItem="29647" secondAttribute="trailing" constant="8" id="29946"/>
+                <constraint firstItem="141" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" multiplier="1.7" id="31430"/>
+                <constraint firstAttribute="centerX" secondItem="34966" secondAttribute="centerX" id="35066"/>
+                <constraint firstItem="141" firstAttribute="top" secondItem="34966" secondAttribute="centerY" constant="20" id="35320"/>
+                <constraint firstItem="141" firstAttribute="top" secondItem="34620" secondAttribute="centerY" constant="20" id="35531"/>
+                <constraint firstItem="141" firstAttribute="top" secondItem="32492" secondAttribute="centerY" constant="20" id="35754"/>
+                <constraint firstItem="34620" firstAttribute="leading" secondItem="34966" secondAttribute="trailing" constant="10" id="36331"/>
+                <constraint firstItem="34966" firstAttribute="leading" secondItem="32492" secondAttribute="trailing" constant="10" id="36365"/>
+                <constraint firstItem="32492" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.35" id="37233"/>
+                <constraint firstItem="34620" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.35" id="37993"/>
             </constraints>
+            <viewLayoutGuide key="safeArea" id="pHN-s8-xYA"/>
+            <point key="canvasLocation" x="2.5" y="-0.5"/>
         </view>
     </objects>
     <resources>
-        <image name="user.png" width="128" height="128"/>
+        <image name="InstagramLogoText.png" width="2495" height="711"/>
+        <image name="facebook.png" width="32" height="32"/>
     </resources>
 </document>

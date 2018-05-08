@@ -71,5 +71,6 @@
     </objects>
     <resources>
         <image name="user.png" width="128" height="128"/>
+        <image name="InstagramLogoText.png" width="2495" height="711"/>
     </resources>
 </document>
