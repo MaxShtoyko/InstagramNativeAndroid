@@ -11,6 +11,8 @@ namespace Ins.iOS.TableViewSources
     {
         public NewsTableViewSource(UITableView tableView) : base(tableView)
         {
+			tableView.RegisterNibForCellReuse(UINib.FromName("PhotoCell", NSBundle.MainBundle),
+			                                  PhotoCell.Key);
         }
 
         public NewsTableViewSource(IntPtr handle) : base(handle)
@@ -26,8 +28,13 @@ namespace Ins.iOS.TableViewSources
         {
             return 1;
         }
+        
+		public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
+		{
+			return PhotoCell.GetCellHeight();
+		}
 
-        protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)
+		protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)
         {
             var cell = (PhotoCell)tableView.DequeueReusableCell(PhotoCell.Key);
             return cell;

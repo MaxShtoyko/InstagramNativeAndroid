@@ -15,6 +15,10 @@ namespace Ins.iOS.Views
         public override void ViewDidLoad()
         {
             base.ViewDidLoad();
+            
+			TakePhotoButton.Layer.BorderColor = UIColor.Black.CGColor;
+			TakePhotoButton.Layer.BorderWidth = 1;
+			TakePhotoButton.Layer.CornerRadius = 4;
         }
 
 		protected override void CreateBindings()

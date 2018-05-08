@@ -21,6 +21,10 @@ namespace Ins.iOS.Views
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UILabel DateOfPublicationLabel { get; set; }
 
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView UserProfileImageView { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (AuthorLabel != null) {
@@ -31,6 +35,11 @@ namespace Ins.iOS.Views
             if (DateOfPublicationLabel != null) {
                 DateOfPublicationLabel.Dispose ();
                 DateOfPublicationLabel = null;
+            }
+
+            if (UserProfileImageView != null) {
+                UserProfileImageView.Dispose ();
+                UserProfileImageView = null;
             }
         }
     }

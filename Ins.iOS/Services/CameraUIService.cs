@@ -1,5 +1,4 @@
-﻿using System;
-using Ins.Core.Interfaces;
+﻿using Ins.Core.Interfaces;
 using Ins.Core.Models;
 
 namespace Ins.iOS.Services

@@ -1,37 +1,45 @@
-﻿using Ins.Core.ViewModels;
+﻿using System;
+using Ins.Core.ViewModels;
 using MvvmCross.Binding.BindingContext;
 using MvvmCross.Binding.iOS.Views;
+using UIKit;
 
 namespace Ins.iOS.Views
 {
-    public partial class NewsView : BaseView
-    {
-        private MvxSimpleTableViewSource _newsTableViewSource;
+	public partial class NewsView : BaseView
+	{
+		private MvxSimpleTableViewSource _newsTableViewSource;
 
-        public NewsView() : base("NewsView", null)
-        {
-        }
+		public NewsView() : base("NewsView", null)
+		{
+		}
 
-        public override void ViewDidLoad()
-        {
-            _newsTableViewSource = new MvxSimpleTableViewSource(NewsTableView, PhotoCell.Key, PhotoCell.Key);;
+		public override void ViewDidLoad()
+		{
+			_newsTableViewSource = new MvxSimpleTableViewSource(NewsTableView, PhotoCell.Key, PhotoCell.Key);
 
-            NewsTableView.Source = _newsTableViewSource;
+			NewsTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
+            
+            NewsTableView.RowHeight = UITableView.AutomaticDimension;
+			NewsTableView.RowHeight = PhotoCell.GetCellHeight();
+            NewsTableView.EstimatedRowHeight = new nfloat(360.0);
+
+			NewsTableView.Source = _newsTableViewSource;
             NewsTableView.ReloadData();
 
-            base.ViewDidLoad();
-        }
+			base.ViewDidLoad();
+		}
 
-        protected override void CreateBindings()
-        {
-            base.CreateBindings();
+		protected override void CreateBindings()
+		{
+			base.CreateBindings();
 
-            var set = this.CreateBindingSet<NewsView, NewsViewModel>();
+			var set = this.CreateBindingSet<NewsView, NewsViewModel>();
 
-            set.Bind(_newsTableViewSource).To(vm => vm.Photos);
+			set.Bind(_newsTableViewSource).To(vm => vm.Photos);
 
-            set.Apply();
-        }
+			set.Apply();
+		}
 
         public override void DidReceiveMemoryWarning()
         {
@@ -45,9 +53,11 @@ namespace Ins.iOS.Views
         {
             base.ViewWillAppear(animated);
 
-            //     NewsViewModel.ReloadDataCommand.Execute();
+			//     NewsViewModel.ReloadDataCommand.Execute();
 
-            //savedJourneyTableView.DeselectRow(savedJourneyTableView.IndexPathForSelectedRow, true);
+			NewsTableView.AllowsSelection = false;
+
+            //NewsTableView.DeselectRow( NewsTableView.IndexPathForSelectedRow, true);
         }
     }
 }
