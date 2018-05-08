@@ -149,6 +149,30 @@
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%401x.png" />
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%402x.png" />
     <ImageAsset Include="Assets.xcassets\Facebook.imageset\facebook%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-normal.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-active.imageset\home%401x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-active.imageset\home%402x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-active.imageset\home%403x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-normal.imageset\GrayHome%401x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-normal.imageset\GrayHome%402x.png" />
+    <ImageAsset Include="Assets.xcassets\HomeTab-normal.imageset\GrayHome%403x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-normal.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\UserTab-active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\UserTab-normal.imageset\UserTab-normal%401x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-normal.imageset\UserTab-normal%402x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-normal.imageset\UserTab-normal%403x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-active.imageset\UserTab-active%401x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-active.imageset\UserTab-active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\UserTab-active.imageset\UserTab-active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-normal.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-normal.imageset\CameraTab-normal%401x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-normal.imageset\CameraTab-normal%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-normal.imageset\CameraTab-normal%403x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%401x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%402x.png" />
+    <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -158,6 +182,12 @@
     <Folder Include="Presenters\" />
     <Folder Include="Utility\" />
     <Folder Include="Assets.xcassets\Facebook.imageset\" />
+    <Folder Include="Assets.xcassets\HomeTab-normal.imageset\" />
+    <Folder Include="Assets.xcassets\HomeTab-active.imageset\" />
+    <Folder Include="Assets.xcassets\UserTab-normal.imageset\" />
+    <Folder Include="Assets.xcassets\UserTab-active.imageset\" />
+    <Folder Include="Assets.xcassets\CameraTab-normal.imageset\" />
+    <Folder Include="Assets.xcassets\CameraTab-active.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
@@ -232,6 +262,7 @@
   <ItemGroup>
     <BundleResource Include="Resources\user.png" />
     <BundleResource Include="Resources\InstagramLogoText.png" />
+    <BundleResource Include="Resources\Mountain.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

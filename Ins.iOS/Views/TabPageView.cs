@@ -39,9 +39,9 @@ namespace Ins.iOS.Views
         {
             var viewControllers = new UIViewController[]
             {
-                CreateTab("Camera", "", (ViewModel as TabPageViewModel).CameraVM),
-                CreateTab("News", "", (ViewModel as TabPageViewModel).NewsVM),
-                CreateTab("Profile", "", (ViewModel as TabPageViewModel).ProfileVM)
+                CreateTab("Camera", "CameraTab-", (ViewModel as TabPageViewModel).CameraVM),
+                CreateTab("News", "HomeTab-", (ViewModel as TabPageViewModel).NewsVM),
+                CreateTab("Profile", "UserTab-", (ViewModel as TabPageViewModel).ProfileVM)
             };
 
             ViewControllers = viewControllers;
@@ -71,14 +71,14 @@ namespace Ins.iOS.Views
         {
             viewController.Title = title;
 
-            //viewController.TabBarItem = new UITabBarItem(
-            //    title,
-            //    UIImage.FromBundle(imageName + "normal.png").ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal),
-            //    _tabsCreatedSoFar)
-            //{
-            //    SelectedImage = UIImage.FromBundle(imageName + "active.png")
-            //        .ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            //};
+            viewController.TabBarItem = new UITabBarItem(
+                title,
+                UIImage.FromBundle(imageName + "normal").ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal),
+                _tabsCreatedSoFar)
+            {
+                SelectedImage = UIImage.FromBundle(imageName + "active")
+                    .ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+            };
 
             var font = UIFont.FromName("Helvetica", 10);
 
