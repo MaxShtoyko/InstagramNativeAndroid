@@ -20,10 +20,6 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint EmailTextFieldToTopConstraint { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UITextField FullNameTextField { get; set; }
 
         [Outlet]
@@ -43,11 +39,6 @@ namespace Ins.iOS.Views
             if (EmailTextField != null) {
                 EmailTextField.Dispose ();
                 EmailTextField = null;
-            }
-
-            if (EmailTextFieldToTopConstraint != null) {
-                EmailTextFieldToTopConstraint.Dispose ();
-                EmailTextFieldToTopConstraint = null;
             }
 
             if (FullNameTextField != null) {

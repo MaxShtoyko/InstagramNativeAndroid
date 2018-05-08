@@ -12,5 +12,7 @@ namespace Ins.iOS.Utility
 		public static UIColor BoxBackgroundTransparentColor = UIColor.FromRGBA(255, 255, 255, 25);
 
 		public static UIColor BoxBorderTransparentColor = UIColor.FromRGBA(255, 255, 255, 50);
+
+		public static UIColor PurpleBackgroundColor = UIColor.FromRGB(149, 52, 131);
     }
 }
