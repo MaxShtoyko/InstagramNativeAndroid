@@ -4,6 +4,7 @@ using Android.Graphics;
 using Android.OS;
 using Android.Views;
 using Android.Widget;
+using Ins.Core.Interfaces;
 using Ins.Core.Models;
 using Ins.Core.Services;
 using Ins.Droid.Helpers;
@@ -68,18 +69,22 @@ namespace Ins.Droid.Views
 
             Typeface robotoLightFont = Typeface.CreateFromAsset(Context.Assets, "fonts/Roboto-Light.ttf");
 
-            takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
+            takePhotoButton.SetTypeface(robotoLightFont, TypefaceStyle.Bold);
             sharePhotoTextView.SetTypeface(robotoLightFont, TypefaceStyle.Normal);
         }
 
         private void AddImageToPhotoAlbum()
         {
+            var photoDataBaseService = new DataBaseService<Photo>();
+
             Photo newPhoto = new Photo()
             {
                 Path = CameraHelper.file.Path,
                 DateOfPublication = DateTime.Now.ToLongDateString(),
                 Author = UserService.GetCurrentUserName()
             };
+
+            photoDataBaseService.InsertIntoTable(newPhoto);
 
             PhotoService.AddPhoto(newPhoto);
         }

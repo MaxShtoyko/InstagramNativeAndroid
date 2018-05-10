@@ -30,5 +30,13 @@ namespace Ins.Core.Models
             return Photos.Count == 0;
         }
 
+        public void AddPhotos(IEnumerable<Photo> photos)
+        {
+            foreach(var photo in photos)
+            {
+                Photos.Add(photo);
+            }
+        }
+
     }
 }
