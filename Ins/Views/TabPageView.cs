@@ -5,6 +5,7 @@ using Android.Widget;
 using Ins.Core.ViewModels;
 using Ins.Droid.Services;
 using MvvmCross.Droid.Views;
+using static Android.Widget.TabHost;
 
 namespace Ins.Droid.Views
 {
@@ -24,9 +25,23 @@ namespace Ins.Droid.Views
 
         protected override void AddTabs(Bundle args)
         {
-            AddTab<CameraView>("Camera", "Camera", args, TabbedViewModel.CameraVM);
-            AddTab<NewsView>("News", "News", args, TabbedViewModel.NewsVM);
-            AddTab<ProfileView>("Profile", "Profile", args, TabbedViewModel.ProfileVM);
+            TabHost tabHost = FindViewById<TabHost>(Android.Resource.Id.TabHost);
+
+            TabSpec tab1 = tabHost.NewTabSpec("First Tab");
+            TabSpec tab2 = tabHost.NewTabSpec("Second Tab");
+            TabSpec tab3 = tabHost.NewTabSpec("Third Tab");
+
+            tab1.SetIndicator("", GetDrawable(Resource.Drawable.cameraIcon));
+            tab2.SetIndicator("", GetDrawable(Resource.Drawable.homeIcon));
+            tab3.SetIndicator("", GetDrawable(Resource.Drawable.profileIcon));
+
+            tab1.SetContent(new Android.Content.Intent(this, typeof(CameraView)));
+            tab2.SetContent(new Android.Content.Intent(this, typeof(NewsView)));
+            tab3.SetContent(new Android.Content.Intent(this, typeof(ProfileView)));
+
+            AddTab<CameraView>(args ,TabbedViewModel.CameraVM, tab1);
+            AddTab<NewsView>(args, TabbedViewModel.NewsVM, tab2);
+            AddTab<ProfileView>(args, TabbedViewModel.ProfileVM, tab3);
         }
 
     }

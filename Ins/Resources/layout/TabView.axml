@@ -3,6 +3,7 @@
     xmlns:local="http://schemas.android.com/apk/res/FragmentSample.UI.Droid"
     android:orientation="vertical"
     android:layout_width="fill_parent"
+    android:background="#000000"
     android:layout_height="fill_parent">
     <TabHost
         android:id="@android:id/tabhost"
@@ -17,9 +18,15 @@
                 android:id="@android:id/tabs"
                 android:orientation="horizontal"
                 android:layout_width="fill_parent"
-                android:background="#941b99"
                 android:layout_height="wrap_content"
+                android:background="#f7f7f7"
+                android:elevation="6dp"
                 android:layout_weight="0" />
+          <View 
+            android:layout_width="fill_parent"
+            android:layout_height="1dp"
+            android:background="#eaeaea"
+            android:layout_marginBottom="8dp"/>
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="0dp"
