@@ -4,6 +4,7 @@ using Ins.Droid.Helpers;
 using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 
 namespace Ins.Droid.Services
@@ -23,9 +24,9 @@ namespace Ins.Droid.Services
             _connection.Insert(item);
         }
 
-        public List<T> GetItems()
+        public IEnumerable<T> GetItems()
         {
-            return _connection.Table<T>().ToList();
+            return _connection.Table<T>();
         }
 
         public void UpdateTable(T item)

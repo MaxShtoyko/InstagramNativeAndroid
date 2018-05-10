@@ -12,6 +12,6 @@ namespace Ins.Core.Interfaces
         void UpdateTable(T item);
         T GetItem(object primaryKey);
 
-        List<T> GetItems();
+        IEnumerable<T> GetItems();
     }
 }
