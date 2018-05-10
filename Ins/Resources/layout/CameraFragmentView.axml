@@ -36,7 +36,7 @@
         android:layout_height="50dp"
         android:gravity="center_horizontal"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="56dp">
+        android:layout_marginBottom="60dp">
         <ImageView
             android:src="@drawable/Facebook"
             android:layout_width="50dp"
@@ -63,9 +63,13 @@
         android:text="Take a photo"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:textColor="#ffffff"
+        android:textColor="#FFFFFF"
         android:minHeight="45dp"
-        android:background="#87184f"
+        android:background="@drawable/takePhotoButtonStyle"
+        android:elevation="24dp"
         android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginRight="2dp"
         local:MvxBind="Click OnTakePhoto" />
 </RelativeLayout>
