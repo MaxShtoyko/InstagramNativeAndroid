@@ -21,7 +21,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datedatedate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="924" translatesAutoresizingMaskIntoConstraints="NO">
-                        <rect key="frame" x="206.5" y="11" width="93.5" height="18"/>
+                        <rect key="frame" x="204.5" y="11" width="93.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         <nil key="highlightedColor"/>
@@ -43,7 +43,7 @@
                     <constraint id="9043" firstItem="7395" firstAttribute="centerY" secondItem="180" secondAttribute="centerY"/>
                     <constraint id="9052" firstItem="180" firstAttribute="leading" secondItem="7395" secondAttribute="trailing" constant="20"/>
                     <constraint id="9071" firstItem="180" firstAttribute="centerY" secondItem="924" secondAttribute="centerY"/>
-                    <constraint id="9092" firstItem="YTl-1W-gDM" firstAttribute="trailing" secondItem="924" secondAttribute="trailing" constant="20"/>
+                    <constraint id="9092" firstItem="YTl-1W-gDM" firstAttribute="trailing" secondItem="924" secondAttribute="trailing" constant="50"/>
                     <constraint id="9115" firstItem="1312" firstAttribute="centerX" secondItem="YTl-1W-gDM" secondAttribute="centerX"/>
                     <constraint id="9128" firstItem="1312" firstAttribute="width" secondItem="YTl-1W-gDM" secondAttribute="width"/>
                     <constraint id="9142" firstItem="1312" firstAttribute="top" secondItem="7395" secondAttribute="bottom" constant="10"/>

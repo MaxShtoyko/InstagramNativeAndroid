@@ -16,15 +16,11 @@ namespace Ins.iOS.Views
     {
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel EmailTextLabel { get; set; }
+        UIKit.UILabel EmailLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.UILabel FullNameTextLabel { get; set; }
-
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint ProfileImageViewToTopConstraint { get; set; }
+        UIKit.UILabel FullNameLabel { get; set; }
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
@@ -34,25 +30,16 @@ namespace Ins.iOS.Views
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton SettingsButton { get; set; }
 
-        [Outlet]
-        [GeneratedCode ("iOS Designer", "1.0")]
-        UIKit.NSLayoutConstraint SettingsButtopToBottomConstraint { get; set; }
-
         void ReleaseDesignerOutlets ()
         {
-            if (EmailTextLabel != null) {
-                EmailTextLabel.Dispose ();
-                EmailTextLabel = null;
+            if (EmailLabel != null) {
+                EmailLabel.Dispose ();
+                EmailLabel = null;
             }
 
-            if (FullNameTextLabel != null) {
-                FullNameTextLabel.Dispose ();
-                FullNameTextLabel = null;
-            }
-
-            if (ProfileImageViewToTopConstraint != null) {
-                ProfileImageViewToTopConstraint.Dispose ();
-                ProfileImageViewToTopConstraint = null;
+            if (FullNameLabel != null) {
+                FullNameLabel.Dispose ();
+                FullNameLabel = null;
             }
 
             if (ProfilePictureImageView != null) {
@@ -63,11 +50,6 @@ namespace Ins.iOS.Views
             if (SettingsButton != null) {
                 SettingsButton.Dispose ();
                 SettingsButton = null;
-            }
-
-            if (SettingsButtopToBottomConstraint != null) {
-                SettingsButtopToBottomConstraint.Dispose ();
-                SettingsButtopToBottomConstraint = null;
             }
         }
     }

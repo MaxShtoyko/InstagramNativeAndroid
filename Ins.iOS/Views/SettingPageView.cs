@@ -7,7 +7,7 @@ namespace Ins.iOS.Views
 {
     public partial class SettingPageView : BaseView
     {
-        public SettingPageView() : base("SettingsView", null)
+		public SettingPageView() : base("SettingPageView", null)
         {
             Title = "Settings";
         }

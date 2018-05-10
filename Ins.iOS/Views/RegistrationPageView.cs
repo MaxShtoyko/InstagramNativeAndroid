@@ -100,10 +100,10 @@ namespace Ins.iOS.Views
         }
               
 		public override void ViewWillAppear(bool animated)
-		{ 
+		{         
             NavigationController.NavigationBar.BarTintColor = InstrugrumColors.PurpleBackgroundColor;
             NavigationController.NavigationBar.TintColor = UIColor.White;
-
+         
 			base.ViewWillAppear(animated);
 		}
 

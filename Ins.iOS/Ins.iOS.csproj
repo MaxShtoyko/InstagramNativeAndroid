@@ -173,6 +173,10 @@
     <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%401x.png" />
     <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%402x.png" />
     <ImageAsset Include="Assets.xcassets\CameraTab-active.imageset\CameraTab-active%403x.png" />
+    <ImageAsset Include="Assets.xcassets\SettingsIcon.imageset\Contents.json" />
+    <ImageAsset Include="Assets.xcassets\SettingsIcon.imageset\settings%401x.png" />
+    <ImageAsset Include="Assets.xcassets\SettingsIcon.imageset\settings%402x.png" />
+    <ImageAsset Include="Assets.xcassets\SettingsIcon.imageset\settings%403x.png" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\" />
@@ -188,17 +192,18 @@
     <Folder Include="Assets.xcassets\UserTab-active.imageset\" />
     <Folder Include="Assets.xcassets\CameraTab-normal.imageset\" />
     <Folder Include="Assets.xcassets\CameraTab-active.imageset\" />
+    <Folder Include="Assets.xcassets\SettingsIcon.imageset\" />
   </ItemGroup>
   <ItemGroup>
     <InterfaceDefinition Include="LaunchScreen.storyboard" />
     <InterfaceDefinition Include="Views\LoginPageView.xib" />
     <InterfaceDefinition Include="Views\RegistrationPageView.xib" />
-    <InterfaceDefinition Include="Views\TabPageStoryboard.storyboard" />
     <InterfaceDefinition Include="Views\CameraView.xib" />
-    <InterfaceDefinition Include="Views\ProfileView.xib" />
     <InterfaceDefinition Include="Views\PhotoCell.xib" />
     <InterfaceDefinition Include="Views\NewsView.xib" />
     <InterfaceDefinition Include="Views\SettingPageView.xib" />
+    <InterfaceDefinition Include="Views\TabPageView.xib" />
+    <InterfaceDefinition Include="Views\ProfileView.xib" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Info.plist" />
@@ -220,17 +225,9 @@
     <Compile Include="Views\RegistrationPageView.designer.cs">
       <DependentUpon>RegistrationPageView.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\TabPageView.cs" />
-    <Compile Include="Views\TabPageView.designer.cs">
-      <DependentUpon>TabPageView.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\CameraView.cs" />
     <Compile Include="Views\CameraView.designer.cs">
       <DependentUpon>CameraView.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Views\ProfileView.cs" />
-    <Compile Include="Views\ProfileView.designer.cs">
-      <DependentUpon>ProfileView.cs</DependentUpon>
     </Compile>
     <Compile Include="Services\UIService.cs" />
     <Compile Include="Services\ErrorService.cs" />
@@ -252,6 +249,14 @@
     </Compile>
     <Compile Include="Utility\IntrugrumColors.cs" />
     <Compile Include="Services\CameraUIService.cs" />
+    <Compile Include="Views\TabPageView.cs" />
+    <Compile Include="Views\TabPageView.designer.cs">
+      <DependentUpon>TabPageView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ProfileView.cs" />
+    <Compile Include="Views\ProfileView.designer.cs">
+      <DependentUpon>ProfileView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ins.Core\Ins.Core.csproj">

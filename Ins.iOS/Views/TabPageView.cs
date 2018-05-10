@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using Ins.Core.ViewModels;
 using MvvmCross.Core.ViewModels;
 using MvvmCross.iOS.Views;
@@ -23,10 +23,11 @@ namespace Ins.iOS.Views
         {
             if (!_constructed)
                 return;
-            
+
             base.ViewDidLoad();
 
             NavigationItem.HidesBackButton = true;
+
             CreateTabs();
         }
 
@@ -67,29 +68,26 @@ namespace Ins.iOS.Views
             return viewController;
         }
 
-        private void UpdateTabBar(UIViewController viewController, string title, string imageName)
-        {
-            viewController.Title = title;
+		private void UpdateTabBar(UIViewController viewController, string title, string imageName)
+		{
+			viewController.Title = title;
 
-            viewController.TabBarItem = new UITabBarItem(
-                title,
-                UIImage.FromBundle(imageName + "normal").ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal),
-                _tabsCreatedSoFar)
-            {
-                SelectedImage = UIImage.FromBundle(imageName + "active")
-                    .ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
-            };
+			viewController.TabBarItem = new UITabBarItem(
+				title,
+				UIImage.FromBundle(imageName + "normal").
+				    ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal),
+				_tabsCreatedSoFar)
+			{
+				SelectedImage = UIImage.FromBundle(imageName + "active")
+									   .ImageWithRenderingMode(UIImageRenderingMode.AlwaysOriginal)
+		    };
 
-            var font = UIFont.FromName("Helvetica", 10);
-
-            viewController.TabBarItem.SetTitleTextAttributes(
-                new UITextAttributes { TextColor = UIColor.Black, Font = font },
-                UIControlState.Normal);
-
-            viewController.TabBarItem.SetTitleTextAttributes(
-                new UITextAttributes { TextColor = UIColor.Black, Font = font },
-                UIControlState.Selected);
-
+            viewController.TabBarItem.ImageInsets = new UIEdgeInsets( 6, 0, -6, 0);
+         
+            viewController.TabBarItem.SetTitleTextAttributes( 
+			         new UITextAttributes { TextColor = UIColor.Clear },
+                     UIControlState.Normal);
+                         
             _tabsCreatedSoFar++;
         }
     }

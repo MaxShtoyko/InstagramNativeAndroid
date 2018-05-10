@@ -15,20 +15,6 @@ namespace Ins.iOS.Views
         {
             base.ViewDidLoad();
 
-            var stringAttributes = new UIStringAttributes();
-            stringAttributes.Font = UIFont.SystemFontOfSize(18);
-            stringAttributes.ForegroundColor = UIColor.Black;
-
-            if ( NavigationController != null ) {
-                NavigationController.NavigationBar.TitleTextAttributes = stringAttributes;
-                NavigationController.NavigationBar.BackgroundColor = UIColor.White;
-            }
-
-            // if (RespondsToSelector(new ObjCRuntime.Selector("edgesForExtendedLayout")))
-            //{
-            //    EdgesForExtendedLayout = UIRectEdge.None;
-            //}
-
             CreateBindings();
         }
 

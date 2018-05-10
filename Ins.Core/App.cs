@@ -16,7 +16,8 @@ namespace Ins.Core
                 .AsInterfaces()
                 .RegisterAsLazySingleton();
 
-            Mvx.RegisterType<IDataBaseService<User>, DataBaseService<User>>();
+			Mvx.RegisterType<IDataBaseService<User>, DataBaseService<User>>();
+			Mvx.RegisterType<IDataBaseService<Photo>, DataBaseService<Photo>>();
 
             RegisterNavigationServiceAppStart<ViewModels.LoginPageViewModel>();
         }
