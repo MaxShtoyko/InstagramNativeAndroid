@@ -35,7 +35,7 @@ namespace Ins.Core.ViewModels
 
             OnEditProfile = new MvxCommand(EditProfileClicked);
         }
-
+              
         private void EditProfileClicked()
         {
             ShowViewModel<SettingPageViewModel>();

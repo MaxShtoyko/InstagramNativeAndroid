@@ -30,6 +30,10 @@ namespace Ins.iOS.Views
         [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIButton LogOutButton { get; set; }
 
+		[Outlet]
+        [GeneratedCode("iOS Designer", "1.0")]
+        UIKit.UIButton SaveChangesButton { get; set; }
+
         void ReleaseDesignerOutlets ()
         {
             if (EmailTextField != null) {

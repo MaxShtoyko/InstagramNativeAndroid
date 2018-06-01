@@ -53,15 +53,15 @@
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141">
-                    <rect key="frame" x="97" y="556" width="181" height="22"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="141" misplaced="YES">
+                    <rect key="frame" x="95.5" y="556" width="184" height="22"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                     <state key="normal" title="  Log in with Facebook" image="Facebook">
                         <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="InstagramLogoText.png" translatesAutoresizingMaskIntoConstraints="NO" id="3729">
-                    <rect key="frame" x="94" y="190" width="187.5" height="53.5"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="InstagramLogoText.png" translatesAutoresizingMaskIntoConstraints="NO" id="3729">
+                    <rect key="frame" x="94" y="175" width="187.5" height="53.5"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="3729" secondAttribute="height" multiplier="35:10" id="3784"/>
                     </constraints>
@@ -86,8 +86,8 @@
                     </attributedString>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22791" ambiguous="YES">
-                    <rect key="frame" x="101" y="620.5" width="173" height="46.5"/>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="22791" misplaced="YES" ambiguous="YES">
+                    <rect key="frame" x="0.0" y="620.5" width="375" height="46.5"/>
                     <state key="normal">
                         <attributedString key="attributedTitle">
                             <fragment content="Don't have an account?">
@@ -107,20 +107,20 @@
                         </attributedString>
                     </state>
                 </button>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="32492">
-                    <rect key="frame" x="39" y="531" width="131.5" height="2"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32492">
+                    <rect key="frame" x="38" y="535.5" width="131.5" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="32526"/>
                     </constraints>
                 </imageView>
-                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="34620">
-                    <rect key="frame" x="205" y="531" width="131.5" height="2"/>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="34620">
+                    <rect key="frame" x="206" y="535.5" width="131" height="1"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="34621"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34966">
-                    <rect key="frame" x="176" y="521.5" width="23.5" height="20.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="OR" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="34966" misplaced="YES">
+                    <rect key="frame" x="179" y="530" width="17" height="13"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="11"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
@@ -160,13 +160,29 @@
                 <constraint firstItem="34966" firstAttribute="leading" secondItem="32492" secondAttribute="trailing" constant="10" id="36365"/>
                 <constraint firstItem="32492" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.35" id="37233"/>
                 <constraint firstItem="34620" firstAttribute="width" secondItem="2" secondAttribute="width" multiplier="0.35" id="37993"/>
+                <constraint firstItem="139" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" constant="13" id="Imd-zF-4al"/>
+                <constraint firstItem="141" firstAttribute="centerY" secondItem="2" secondAttribute="centerY" multiplier="1.8" id="PCq-4J-T52"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="pHN-s8-xYA"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="Imd-zF-4al"/>
+                    <exclude reference="PCq-4J-T52"/>
+                </mask>
+            </variation>
+            <variation key="heightClass=compact">
+                <mask key="constraints">
+                    <exclude reference="7031"/>
+                    <include reference="Imd-zF-4al"/>
+                    <exclude reference="31430"/>
+                    <include reference="PCq-4J-T52"/>
+                </mask>
+            </variation>
             <point key="canvasLocation" x="2.5" y="-0.5"/>
         </view>
     </objects>
     <resources>
-        <image name="InstagramLogoText.png" width="2495" height="711"/>
         <image name="Facebook" width="22" height="22"/>
+        <image name="InstagramLogoText.png" width="2495" height="711"/>
     </resources>
 </document>

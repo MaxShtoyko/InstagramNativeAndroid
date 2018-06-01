@@ -18,16 +18,19 @@ namespace Ins.iOS.Views
 
             set.Bind(EmailTextField)
                .To(ViewModel => ViewModel.CurrentUser.Email)
-               .TwoWay();;
+               .TwoWay();
 
             set.Bind(FullNameTextField)
                .To(ViewModel => ViewModel.CurrentUser.FullName)
-               .TwoWay();;
+               .TwoWay();
 
             set.Bind(LoginTextField)
                .To(ViewModel => ViewModel.CurrentUser.Login)
                .TwoWay();
 
+			set.Bind(SaveChangesButton)
+			   .To(ViewModel => ViewModel.OnSaveChanges);
+			
             set.Bind(LogOutButton)
                .To(ViewModel => ViewModel.OnLogOut);
 

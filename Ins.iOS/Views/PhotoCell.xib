@@ -21,13 +21,17 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Datedatedate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="924" translatesAutoresizingMaskIntoConstraints="NO">
-                        <rect key="frame" x="204.5" y="11" width="93.5" height="18"/>
+                        <rect key="frame" x="176.5" y="11" width="93.5" height="18"/>
                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                         <color key="textColor" colorSpace="calibratedWhite" white="0.333333333333333" alpha="1"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1312" translatesAutoresizingMaskIntoConstraints="NO" image="Mountain.jpg">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="1312" translatesAutoresizingMaskIntoConstraints="NO">
                         <rect key="frame" x="0.0" y="40" width="320" height="309.5"/>
+                        <constraints>
+                            <constraint id="13093" firstItem="1312" firstAttribute="height" constant="40"/>
+                        </constraints>
+                        <color key="backgroundColor" colorSpace="calibratedRGB" red="0.403921568627451" green="1" blue="0.36078431372549019" alpha="1"/>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="7395" translatesAutoresizingMaskIntoConstraints="NO" image="Mountain.jpg">
                         <rect key="frame" x="10" y="10" width="20" height="20"/>
@@ -55,6 +59,8 @@
                 <outlet property="AuthorLabel" destination="180" id="name-outlet-180"/>
                 <outlet property="DateOfPublicationLabel" destination="924" id="name-outlet-924"/>
                 <outlet property="UserProfileImageView" destination="7395" id="name-outlet-7395"/>
+                <outlet property="PhotoImageView" destination="1312" id="name-outlet-1312"/>
+                <outlet property="photoHeightConstraint" destination="13093" id="name-outlet-13093"/>
             </connections>
         </tableViewCell>
     </objects>

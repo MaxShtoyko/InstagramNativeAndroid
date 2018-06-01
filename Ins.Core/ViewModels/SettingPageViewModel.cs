@@ -15,6 +15,7 @@ namespace Ins.Core.ViewModels
         private readonly IUserService _userService;
 
         public ICommand OnLogOut { get; private set; }
+		public ICommand OnSaveChanges { get; private set; }
 
         private User _currentUser;
         public User CurrentUser
@@ -35,14 +36,20 @@ namespace Ins.Core.ViewModels
             _currentUser = _userService.GetCurrentUser();
 
             OnLogOut = new MvxCommand(LogOutClicked);
+			OnSaveChanges = new MvxCommand(SaveChangesClicked);
         }
 
-        void LogOutClicked()
+        private void LogOutClicked()
         {
             var mvxBundle = new MvxBundle(new Dictionary<string, string> { { "NavigationCommand", "StackClear" } });
             _navigationService.Navigate<LoginPageViewModel>(mvxBundle);
             _userService.Reset();
         }
 
+        private void SaveChangesClicked()
+        {
+			_userService.SetUser(CurrentUser);
+        }
+      
     }
 }

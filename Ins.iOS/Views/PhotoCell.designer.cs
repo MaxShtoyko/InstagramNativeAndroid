@@ -23,6 +23,14 @@ namespace Ins.iOS.Views
 
         [Outlet]
         [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.NSLayoutConstraint photoHeightConstraint { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
+        UIKit.UIImageView PhotoImageView { get; set; }
+
+        [Outlet]
+        [GeneratedCode ("iOS Designer", "1.0")]
         UIKit.UIImageView UserProfileImageView { get; set; }
 
         void ReleaseDesignerOutlets ()
@@ -35,6 +43,16 @@ namespace Ins.iOS.Views
             if (DateOfPublicationLabel != null) {
                 DateOfPublicationLabel.Dispose ();
                 DateOfPublicationLabel = null;
+            }
+
+            if (photoHeightConstraint != null) {
+                photoHeightConstraint.Dispose ();
+                photoHeightConstraint = null;
+            }
+
+            if (PhotoImageView != null) {
+                PhotoImageView.Dispose ();
+                PhotoImageView = null;
             }
 
             if (UserProfileImageView != null) {
