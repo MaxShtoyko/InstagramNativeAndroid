@@ -21,8 +21,7 @@ namespace Ins.iOS.Views
 			NewsTableView.SeparatorStyle = UITableViewCellSeparatorStyle.None;
             
             NewsTableView.RowHeight = UITableView.AutomaticDimension;
-			NewsTableView.RowHeight = PhotoCell.GetCellHeight();
-            NewsTableView.EstimatedRowHeight = new nfloat(360.0);
+            NewsTableView.EstimatedRowHeight = new nfloat(120.0);
 
 			NewsTableView.Source = _newsTableViewSource;
             NewsTableView.ReloadData();
@@ -53,7 +52,7 @@ namespace Ins.iOS.Views
         {
             base.ViewWillAppear(animated);
 
-			//     NewsViewModel.ReloadDataCommand.Execute();
+			//NewsViewModel.ReloadDataCommand.Execute();
 
 			NewsTableView.AllowsSelection = false;
 
