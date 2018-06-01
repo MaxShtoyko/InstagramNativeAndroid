@@ -12,6 +12,7 @@
                 <outlet property="EmailTextField" destination="192" id="name-outlet-192"/>
                 <outlet property="FullNameTextField" destination="193" id="name-outlet-193"/>
                 <outlet property="LoginTextField" destination="194" id="name-outlet-194"/>
+                <outlet property="SaveChangesButton" destination="1831" id="name-outlet-1831"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -42,6 +43,10 @@
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
                 </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="1831" translatesAutoresizingMaskIntoConstraints="NO">
+                    <rect key="frame" x="158" y="586" width="98" height="30"/>
+                    <state key="normal" title="Save Changes"/>
+                </button>
             </subviews>
             <constraints>
                 <constraint id="430" firstItem="189" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
@@ -55,6 +60,8 @@
                 <constraint id="1045" firstItem="192" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="60"/>
                 <constraint id="1102" firstItem="193" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="60"/>
                 <constraint id="1159" firstItem="194" firstAttribute="leading" secondItem="2" secondAttribute="leading" constant="60"/>
+                <constraint id="2136" firstItem="1831" firstAttribute="centerX" secondItem="2" secondAttribute="centerX"/>
+                <constraint id="2156" firstItem="189" firstAttribute="top" secondItem="1831" secondAttribute="bottom" constant="40"/>
             </constraints>
         </view>
     </objects>

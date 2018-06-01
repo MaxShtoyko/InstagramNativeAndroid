@@ -31,7 +31,7 @@ namespace Ins.iOS.TableViewSources
         
 		public override nfloat GetHeightForRow(UITableView tableView, NSIndexPath indexPath)
 		{
-			return PhotoCell.GetCellHeight();
+			return (nfloat)120.0;
 		}
 
 		protected override UITableViewCell GetOrCreateCellFor(UITableView tableView, NSIndexPath indexPath, object item)
