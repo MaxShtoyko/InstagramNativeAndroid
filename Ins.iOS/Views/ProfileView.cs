@@ -1,5 +1,4 @@
 ﻿using System;
-using CoreGraphics;
 using Ins.Core.ViewModels;
 
 using MvvmCross.Binding.BindingContext;
@@ -8,7 +7,7 @@ using UIKit;
 
 namespace Ins.iOS.Views
 {
-    public partial class ProfileView : BaseView
+	public partial class ProfileView : BaseView
     {
         private MvxImageViewLoader _loader;
         private UIBarButtonItem _settingsButton;

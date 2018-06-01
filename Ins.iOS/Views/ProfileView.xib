@@ -26,16 +26,15 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="258">
-                    <rect key="frame" x="33" y="410" width="175" height="21"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="258" misplaced="YES" ambiguous="YES" text="Here's to you">
+                    <rect key="frame" x="15.5" y="204" width="101" height="20.5"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17" weight="light"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="259" misplaced="YES" ambiguous="YES">
-                    <rect key="frame" x="15.5" y="245" width="42.5" height="20.5"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="259" misplaced="YES" ambiguous="YES" text="Admin iOSer">
+                    <rect key="frame" x="15.5" y="164" width="99.5" height="20.5"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -118,8 +117,10 @@
                 <constraint firstItem="263" firstAttribute="leading" secondItem="262" secondAttribute="leading" id="756"/>
                 <constraint firstItem="262" firstAttribute="trailing" secondItem="263" secondAttribute="trailing" id="776"/>
                 <constraint id="1382" firstItem="260" firstAttribute="centerY" secondItem="263" secondAttribute="bottom" constant="6"/>
-                <constraint id="4185" firstItem="259" firstAttribute="top" secondItem="260" secondAttribute="bottom" constant="105"/>
+                <constraint id="4185" firstItem="259" firstAttribute="top" secondItem="260" secondAttribute="bottom" constant="20"/>
                 <constraint id="4186" firstItem="259" firstAttribute="leading" secondItem="260" secondAttribute="leading"/>
+                <constraint id="5032" firstItem="258" firstAttribute="leading" secondItem="260" secondAttribute="leading"/>
+                <constraint id="5033" firstItem="258" firstAttribute="top" secondItem="259" secondAttribute="bottom" constant="10"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="7Sq-Pe-KsD"/>
         </view>
